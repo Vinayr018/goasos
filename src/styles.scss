@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+@include mat.core();
+
+$md-primary: (
+    50 : #e0f4fe,
+    100 : #b3e5fd,
+    200 : #80d3fc,
+    300 : #4dc1fa,
+    400 : #26b4f9,
+    500 : #00a7f8,
+    600 : #009ff7,
+    700 : #0096f6,
+    800 : #008cf5,
+    900 : #007cf3,
+    A100 : #ffffff,
+    A200 : #e6f1ff,
+    A400 : #b3d6ff,
+    A700 : #9ac8ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$goasos-primary: mat.define-palette($md-primary);
+$goasos-accent: mat.define-palette($md-primary);
+$goasos-warn: mat.define-palette(mat.$red-palette);
+
+$goasos-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $goasos-primary,
+      accent: $goasos-primary,
+      warn: $goasos-warn
+    )
+  )
+);
+
+@include mat.all-component-themes($goasos-theme);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ubuntu-sans-goasos {
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  min-height: 100vh;
+  font-family: "Ubuntu Sans", sans-serif;
+  font-size: 1.5rem;
+  background-color: rgb(241, 244, 247);
+}
+
+a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
