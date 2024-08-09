@@ -15,7 +15,8 @@ div.main-wrapper {
             padding: 1em;
             overflow-y: auto;
             overflow-x: hidden;
-            > p {
+            > main {
+                height: 100%;
             }
         }
     }

@@ -1,0 +1,73 @@
+$bg-color: white;
+
+div.main-contact {
+    display: flex;
+    gap: 1em;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    > div.contact-rest {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        > div.container {
+            background-color: $bg-color;
+            border-radius: 4px;
+            padding: 1em;
+            box-shadow:
+                0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+                0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+                0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+            user-select: none;
+            > p.heading {
+                font-weight: 600;
+                margin-bottom: 1em;
+                text-align: center;
+            }
+            > div.cnt-rest {
+            }
+        }
+    }
+    > div.contact-form {
+        padding: 1em;
+        background-color: $bg-color;
+        box-shadow:
+            0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+            0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+            0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        > form {
+            > p.heading {
+                font-weight: 600;
+                margin-bottom: 1em;
+                text-align: center;
+            }
+            > div.row {
+                > label {
+                    position: relative;
+                    border: 1px solid;
+                    margin: 1em 0;
+                    display: inline-block;
+                    height: max-content;
+                    > span {
+                        position: absolute;
+                        top: -20px;
+                        left: 10px;
+                        padding: 5px 10px;
+                        background-color: $bg-color;
+                        pointer-events: none;
+                    }
+                    > input,
+                    > textarea {
+                        outline: none;
+                        border: transparent;
+                        padding: 10px;
+                        background-color: transparent;
+                        font-family: inherit;
+                        font-size: inherit;
+                    }
+                }
+            }
+        }
+    }
+}
