@@ -8,7 +8,7 @@
             <app-automation-menu />
         </div>
         <div class="main-content">
-            <main>
+            <main  [@routeAnimations]="getRouteAnimationData()">
                 <router-outlet/>
             </main>
         </div>

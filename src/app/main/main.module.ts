@@ -5,6 +5,7 @@ import { GoasosCommonModule } from "../common/common.module";
 import { AutomationModule } from "../automation/automation.module";
 import { ConsultModule } from "../consult/consult.module";
 import { GoasasMatModule } from "../mat/goasos-mat.module";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 const routes: Routes = [
     {
@@ -27,6 +28,7 @@ const routes: Routes = [
     ],
     imports: [
         RouterModule.forChild(routes),
+        BrowserAnimationsModule,
         GoasosCommonModule,
         AutomationModule,
         ConsultModule,
