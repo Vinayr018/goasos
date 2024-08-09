@@ -25,18 +25,52 @@ div.main-contact {
                 text-align: center;
             }
             > div.cnt-rest {
+                margin-top: 1em;
+                &.call {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    > a {
+                        text-decoration: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                }
+                &.social {
+                    > ul.social {
+                        list-style: none;
+                        display: flex;
+                        justify-content: center;
+                        gap: 10px;
+                        > li {
+                            > a {
+                                font-size: inherit;
+                                > svg {
+                                    height: 1.3em;
+                                    > path {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
     > div.contact-form {
-        padding: 1em;
+        padding: 1em 2em;
         background-color: $bg-color;
+        height: 520px;
+        width: 350px;
         box-shadow:
             0px 3px 1px -2px rgba(0, 0, 0, 0.2),
             0px 2px 2px 0px rgba(0, 0, 0, 0.14),
             0px 1px 5px 0px rgba(0, 0, 0, 0.12);
         border-radius: 4px;
         > form {
+            height: 100%;
             > p.heading {
                 font-weight: 600;
                 margin-bottom: 1em;
@@ -49,6 +83,7 @@ div.main-contact {
                     margin: 1em 0;
                     display: inline-block;
                     height: max-content;
+                    width: 100%;
                     > span {
                         position: absolute;
                         top: -20px;
@@ -66,6 +101,13 @@ div.main-contact {
                         font-family: inherit;
                         font-size: inherit;
                     }
+                    > textarea {
+                        height: 250px;
+                    }
+                }
+                &.action {
+                    text-align: right;
+                    margin-top: 10px;
                 }
             }
         }
