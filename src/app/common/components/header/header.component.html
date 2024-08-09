@@ -1,9 +1,9 @@
 <header>
     <img src="https://www.goasos.com/img/goas-header-logo-small.jpg" alt="logo">
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">About Us</a></li>
+        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <li routerLinkActive="active"><a routerLink="product" >Products</a></li>
+        <li routerLinkActive="active"><a routerLink="contact" >Contact Us</a></li>
+        <li routerLinkActive="active"><a routerLink="about" >About Us</a></li>
     </ul>
 </header>

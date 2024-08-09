@@ -1,17 +1,20 @@
 div.main-wrapper {
+    overflow: hidden;
     > div.main-header {
         margin-bottom: 10px;
     }
     > div.main-body {
         display: grid;
         grid-template-columns: 300px 1fr;
+        height: calc(100vh - 89px);
         > div.main-menu {
-            > app-consult-menu {
-                > app-automation-menu {
-                }
-            }
+            padding: 1em;
+            padding-top: 10px;
         }
         > div.main-content {
+            padding: 1em;
+            overflow-y: auto;
+            overflow-x: hidden;
             > p {
             }
         }

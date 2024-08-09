@@ -1,19 +1,37 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { MainBaseComponent } from './components';
+import { MainProductComponent, MainContactComponent, MainBaseComponent, MainHomeComponent, MainAboutComponent } from './components';
 import { GoasosCommonModule } from "../common/common.module";
 import { AutomationModule } from "../automation/automation.module";
 import { ConsultModule } from "../consult/consult.module";
+import { GoasasMatModule } from "../mat/goasos-mat.module";
 
 const routes: Routes = [
-    { path: '', component: MainBaseComponent }
+    {
+        path: '', component: MainBaseComponent, children: [
+            { path: '', component: MainHomeComponent, pathMatch: 'full' },
+            { path: 'about', component: MainAboutComponent },
+            { path: 'contact', component: MainContactComponent },
+            { path: 'product', component: MainProductComponent },
+        ]
+    }
 ]
 
 @NgModule({
     declarations: [
-        MainBaseComponent
+        MainBaseComponent,
+        MainHomeComponent,
+        MainAboutComponent,
+        MainContactComponent,
+        MainProductComponent
     ],
-    imports: [RouterModule.forChild(routes), GoasosCommonModule, AutomationModule, ConsultModule],
+    imports: [
+        RouterModule.forChild(routes),
+        GoasosCommonModule,
+        AutomationModule,
+        ConsultModule,
+        GoasasMatModule
+    ],
     exports: [RouterModule]
 })
 export class MainModule { }

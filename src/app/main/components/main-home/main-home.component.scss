@@ -1,0 +1,24 @@
+div.main-home-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    > div.main-consult-wrapper,
+    > div.main-automation-wrapper {
+        background-color: white;
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        > button {
+        }
+    }
+    > div.main-consult-wrapper {
+        > button {
+        }
+    }
+    > div.main-automation-wrapper {
+        > button {
+        }
+    }
+}

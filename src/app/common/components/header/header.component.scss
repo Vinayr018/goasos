@@ -4,18 +4,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 0 8px 0 rgba(0,0,0,0.3);
-    > img {
-    }
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
     > ul {
         display: flex;
         gap: 1em;
         list-style: none;
         > li {
-            &:hover {
+            &:hover,
+            &.active {
                 color: #00a7f8;
-            }
-            > a {
             }
         }
     }
