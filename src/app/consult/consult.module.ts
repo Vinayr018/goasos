@@ -1,4 +1,10 @@
 import { NgModule } from "@angular/core";
+import { ConsultMenuComponent } from './components';
 
-@NgModule({})
-export class ConsultModule{}
+@NgModule({
+  declarations: [
+    ConsultMenuComponent
+  ],
+  exports: [ConsultMenuComponent]
+})
+export class ConsultModule { }

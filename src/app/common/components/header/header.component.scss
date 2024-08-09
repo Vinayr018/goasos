@@ -12,6 +12,9 @@ header {
         gap: 1em;
         list-style: none;
         > li {
+            &:hover {
+                color: #00a7f8;
+            }
             > a {
             }
         }

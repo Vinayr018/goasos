@@ -1,4 +1,10 @@
 import { NgModule } from "@angular/core";
+import { AutomationMenuComponent } from './components';
 
-@NgModule({})
-export class AutomationModule{}
+@NgModule({
+  declarations: [
+    AutomationMenuComponent
+  ],
+  exports: [AutomationMenuComponent]
+})
+export class AutomationModule { }

@@ -1,0 +1,19 @@
+div.main-wrapper {
+    > div.main-header {
+        margin-bottom: 10px;
+    }
+    > div.main-body {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        > div.main-menu {
+            > app-consult-menu {
+                > app-automation-menu {
+                }
+            }
+        }
+        > div.main-content {
+            > p {
+            }
+        }
+    }
+}

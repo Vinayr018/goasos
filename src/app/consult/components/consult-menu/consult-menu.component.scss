@@ -1,0 +1,19 @@
+div.consult-menu-wrapper {
+    margin: 10px 0;
+    > h3 {
+        font-weight: 600;
+    }
+    > ul {
+        list-style: none;
+        > li {
+            padding: 0.5em 2em;
+            cursor: pointer;
+            &:hover {
+                background-color: #e5e6ea;
+            }
+            > a {
+                text-decoration: none;
+            }
+        }
+    }
+}
