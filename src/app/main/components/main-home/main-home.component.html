@@ -3,6 +3,12 @@
         <button mat-raised-button color="primary">Enter the world of software consulting</button>
     </div>
     <div class="main-automation-wrapper">
+        <div class="img-wrapper">
+            <div class="img" *ngFor="let im of automationImages">
+                <img [src]="im.src" [alt]="im.alt" loading="lazy">
+                <div class="overlay"></div>
+            </div>
+        </div>
         <button mat-raised-button color="primary">Enter the world of Automation</button>
     </div>
 </div>

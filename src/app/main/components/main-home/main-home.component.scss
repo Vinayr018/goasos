@@ -6,19 +6,45 @@ div.main-home-wrapper {
     > div.main-automation-wrapper {
         background-color: white;
         height: 70vh;
+        border-radius: 5px;
+    }
+    > div.main-consult-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
-        > button {
-        }
-    }
-    > div.main-consult-wrapper {
         > button {
         }
     }
     > div.main-automation-wrapper {
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 1em;
+        > div.img-wrapper {
+            position: relative;
+            height: 100%;
+            > div.img {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                > img {
+                    display: inline-block;
+                    height: 100%;
+                    object-fit: contain;
+                }
+                > div.overlay {
+                    position: absolute;
+                    inset: 0;
+                    background-color: rgba(0,0,0,0.5);
+                }
+            }
+        }
         > button {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
         }
     }
 }

@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class MainHomeComponent {
 
+  public automationImages: any[] = [
+    { src: '/images/automation/doorlock.jpg', alt: 'door lock' },
+    { src: '/images/automation/home.jpg', alt: 'Home' },
+    { src: '/images/automation/light.png', alt: 'lighting' },
+    { src: '/images/automation/smarthome.jpg', alt: 'smarthome' },
+  ];
+
 }
