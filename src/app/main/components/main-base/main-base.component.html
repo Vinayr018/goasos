@@ -1,16 +1,23 @@
-<div class="main-wrapper">
+<app-base>
+    <ng-container menu>
+        <app-consult-menu />
+        <app-automation-menu />
+    </ng-container>
+    <ng-container rest>
+        <main [@routeAnimations]="getRouteAnimationData()">
+            <router-outlet/>
+        </main>
+    </ng-container>
+</app-base>
+
+<!-- <div class="main-wrapper">
     <div class="main-header">
         <app-header />
     </div>
     <div class="main-body">
         <div class="main-menu">
-            <app-consult-menu />
-            <app-automation-menu />
         </div>
         <div class="main-content">
-            <main  [@routeAnimations]="getRouteAnimationData()">
-                <router-outlet/>
-            </main>
         </div>
     </div>
-</div>
+</div> -->

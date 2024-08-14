@@ -1,0 +1,22 @@
+div.main-wrapper {
+    overflow: hidden;
+    > div.main-header {
+        margin-bottom: 10px;
+    }
+    > div.main-body {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        height: calc(100vh - 89px);
+        > div.main-menu {
+            padding: 1em;
+            padding-top: 10px;
+            height: 100%;
+        }
+        > div.main-content {
+            padding: 1em;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100%;
+        }
+    }
+}

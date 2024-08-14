@@ -1,13 +1,14 @@
 import { NgModule } from "@angular/core";
-import { HeaderComponent } from './components';
+import { HeaderComponent, BaseComponent } from './components';
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    BaseComponent
   ],
-  exports: [HeaderComponent],
+  exports: [HeaderComponent, BaseComponent],
   imports: [GoasasMatModule, RouterModule]
 })
 export class GoasosCommonModule { }

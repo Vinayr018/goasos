@@ -1,0 +1,11 @@
+<app-base>
+    <ng-container menu>
+        <!-- <app-consult-menu /> -->
+        <app-automation-menu />
+    </ng-container>
+    <ng-container rest>
+        <main [@routeAnimations]="getRouteAnimationData()">
+            <router-outlet/>
+        </main>
+    </ng-container>
+</app-base>
