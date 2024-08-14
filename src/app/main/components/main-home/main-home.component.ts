@@ -8,10 +8,10 @@ import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
 export class MainHomeComponent implements AfterViewInit {
 
   public automationImages: any[] = [
-    { src: '/images/automation/doorlock.jpg', alt: 'door lock' },
-    { src: '/images/automation/home.jpg', alt: 'Home' },
-    { src: '/images/automation/light.png', alt: 'lighting' },
-    { src: '/images/automation/smarthome.jpg', alt: 'smarthome' },
+    { src: '/images/automation/home/doorlock.jpg', alt: 'door lock' },
+    { src: '/images/automation/home/home.jpg', alt: 'Home' },
+    { src: '/images/automation/home/light.png', alt: 'lighting' },
+    { src: '/images/automation/home/smarthome.jpg', alt: 'smarthome' },
   ];
 
   private currentIndex = 0;
