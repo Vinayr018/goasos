@@ -9,7 +9,11 @@ import { GoasosCommonModule } from "../common/common.module";
 const routes: Routes = [
   {
     path: 'automation', component: AutomationBaseComponent, children: [
-      { path: '', component: AutomationHomeComponent, pathMatch: 'full' }
+      { path: '', component: AutomationHomeComponent, pathMatch: 'full' },
+      { path: 'office', component: AutomationHomeComponent },
+      { path: 'industry', component: AutomationHomeComponent },
+      { path: 'security', component: AutomationHomeComponent },
+      { path: 'space', component: AutomationHomeComponent },
     ]
   }
 ];
