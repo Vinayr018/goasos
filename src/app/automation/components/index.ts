@@ -1,3 +1,4 @@
+import { AutomationHomeComponent } from "./automation-home/automation-home.component";
 import { AutomationMenuComponent } from "./automation-menu/automation-menu.component";
 
-export { AutomationMenuComponent }
+export { AutomationMenuComponent, AutomationHomeComponent }
