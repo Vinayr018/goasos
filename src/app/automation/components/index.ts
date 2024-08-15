@@ -3,9 +3,10 @@ import { AutomationHomeComponent } from "./automation-home/automation-home.compo
 import { AutomationIndustryComponent } from "./automation-industry/automation-industry.component";
 import { AutomationMenuComponent } from "./automation-menu/automation-menu.component";
 import { AutomationOfficeComponent } from "./automation-office/automation-office.component";
+import { AutomationSecurityComponent } from "./automation-security/automation-security.component";
 
 export {
     AutomationMenuComponent, AutomationHomeComponent,
     AutomationBaseComponent, AutomationOfficeComponent,
-    AutomationIndustryComponent
+    AutomationIndustryComponent, AutomationSecurityComponent
 }
