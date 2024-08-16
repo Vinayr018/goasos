@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Box } from '../../../common/models';
-import { BaseLocationService } from '../../../common/services/base-location.service';
 
 @Component({
   selector: 'app-automation-security',
@@ -13,6 +12,4 @@ export class AutomationSecurityComponent {
     { img: '/images/automation/security/cctvdevice.jpg', alt: 'cctv devices', header: 'CCTV installation with centeralised control', body: 'CCTV installation with centeralised control via mobile app' },
     { img: '/images/automation/security/cctvnotification.jpg', alt: 'cctv notification', header: 'CCTV activity notification', body: 'get notified on mobile App whenever there is any movment detected' },
   ];
-
-  constructor(public base: BaseLocationService) { }
 }

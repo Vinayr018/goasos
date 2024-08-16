@@ -1,15 +1,17 @@
 import { NgModule } from "@angular/core";
-import { HeaderComponent, BaseComponent, BoxComponent } from './components';
+import { HeaderComponent, BaseComponent, BoxComponent, BrochureComponent } from './components';
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
     HeaderComponent,
     BaseComponent,
-    BoxComponent
+    BoxComponent,
+    BrochureComponent
   ],
-  exports: [HeaderComponent, BaseComponent, BoxComponent],
-  imports: [GoasasMatModule, RouterModule]
+  exports: [HeaderComponent, BaseComponent, BoxComponent, BrochureComponent],
+  imports: [GoasasMatModule, RouterModule, CommonModule]
 })
 export class GoasosCommonModule { }
