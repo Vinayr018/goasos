@@ -3,7 +3,8 @@
         <button mat-raised-button color="primary">Enter the world of software consulting</button>
     </div>
     <div class="main-automation-wrapper">
-        <button mat-raised-button color="primary">Enter the world of Automation</button>
+        <button mat-raised-button (click)="Navigate('automation')" 
+        color="primary">Enter the world of Automation</button>
         <div class="img-wrapper automation-slide-it">
             <div class="img" [attr.data-slide]="index" *ngFor="let im of automationImages;let index=index">
                 <img [src]="base.AppendPath(im.src)" [alt]="im.alt" loading="lazy">

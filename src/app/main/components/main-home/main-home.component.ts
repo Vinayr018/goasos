@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
 import { BaseLocationService } from '../../../common/services/base-location.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-home',
@@ -18,7 +19,9 @@ export class MainHomeComponent implements AfterViewInit {
   private currentIndex = 0;
   private automationSliders: HTMLDivElement[];
 
-  constructor(public base: BaseLocationService) {
+  constructor(public base: BaseLocationService,
+    private router: Router
+  ) {
     this.automationSliders = [];
   }
 
@@ -58,5 +61,9 @@ export class MainHomeComponent implements AfterViewInit {
     }, 100);
 
     this.currentIndex = nextIndex;
+  }
+
+  public Navigate(url: string): void {
+    this.router.navigateByUrl(url)
   }
 }
