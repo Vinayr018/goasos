@@ -1,14 +1,8 @@
 <div class="wrapper">
     <h2>Office Automation</h2>
     <div class="boxes">
-        <div *ngFor="let o of boxes" class="homebox">
-            <div class="img">
-                <img loading="lazy" [src]="o.img" [alt]="o.alt">
-            </div>
-            <div class="content">
-                <h3 class="header">{{o.header}}</h3>
-                <p>{{o.body}}</p>
-            </div>
+        <div *ngFor="let i of boxes" class="homebox">
+            <app-box [img]="i.img" [alt]="i.alt" [header]="i.header" [body]="i.body" />
         </div>
     </div>
 </div>

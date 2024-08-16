@@ -5,26 +5,8 @@ div.wrapper {
     }
     > div.boxes {
         > div.homebox {
-            padding: 1em 2em;
-            background-color: white;
-            margin: 1em 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
             animation: appear 0.6s ease-in 0s 1 forwards;
             opacity: 0;
-            > div.img {
-                > img {
-                    margin-left: 30px;
-                    display: block;
-                    height: 225px;
-                    object-fit: contain;
-                }
-            }
-            > div.content {
-                > h3.header {
-                    margin-bottom: 1em;
-                }
-            }
         }
         > div.homebox:nth-of-type(2) {
             animation-delay: 0.3s;
