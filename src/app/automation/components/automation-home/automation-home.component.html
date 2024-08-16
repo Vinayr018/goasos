@@ -1,40 +1,13 @@
 <div class="wrapper">
     <h2>Home Automation</h2>
     <div class="boxes">
-        <div class="homebox">
+        <div *ngFor="let m of boxes" class="homebox">
             <div class="img">
-                <img loading="lazy" src="/images/automation/home/gateautomation.jpg" alt="gateautomation">
+                <img loading="lazy" [src]="m.img" [alt]="m.alt">
             </div>
             <div class="content">
-                <h3 class="header">Gate automation</h3>
-                <p>Automating gate operation using mobile.</p>
-            </div>
-        </div>
-        <div class="homebox">
-            <div class="img">
-                <img loading="lazy" src="/images/automation/home/doorlock.jpg" alt="doorlock">
-            </div>
-            <div class="content">
-                <h3 class="header">Door automation</h3>
-                <p>door lock operation automation using mobile.</p>
-            </div>
-        </div>
-        <div class="homebox">
-            <div class="img">
-                <img loading="lazy" src="/images/automation/home/light.png" alt="light">
-            </div>
-            <div class="content">
-                <h3 class="header">Lights automation</h3>
-                <p>control the lighting with mobile devices with RGB to change the color</p>
-            </div>
-        </div>
-        <div class="homebox">
-            <div class="img">
-                <img loading="lazy" src="/images/automation/home/curtainautomation.jpg" alt="curtainautomation">
-            </div>
-            <div class="content">
-                <h3 class="header">Curtian automation</h3>
-                <p>control curtians with mobile device</p>
+                <h3 class="header">{{m.header}}</h3>
+                <p>{{m.body}}</p>
             </div>
         </div>
     </div>

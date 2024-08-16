@@ -7,6 +7,7 @@ import {
 } from './components';
 import { RouterModule, Routes } from "@angular/router";
 import { GoasosCommonModule } from "../common/common.module";
+import { CommonModule } from "@angular/common";
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
     AutomationSecurityComponent,
     AutomationSpaceComponent
   ],
-  imports: [RouterModule.forChild(routes), GoasosCommonModule],
+  imports: [RouterModule.forChild(routes), GoasosCommonModule, CommonModule],
   exports: [AutomationMenuComponent, RouterModule]
 })
 export class AutomationModule { }

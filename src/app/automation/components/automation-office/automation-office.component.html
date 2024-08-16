@@ -1,40 +1,13 @@
 <div class="wrapper">
     <h2>Office Automation</h2>
     <div class="boxes">
-        <div class="homebox">
+        <div *ngFor="let o of boxes" class="homebox">
             <div class="img">
-                <img loading="lazy" src="/images/automation/office/access.jpg" alt="office acess">
+                <img loading="lazy" [src]="o.img" [alt]="o.alt">
             </div>
             <div class="content">
-                <h3 class="header">Access card automation</h3>
-                <p>Automate office with Access cards.</p>
-            </div>
-        </div>
-        <div class="homebox">
-            <div class="img">
-                <img loading="lazy" src="/images/automation/office/conference.jpeg" alt="conference room automation">
-            </div>
-            <div class="content">
-                <h3 class="header">Conference room automation</h3>
-                <p>Automate conference room.</p>
-            </div>
-        </div>
-        <div class="homebox">
-            <div class="img">
-                <img loading="lazy" src="/images/automation/office/overall.webp" alt="overall automation">
-            </div>
-            <div class="content">
-                <h3 class="header">Lights & CCTV automation</h3>
-                <p>automatically control the lighting and cctv cameras with mobile devices</p>
-            </div>
-        </div>
-        <div class="homebox">
-            <div class="img">
-                <img loading="lazy" src="/images/automation/office/parking.gif" alt="parking">
-            </div>
-            <div class="content">
-                <h3 class="header">Parking automation</h3>
-                <p>Parking automation</p>
+                <h3 class="header">{{o.header}}</h3>
+                <p>{{o.body}}</p>
             </div>
         </div>
     </div>
