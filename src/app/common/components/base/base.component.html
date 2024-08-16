@@ -3,10 +3,11 @@
         <app-header />
     </div>
     <div class="main-body">
-        <div class="main-menu">
-            <app-menu/>
+        <div class="main-menu" #men>
+            <app-menu (menuClickEvent)="HideSideMenu()"/>
+            <button class="mobile-show" (click)="ShowSideMenu()">&#x2630;</button>
         </div>
-        <div class="main-content">
+        <div class="main-content" (click)="HideSideMenu()">
             <ng-content select="[rest]" />
         </div>
     </div>
