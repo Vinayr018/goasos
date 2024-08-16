@@ -1,9 +1,8 @@
 import { NgModule } from "@angular/core";
 import {
-  AutomationMenuComponent, AutomationHomeComponent,
-  AutomationBaseComponent, AutomationOfficeComponent,
-  AutomationIndustryComponent, AutomationSecurityComponent,
-  AutomationSpaceComponent
+  AutomationHomeComponent, AutomationBaseComponent,
+  AutomationOfficeComponent, AutomationIndustryComponent,
+  AutomationSecurityComponent, AutomationSpaceComponent
 } from './components';
 import { RouterModule, Routes } from "@angular/router";
 import { GoasosCommonModule } from "../common/common.module";
@@ -23,7 +22,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AutomationMenuComponent,
+
     AutomationHomeComponent,
     AutomationBaseComponent,
     AutomationOfficeComponent,
@@ -32,6 +31,6 @@ const routes: Routes = [
     AutomationSpaceComponent
   ],
   imports: [RouterModule.forChild(routes), GoasosCommonModule, CommonModule],
-  exports: [AutomationMenuComponent, RouterModule]
+  exports: [RouterModule]
 })
 export class AutomationModule { }
