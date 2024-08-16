@@ -2,7 +2,7 @@
     <h2>Home Automation</h2>
     <div class="boxes">
         <div *ngFor="let i of boxes" class="homebox">
-            <app-box [img]="i.img" [alt]="i.alt" [header]="i.header" [body]="i.body" />
+            <app-box [img]="base.AppendPath(i.img)" [alt]="i.alt" [header]="i.header" [body]="i.body" />
         </div>
     </div>
 </div>

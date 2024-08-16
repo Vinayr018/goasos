@@ -12,8 +12,7 @@ import { BaseLocationService } from '../../../common/services/base-location.serv
 })
 export class AutomationBaseComponent {
 
-  constructor(private contexts: ChildrenOutletContexts,
-    private base: BaseLocationService
+  constructor(private contexts: ChildrenOutletContexts
   ) { }
 
   getRouteAnimationData() {

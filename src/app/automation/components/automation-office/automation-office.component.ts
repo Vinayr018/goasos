@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Box } from '../../../common/models';
+import { BaseLocationService } from '../../../common/services/base-location.service';
 
 @Component({
   selector: 'app-automation-office',
@@ -13,4 +14,6 @@ export class AutomationOfficeComponent {
     { img: '/images/automation/office/overall.webp', alt: 'overall automation', header: 'Lights & CCTV automation', body: 'automatically control the lighting and cctv cameras with mobile devices' },
     { img: '/images/automation/office/parking.gif', alt: 'parking', header: 'Parking automation', body: 'Parking automation' }
   ];
+
+  constructor(public base: BaseLocationService) { }
 }

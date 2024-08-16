@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Box } from '../../../common/models';
+import { BaseLocationService } from '../../../common/services/base-location.service';
 
 @Component({
   selector: 'app-automation-industry',
@@ -16,4 +17,6 @@ export class AutomationIndustryComponent {
     { img: '/images/automation/industry/substation.png', alt: 'substation', header: 'Power Substation Monitoring & Control', body: 'GPRS based IoT device, MODBUS RTU communication to fetch electrical parameters to monitor power quality from the control panel. Track changes in all electrical parameters, circuit breakers, Isolators & Relay status to identify the faults and suggest recovery tips to maintain the power quality' },
     { img: '/images/automation/industry/solar.png', alt: 'solar', header: 'Remote monitoring of Solar farm', body: 'GPRS based, condition monitoring of solar panel, MPPT charger & Battery, Retrofitting of custom sensors to measure power, Condition monitoring, Predictive maintenance of Solar plant equipment' }
   ];
+
+  constructor(public base: BaseLocationService) { }
 }

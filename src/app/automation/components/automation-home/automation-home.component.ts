@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Box } from '../../../common/models';
+import { BaseLocationService } from '../../../common/services/base-location.service';
 
 @Component({
   selector: 'app-automation-home',
@@ -13,4 +14,6 @@ export class AutomationHomeComponent {
     { img: '/images/automation/home/light.png', alt: 'light', header: 'Lights automation', body: 'control the lighting with mobile devices with RGB to change the color' },
     { img: '/images/automation/home/curtainautomation.jpg', alt: 'curtainautomation', header: 'Curtian automation', body: 'control curtians with mobile device' },
   ];
+
+  constructor(public base: BaseLocationService) { }
 }
