@@ -2,7 +2,8 @@ import { NgModule } from "@angular/core";
 import {
   AutomationMenuComponent, AutomationHomeComponent,
   AutomationBaseComponent, AutomationOfficeComponent,
-  AutomationIndustryComponent, AutomationSecurityComponent
+  AutomationIndustryComponent, AutomationSecurityComponent,
+  AutomationSpaceComponent
 } from './components';
 import { RouterModule, Routes } from "@angular/router";
 import { GoasosCommonModule } from "../common/common.module";
@@ -14,7 +15,7 @@ const routes: Routes = [
       { path: 'office', component: AutomationOfficeComponent },
       { path: 'industry', component: AutomationIndustryComponent },
       { path: 'security', component: AutomationSecurityComponent },
-      { path: 'space', component: AutomationHomeComponent },
+      { path: 'space', component: AutomationSpaceComponent },
     ]
   }
 ];
@@ -26,7 +27,8 @@ const routes: Routes = [
     AutomationBaseComponent,
     AutomationOfficeComponent,
     AutomationIndustryComponent,
-    AutomationSecurityComponent
+    AutomationSecurityComponent,
+    AutomationSpaceComponent
   ],
   imports: [RouterModule.forChild(routes), GoasosCommonModule],
   exports: [AutomationMenuComponent, RouterModule]
