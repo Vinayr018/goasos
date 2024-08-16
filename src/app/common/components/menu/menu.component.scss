@@ -1,0 +1,37 @@
+div.consult-menu-wrapper {
+    margin: 10px 0;
+    height: 100%;
+    > div.menu-seg {
+        margin-bottom: 1em;
+        &:last-child {
+            margin-bottom: unset;
+        }
+        > a.menu-heading {
+            font-weight: 600;
+            margin-bottom: 0.5em;
+            font-size: 1.17em;
+            display: block;
+            cursor: pointer;
+        }
+        > ul {
+            list-style: none;
+            max-height: 0;
+            transition: max-height 0.5s ease-in-out;
+            overflow: hidden;
+            &.show {
+                max-height: 200px;
+            }
+            > li {
+                cursor: pointer;
+                &:hover {
+                    background-color: #e5e6ea;
+                }
+                > a {
+                    display: block;
+                    padding: 0.5em 2em;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

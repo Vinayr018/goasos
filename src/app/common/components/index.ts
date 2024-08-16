@@ -2,5 +2,10 @@ import { BaseComponent } from "./base/base.component";
 import { BoxComponent } from "./box/box.component";
 import { BrochureComponent } from "./brochure/brochure.component";
 import { HeaderComponent } from "./header/header.component";
+import { MenuComponent } from "./menu/menu.component";
 
-export { HeaderComponent, BaseComponent, BoxComponent, BrochureComponent }
+export {
+    HeaderComponent, BaseComponent,
+    BoxComponent, BrochureComponent,
+    MenuComponent
+}
