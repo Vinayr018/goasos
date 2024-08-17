@@ -6,6 +6,9 @@ div.main-contact {
     justify-content: space-evenly;
     align-items: center;
     height: 100%;
+    @media (max-width:784px) {
+        flex-direction: column;
+    }
     > div.contact-rest {
         display: flex;
         flex-direction: column;
