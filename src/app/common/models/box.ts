@@ -3,4 +3,5 @@ export interface Box {
     alt: string;
     header: string;
     body: string;
+    id: string;
 }

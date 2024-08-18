@@ -18,7 +18,7 @@ export class HeaderComponent {
     const clickedElement = (event.target as HTMLElement);
     const hamButton = this.closestParent(clickedElement, 'button.ham');
 
-    if (!hamButton) {
+    if (!hamButton && this.nav) {
       this.nav.nativeElement.classList.remove('show');
     }
   }

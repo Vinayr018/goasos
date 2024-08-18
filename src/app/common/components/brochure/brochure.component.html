@@ -2,7 +2,8 @@
     <h2>{{title}}</h2>
     <div class="boxes">
         <div *ngFor="let i of boxes;let index = index" class="homebox"
-            [ngStyle]="{ 'animation-delay': index * 0.3 + 's' }">
+            [ngStyle]="{ 'animation-delay': index * 0.3 + 's' }"
+            [attr.id]="i.id">
             <app-box [img]="base.AppendPath(i.img)" [alt]="i.alt" [header]="i.header" [body]="i.body" />
         </div>
     </div>

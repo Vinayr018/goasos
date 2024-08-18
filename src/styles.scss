@@ -64,6 +64,10 @@ $goasos-theme: mat.define-light-theme(
   font-variation-settings: "wdth" 100;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
