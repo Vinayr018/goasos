@@ -1,0 +1,15 @@
+div.wrapper {
+    > div.synopsis {
+        > h2 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        > p {
+            margin-bottom: 1em;
+        }
+    }
+    > div.automation {
+        > app-automation-products {
+        }
+    }
+}

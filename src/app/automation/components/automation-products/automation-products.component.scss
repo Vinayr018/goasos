@@ -1,0 +1,10 @@
+div.wrapper {
+    > div.home {
+        > h4 {
+            text-align: center;
+            margin: 0.8em;
+        }
+        > app-product-video {
+        }
+    }
+}
