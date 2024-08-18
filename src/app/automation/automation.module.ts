@@ -2,11 +2,13 @@ import { NgModule } from "@angular/core";
 import {
   AutomationHomeComponent, AutomationBaseComponent,
   AutomationOfficeComponent, AutomationIndustryComponent,
-  AutomationSecurityComponent, AutomationSpaceComponent
+  AutomationSecurityComponent, AutomationSpaceComponent,
+  AutomationProductsComponent, ProductVideoComponent
 } from './components';
 import { RouterModule, Routes } from "@angular/router";
 import { GoasosCommonModule } from "../common/common.module";
 import { CommonModule } from "@angular/common";
+import { GoasasMatModule } from "../mat/goasos-mat.module";
 
 const routes: Routes = [
   {
@@ -28,9 +30,12 @@ const routes: Routes = [
     AutomationOfficeComponent,
     AutomationIndustryComponent,
     AutomationSecurityComponent,
-    AutomationSpaceComponent
+    AutomationSpaceComponent,
+    AutomationProductsComponent,
+    ProductVideoComponent
   ],
-  imports: [RouterModule.forChild(routes), GoasosCommonModule, CommonModule],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes), GoasosCommonModule,
+    CommonModule, GoasasMatModule],
+  exports: [RouterModule, AutomationProductsComponent]
 })
 export class AutomationModule { }

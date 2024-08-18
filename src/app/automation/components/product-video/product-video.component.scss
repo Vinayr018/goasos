@@ -1,0 +1,117 @@
+$breaking-point: 799px;
+
+div.wrapper {
+    padding: 1em;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+    width: 763px;
+    border-radius: 4px;
+    margin: 0 auto;
+    @media (max-width: $breaking-point) {
+        width: auto !important;
+        padding: 10px;
+    }
+    > div.control {
+        @media (max-width: $breaking-point) {
+            margin-bottom: 5px;
+        }
+        > ul {
+            list-style: none;
+            display: flex;
+            > li {
+                > button {
+                    background-color: transparent;
+                    border: transparent;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 10px;
+                    padding: 1em 1.3em;
+                    cursor: pointer;
+                    @media (max-width: $breaking-point) {
+                        gap: 5px;
+                        padding: 10px;
+                    }
+                    @media (max-width: 588px) {
+                        padding: 5px;
+                        gap: unset;
+                    }
+                    > .ico {
+                        height: 2rem;
+                        font-size: 2rem;
+                        width: 2rem;
+                        @media (max-width: $breaking-point) {
+                            height: 1rem;
+                            font-size: 1rem;
+                            width: 1rem;
+                        }
+                    }
+                    > span {
+                    }
+                    &.active {
+                        background-color: rgba(0, 0, 0, 0.05);
+                        color: #00a7f8;
+                        > .ico {
+                            fill: #00a7f8;
+                        }
+                    }
+                }
+            }
+            > li:nth-of-type(1) {
+                > button {
+                    > mat-icon {
+                    }
+                    > span {
+                    }
+                }
+            }
+            > li:nth-of-type(2) {
+                > button {
+                    > mat-icon {
+                    }
+                    > span {
+                    }
+                }
+            }
+            > li:nth-of-type(3) {
+                > button {
+                    > mat-icon {
+                    }
+                    > span {
+                    }
+                }
+            }
+            > li:nth-of-type(4) {
+                > button {
+                    > mat-icon {
+                    }
+                    > span {
+                    }
+                }
+            }
+            > li:nth-of-type(5) {
+                > button {
+                    > mat-icon {
+                    }
+                    > span {
+                    }
+                }
+            }
+        }
+    }
+    > div.video {
+        > video {
+            width: 100%;
+            > source {
+            }
+        }
+    }
+    > div.product-video-text {
+        margin-top: 1em;
+        > span {
+            display: none;
+        }
+        > span:nth-of-type(1) {
+            display: inline;
+        }
+    }
+}
