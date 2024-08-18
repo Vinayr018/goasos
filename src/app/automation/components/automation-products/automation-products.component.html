@@ -1,6 +1,41 @@
 <div class="wrapper">
-    <div class="home">
-        <h4 class="header">Home automation</h4>
+    <div class="home product-section">
+        <h4 class="header">
+            <span class="divider-left"></span>
+            <span class="heading-text">Home automation</span>
+            <span class="divider-right"></span>
+        </h4>
         <app-product-video />
     </div>
+    <div class="office product-section">
+        <h4 class="header">
+            <span class="divider-left"></span>
+            <span class="heading-text">Office automation</span>
+            <span class="divider-right"></span>
+        </h4>
+        <div class="cards">
+            <div class="ca" *ngFor="let card of officeProducts">
+                <ng-container *ngTemplateOutlet="cardTpl; context: {card}">
+                </ng-container>
+            </div>
+        </div>
+    </div>
 </div>
+
+<ng-template #cardTpl let-card="card">
+    <mat-card class="product-card" appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>{{card.title}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="path.AppendPath(card.img)" [alt]="card.alt">
+        <mat-card-content>
+            <p>
+                {{card.desc}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button color="primary" (click)="Navigate(card.targetRoute, card.param)">learn more</button>
+        </mat-card-actions>
+    </mat-card>
+
+</ng-template>

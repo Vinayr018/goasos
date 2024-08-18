@@ -47,7 +47,6 @@ export class ProductVideoComponent implements AfterViewInit {
     const allSpans = document.querySelectorAll('.product-video-text span');
 
     allSpans.forEach((s: Element, index: number) => {
-      console.log('spindex', index);
       const sp = s as HTMLSpanElement;
       if (sp.style.display === 'inline' && index !== this.currentIndex) {
         sp.style.display = 'none';
