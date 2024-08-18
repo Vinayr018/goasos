@@ -12,7 +12,7 @@
         <ul class="show">
             <li><a (click)="LinkClicked()" routerLink="/automation">Home automation</a></li>
             <li><a (click)="LinkClicked()" routerLink="/automation/office">Office automation</a></li>
-            <li><a (click)="LinkClicked()" routerLink="/automation/industry">Industry automation</a></li>
+            <li><a (click)="LinkClicked()" routerLink="/automation/industry" [state]="{routeId:'five'}">Industry automation</a></li>
             <li><a (click)="LinkClicked()" routerLink="/automation/security">Security automation</a></li>
             <li><a (click)="LinkClicked()" routerLink="/automation/space">Space optimization</a></li>
         </ul>
