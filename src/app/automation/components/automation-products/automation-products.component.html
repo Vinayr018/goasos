@@ -27,7 +27,7 @@
         <mat-card-header>
             <mat-card-title>{{card.title}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image [src]="path.AppendPath(card.img)" [alt]="card.alt">
+        <img mat-card-image loading="lazy" [src]="path.AppendPath(card.img)" [alt]="card.alt">
         <mat-card-content>
             <p>
                 {{card.desc}}
