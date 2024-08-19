@@ -37,7 +37,7 @@ div.cards {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1em;
     justify-items: center;
-    @media (max-width:1295px) {
+    @media (max-width:1597px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
     @media (max-width:961px) {
