@@ -33,6 +33,19 @@
             </div>
         </div>
     </div>
+    <div class="industry product-section">
+        <h4 class="header">
+            <span class="divider-left"></span>
+            <span class="heading-text">Space Optimization</span>
+            <span class="divider-right"></span>
+        </h4>
+        <div class="cards">
+            <div class="ca" *ngFor="let card of spaceProducts">
+                <ng-container *ngTemplateOutlet="cardTpl; context: {card}">
+                </ng-container>
+            </div>
+        </div>
+    </div>
 </div>
 
 <ng-template #cardTpl let-card="card">

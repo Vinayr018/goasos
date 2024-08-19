@@ -26,6 +26,18 @@ export class AutomationProductsComponent {
     { title: 'Solar farm automation', img: 'images/automation/industry/solar.png', alt: 'solar', desc: 'monitor solar farm remotely.', targetRoute: '/automation/industry', param: 'seven' },
   ];
 
+  public securityProducts: any[] = [
+    { title: 'CCTV installation', img: 'images/automation/security/cctv.jpeg', alt: 'cctv', desc: 'CCTV installation and monitoring via App.', targetRoute: '/automation/security', param: 'one' },
+    { title: 'CCTV installation with centeralised control', img: 'images/automation/industry/cctvdevice.jpg', alt: 'cctv devices', desc: 'monitor CCTV activity centerally.', targetRoute: '/automation/security', param: 'two' },
+    { title: 'CCTV activity notification', img: 'images/automation/industry/cctvnotification.jpg', alt: 'activity', desc: 'get notified on mobile App whenever there is any movement detected.', targetRoute: '/automation/security', param: 'three' },
+  ];
+
+  public spaceProducts: any[] = [
+    { title: 'Bed with storage and iDesk', img: 'images/automation/space/beddesk.png', alt: 'beddesk', desc: 'Bed with storage and iDesk and comes in all sizes (Single bed, King size, queen size).', targetRoute: '/automation/space', param: 'one' },
+    { title: 'Bed with storage', img: 'images/automation/space/bedstorage.png', alt: 'bedstorage', desc: 'Bed with storage and comes in all sizes (Single bed, King size, queen size).', targetRoute: '/automation/space', param: 'two' },
+    { title: 'Bed with storage and Sofa', img: 'images/automation/space/bedsofa.png', alt: 'bedsofa', desc: 'Bed with storage and Sofa and comes in all sizes (Single bed, King size, queen size).', targetRoute: '/automation/space', param: 'three' },
+  ];
+
   constructor(public path: BaseLocationService, private router: Router) { }
 
   public Navigate(route: string, param: string): void {
