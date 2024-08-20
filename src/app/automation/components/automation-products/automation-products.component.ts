@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseLocationService } from '../../../common/services/base-location.service';
 import { NavigationBehaviorOptions, Router } from '@angular/router';
+import { ProductVideo } from '../../../common/models';
 
 @Component({
   selector: 'app-automation-products',
@@ -8,6 +9,20 @@ import { NavigationBehaviorOptions, Router } from '@angular/router';
   styleUrl: './automation-products.component.scss'
 })
 export class AutomationProductsComponent {
+
+  public videos: ProductVideo[] = [
+    { videoLink: 'images/automation/home/gate_automation.mp4', content: 'Control the gate operation via mobile app.' },
+    { videoLink: 'images/automation/home/lights_and_fan.mp4', content: 'Control the lights and fans via mobile app.' },
+    { videoLink: 'images/automation/home/switch.mp4', content: 'electronic switch with light color control.' },
+    { videoLink: 'images/automation/home/window_blind_control.mp4', content: 'Control curtains/blinds via mobile app.' },
+    { videoLink: 'images/automation/home/voicecontrol.mp4', content: 'Control your home electronics via voice control (alexa).' },
+  ];
+
+  public spaceVideos: ProductVideo[] = [
+    { videoLink: 'images/automation/space/bed-with-desk.mp4', content: 'Bed with stable desk.' },
+    { videoLink: 'images/automation/space/bed-with-storage.mp4', content: 'Bed with storage.' },
+    { videoLink: 'images/automation/space/desk-control.mp4', content: 'control desk via mobile.' },
+  ];
 
   public officeProducts: any[] = [
     { title: 'Access cards', img: 'images/automation/office/access.jpg', alt: 'access card', desc: 'Access card automation to restrict the general access to your work place.', targetRoute: '/automation/office', param: 'one' },
@@ -42,7 +57,7 @@ export class AutomationProductsComponent {
 
   public Navigate(route: string, param: string): void {
     const ex: NavigationBehaviorOptions = { state: { routeId: param } };
-    console.log(ex.state,'state');
+    console.log(ex.state, 'state');
     this.router.navigate([route], { state: { routeId: param } });
   }
 }

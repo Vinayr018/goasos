@@ -1,21 +1,20 @@
-import { AfterViewInit, Component, ElementRef, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, ContentChildren, ElementRef, Input, OnInit, QueryList, TemplateRef, ViewChild } from '@angular/core';
 import { BaseLocationService } from '../../../common/services/base-location.service';
+import { ProductVideo } from '../../../common/models';
 
 @Component({
   selector: 'app-product-video',
   templateUrl: './product-video.component.html',
   styleUrl: './product-video.component.scss'
 })
-export class ProductVideoComponent implements OnInit, AfterViewInit {
+export class ProductVideoComponent implements OnInit, AfterViewInit, AfterContentInit {
+
+  @ContentChildren(TemplateRef) templates!: QueryList<TemplateRef<any>>;
 
   @ViewChild('vid') private video!: ElementRef<HTMLVideoElement>;
-  @ViewChild('index0', { static: true }) private one!: TemplateRef<any>;
-  @ViewChild('index1', { static: true }) private two!: TemplateRef<any>;
-  @ViewChild('index2', { static: true }) private three!: TemplateRef<any>;
-  @ViewChild('index3', { static: true }) private four!: TemplateRef<any>;
-  @ViewChild('index4', { static: true }) private five!: TemplateRef<any>;
+  @ViewChild('prod') private productText!: ElementRef<HTMLDivElement>;
 
-  public videos: any[] = [];
+  @Input({ required: true }) public videos: ProductVideo[] = [];
 
   public videoLink: string = '';
   public currentIndex: number = 0;
@@ -23,14 +22,11 @@ export class ProductVideoComponent implements OnInit, AfterViewInit {
   constructor(public path: BaseLocationService) {
   }
 
+  ngAfterContentInit(): void {
+    console.log('contentinit', this.templates?.length)
+  }
+
   ngOnInit(): void {
-    this.videos = [
-      { template: this.one, videoLink: 'images/automation/home/gate_automation.mp4', content: 'Control the gate operation via mobile app.' },
-      { template: this.two, videoLink: 'images/automation/home/lights_and_fan.mp4', content: 'Control the lights and fans via mobile app.' },
-      { template: this.three, videoLink: 'images/automation/home/switch.mp4', content: 'electronic switch with light color control.' },
-      { template: this.four, videoLink: 'images/automation/home/window_blind_control.mp4', content: 'Control curtains/blinds via mobile app.' },
-      { template: this.five, videoLink: 'images/automation/home/voicecontrol.mp4', content: 'Control your home electronics via voice control (alexa).' },
-    ];
     this.videoLink = this.videos[this.currentIndex].videoLink;
   }
 
@@ -53,14 +49,14 @@ export class ProductVideoComponent implements OnInit, AfterViewInit {
   }
 
   private LoadContent(): void {
-    const allSpans = document.querySelectorAll('.product-video-text span');
+    const allSpans = this.productText.nativeElement.children;
 
-    allSpans.forEach((s: Element, index: number) => {
-      const sp = s as HTMLSpanElement;
-      if (sp.style.display === 'inline' && index !== this.currentIndex) {
-        sp.style.display = 'none';
-      }
-    });
+    for (let index = 0; index < allSpans.length; index++) {
+        const sp = allSpans[index] as HTMLSpanElement;
+        if (sp.style.display === 'inline' && index !== this.currentIndex) {
+          sp.style.display = 'none';
+        }
+    }
 
     const activeSpan = (allSpans[this.currentIndex] as HTMLSpanElement);
     activeSpan.style.display = 'inline';

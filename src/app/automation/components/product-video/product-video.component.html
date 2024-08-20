@@ -1,10 +1,10 @@
 <div class="wrapper">
     <div class="control">
         <ul>
-            <li *ngFor="let c of videos;let index=index">
-                <button [ngClass]="currentIndex === index ? 'active':''"
-                    (click)="ControlButtonClicked(index)">
-                    <ng-container [ngTemplateOutlet]="c.template"></ng-container>
+            <li *ngFor="let c of templates;let index=index">
+                <button [attr.data-in]="'[control-'+index+']'" class="product-video-control"
+                    [ngClass]="currentIndex === index ?  'active':''" (click)="ControlButtonClicked(index)">
+                    <ng-container *ngTemplateOutlet="c"></ng-container>
                 </button>
             </li>
         </ul>
@@ -14,34 +14,7 @@
             <source [src]="path.AppendPath(videoLink)" />
         </video>
     </div>
-    <div class="product-video-text">
+    <div class="product-video-text" #prod>
         <span *ngFor="let c of videos;let index=index" [attr.data-index]="index">{{c.content}}</span>
     </div>
 </div>
-
-<ng-template #index0>
-    <svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-        <path
-            d="M80-280v-400h80v400H80Zm120 80v-400q0-66 47-113t113-47h240q66 0 113 47t47 113v400H200Zm600-80v-400h80v400h-80ZM480-480ZM280-280h160v-160h-80v-80h80v-160h-80q-33 0-56.5 23.5T280-600v320Zm240 0h160v-320q0-33-23.5-56.5T600-680h-80v160h80v80h-80v160Z" />
-    </svg>
-    <span>Outdoor Gate</span>
-</ng-template>
-<ng-template #index1>
-    <mat-icon class="ico" fontIcon="lightbulb"></mat-icon>
-    <span>Light & fan</span>
-</ng-template>
-<ng-template #index2>
-    <svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-        <path
-            d="M320-280h320v-400H320v400Zm80-80v-240h160v240H400Zm40-120h80v-80h-80v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
-    </svg>
-    <span>Switch</span>
-</ng-template>
-<ng-template #index3>
-    <mat-icon class="ico" fontIcon="window"></mat-icon>
-    <span>Window Blind</span>
-</ng-template>
-<ng-template #index4>
-    <mat-icon class="ico" fontIcon="mic"></mat-icon>
-    <span>Voice Control</span>
-</ng-template>

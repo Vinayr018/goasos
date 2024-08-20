@@ -5,7 +5,34 @@
             <span class="heading-text">Home automation</span>
             <span class="divider-right"></span>
         </h4>
-        <app-product-video />
+        <app-product-video [videos]="videos">
+            <ng-template control-0>
+                <svg class=" ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M80-280v-400h80v400H80Zm120 80v-400q0-66 47-113t113-47h240q66 0 113 47t47 113v400H200Zm600-80v-400h80v400h-80ZM480-480ZM280-280h160v-160h-80v-80h80v-160h-80q-33 0-56.5 23.5T280-600v320Zm240 0h160v-320q0-33-23.5-56.5T600-680h-80v160h80v80h-80v160Z" />
+                </svg>
+                <span>Outdoor Gate</span>
+            </ng-template>
+            <ng-template control-1>
+                <mat-icon class="ico" fontIcon="lightbulb"></mat-icon>
+                <span>Light & fan</span>
+            </ng-template>
+            <ng-template control-2>
+                <svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M320-280h320v-400H320v400Zm80-80v-240h160v240H400Zm40-120h80v-80h-80v80ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z" />
+                </svg>
+                <span>Switch</span>
+            </ng-template>
+            <ng-template control-3>
+                <mat-icon class="ico" fontIcon="window"></mat-icon>
+                <span>Window Blind</span>
+            </ng-template>
+            <ng-template control-4>
+                <mat-icon class="ico" fontIcon="mic"></mat-icon>
+                <span>Voice Control</span>
+            </ng-template>
+        </app-product-video>
     </div>
     <div class="office product-section">
         <h4 class="header">
@@ -39,12 +66,23 @@
             <span class="heading-text">Space Optimization</span>
             <span class="divider-right"></span>
         </h4>
-        <div class="cards">
-            <div class="ca" *ngFor="let card of spaceProducts">
-                <ng-container *ngTemplateOutlet="cardTpl; context: {card}">
-                </ng-container>
-            </div>
-        </div>
+        <app-product-video [videos]="spaceVideos">
+            <ng-template control-0>
+                <mat-icon class="ico" fontIcon="bed" />
+                <span>Bed with desk</span>
+            </ng-template>
+            <ng-template control-1>
+                <mat-icon class="ico" fontIcon="bed" />
+                <span>Bed with storage</span>
+            </ng-template>
+            <ng-template control-2>
+                <svg class="ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M240-120h480v-80H520v-288l64 64 56-56-160-160-160 160 56 56 64-64v288H240v80Zm240-360ZM160-320q-33 0-56.5-23.5T80-400v-360q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v360q0 33-23.5 56.5T800-320H600v-80h200v-360H160v360h200v80H160Z" />
+                </svg>
+                <span>Adjustable Desk</span>
+            </ng-template>
+        </app-product-video>
     </div>
 </div>
 

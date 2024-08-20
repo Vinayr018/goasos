@@ -2,38 +2,37 @@
 @include mat.core();
 
 $md-primary: (
-    50 : #e0f4fe,
-    100 : #b3e5fd,
-    200 : #80d3fc,
-    300 : #4dc1fa,
-    400 : #26b4f9,
-    500 : #00a7f8,
-    600 : #009ff7,
-    700 : #0096f6,
-    800 : #008cf5,
-    900 : #007cf3,
-    A100 : #ffffff,
-    A200 : #e6f1ff,
-    A400 : #b3d6ff,
-    A700 : #9ac8ff,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
-    )
+  50: #e0f4fe,
+  100: #b3e5fd,
+  200: #80d3fc,
+  300: #4dc1fa,
+  400: #26b4f9,
+  500: #00a7f8,
+  600: #009ff7,
+  700: #0096f6,
+  800: #008cf5,
+  900: #007cf3,
+  A100: #ffffff,
+  A200: #e6f1ff,
+  A400: #b3d6ff,
+  A700: #9ac8ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000
+  )
 );
-
 
 $goasos-primary: mat.define-palette($md-primary);
 $goasos-accent: mat.define-palette($md-primary);
@@ -111,5 +110,43 @@ a {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+button.product-video-control {
+  background-color: transparent;
+  border: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 1em 1.3em;
+  cursor: pointer;
+  @media (max-width: 799px) {
+    gap: 5px;
+    padding: 10px;
+  }
+  @media (max-width: 588px) {
+    padding: 5px;
+    gap: unset;
+  }
+  > .ico {
+    height: 2rem;
+    font-size: 2rem;
+    width: 2rem;
+    @media (max-width: 799px) {
+      height: 1rem;
+      font-size: 1rem;
+      width: 1rem;
+    }
+  }
+  > span {
+  }
+  &.active {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #00a7f8;
+    > .ico {
+      fill: #00a7f8;
+    }
   }
 }

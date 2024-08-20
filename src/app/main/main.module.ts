@@ -1,8 +1,10 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { MainProductComponent, MainContactComponent,
-     MainBaseComponent, MainHomeComponent, 
-     MainAboutComponent, ProductVideoComponent } from './components';
+import {
+    MainProductComponent, MainContactComponent,
+    MainBaseComponent, MainHomeComponent,
+    MainAboutComponent, ProductVideoComponent
+} from './components';
 import { GoasosCommonModule } from "../common/common.module";
 import { AutomationModule } from "../automation/automation.module";
 import { ConsultModule } from "../consult/consult.module";
