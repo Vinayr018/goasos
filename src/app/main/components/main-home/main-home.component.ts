@@ -16,6 +16,14 @@ export class MainHomeComponent implements AfterViewInit {
     { src: '/images/automation/home/smarthome.jpg', alt: 'smarthome' },
   ];
 
+  public consultingImages: any[] = [
+    { src: '/images/consulting/card.webp', alt: 'cards' },
+    { src: '/images/consulting/invesment.webp', alt: 'investment' },
+    { src: '/images/consulting/lending.webp', alt: 'lending' },
+    { src: '/images/consulting/retail.webp', alt: 'retail' },
+    { src: '/images/consulting/wealth.webp', alt: 'wealth' },
+  ];
+
   private currentIndex = 0;
   private automationSliders: HTMLDivElement[];
 
