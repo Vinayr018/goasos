@@ -18,43 +18,86 @@ export class MainHomeComponent implements AfterViewInit {
 
   public consultingImages: any[] = [
     { src: '/images/consulting/card.webp', alt: 'cards' },
-    { src: '/images/consulting/invesment.webp', alt: 'investment' },
+    { src: '/images/consulting/investment.webp', alt: 'investment' },
     { src: '/images/consulting/lending.webp', alt: 'lending' },
     { src: '/images/consulting/retail.webp', alt: 'retail' },
     { src: '/images/consulting/wealth.webp', alt: 'wealth' },
   ];
 
-  private currentIndex = 0;
+  private currentAutomationIndex = 0;
   private automationSliders: HTMLDivElement[];
+
+  private currentConsultingIndex = 0;
+  private consultingSliders: HTMLDivElement[];
 
   constructor(public base: BaseLocationService,
     private router: Router
   ) {
     this.automationSliders = [];
+    this.consultingSliders = [];
   }
 
   ngAfterViewInit(): void {
+    this.PrepAutomationSlideShow();
+    setTimeout(() => {
+      this.PrepConsultingSlideShow();
+    }, 200);
+  }
+
+  private PrepAutomationSlideShow() {
     const eles = document.querySelectorAll('.automation-slide-it .img');
     if (eles && eles.length > 0) {
       this.automationSliders = Array.from(eles) as HTMLDivElement[];
     }
     setInterval(() => {
-      this.MoveIt();
+      this.StartAutomationSlideShow();
     }, 3500);
   }
 
-  ngOnInit(): void {
+  private PrepConsultingSlideShow() {
+    const eles = document.querySelectorAll('.consult-slide-it .img');
+    if (eles && eles.length > 0) {
+      this.consultingSliders = Array.from(eles) as HTMLDivElement[];
+    }
+    setInterval(() => {
+      this.StartConsultingSlideShow();
+    }, 3500);
   }
 
-  private MoveIt(): void {
+  private StartConsultingSlideShow(): void {
+    if (this.consultingSliders.length <= 0) {
+      return;
+    }
+
+    let maxIndex = this.consultingImages.length - 1;
+    const nextIndex = this.currentConsultingIndex + 1 > maxIndex ? 0 : this.currentConsultingIndex + 1;
+
+    const currentDiv = this.consultingSliders[this.currentConsultingIndex],
+      nextDiv = this.consultingSliders[nextIndex];
+
+    nextDiv.style.display = 'flex';
+
+    setTimeout(() => {
+      currentDiv.style.display = 'none';
+      currentDiv.style.left = '500%';
+    }, 800);
+    setTimeout(() => {
+      currentDiv.style.left = '-500%';
+      nextDiv.style.left = '0';
+    }, 100);
+
+    this.currentConsultingIndex = nextIndex;
+  }
+
+  private StartAutomationSlideShow(): void {
     if (this.automationSliders.length <= 0) {
       return;
     }
 
     let maxIndex = this.automationImages.length - 1;
-    const nextIndex = this.currentIndex + 1 > maxIndex ? 0 : this.currentIndex + 1;
+    const nextIndex = this.currentAutomationIndex + 1 > maxIndex ? 0 : this.currentAutomationIndex + 1;
 
-    const currentDiv = this.automationSliders[this.currentIndex],
+    const currentDiv = this.automationSliders[this.currentAutomationIndex],
       nextDiv = this.automationSliders[nextIndex];
 
     nextDiv.style.display = 'flex';
@@ -68,7 +111,7 @@ export class MainHomeComponent implements AfterViewInit {
       nextDiv.style.left = '0';
     }, 100);
 
-    this.currentIndex = nextIndex;
+    this.currentAutomationIndex = nextIndex;
   }
 
   public Navigate(url: string): void {
