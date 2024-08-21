@@ -8,6 +8,7 @@ div.homebox {
     grid-template-columns: 1fr 1fr;
     animation: appear 0.6s ease-in 0s 1 forwards;
     opacity: 0;
+    gap: 1em;
     @media (max-width:$breaking-point) {
         grid-template-columns: 1fr;
         gap: 1em;

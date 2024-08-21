@@ -2,9 +2,9 @@
     <div class="menu-seg">
         <a class="menu-heading" (click)="ToggleMenu($event)">Consulting</a>
         <ul class="show">
-            <li><a (click)="LinkClicked()" href="#">Software consulting</a></li>
-            <li><a (click)="LinkClicked()" href="#">Resource allocation</a></li>
-            <li><a (click)="LinkClicked()" href="#">Something else</a></li>
+            <li><a (click)="LinkClicked()" routerLink="/consulting">Banking</a></li>
+            <li><a (click)="LinkClicked()"  routerLink="/consulting/market">Capital Markets</a></li>
+            <li><a (click)="LinkClicked()"  routerLink="/consulting/data">Data & AI</a></li>
         </ul>
     </div>
     <div class="menu-seg">
