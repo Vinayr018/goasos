@@ -38,42 +38,76 @@ export class MainHomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.PrepAutomationSlideShow();
+    this.PrepSlideShow('.automation-slide-it .img', 2);
     setTimeout(() => {
-      this.PrepConsultingSlideShow();
+      this.PrepSlideShow('.consult-slide-it .img', 1);
     }, 200);
   }
 
-  private PrepAutomationSlideShow() {
-    const eles = document.querySelectorAll('.automation-slide-it .img');
+  private PrepSlideShow(selector: string, type: number): void {
+    const eles = document.querySelectorAll(selector);
     if (eles && eles.length > 0) {
-      this.automationSliders = Array.from(eles) as HTMLDivElement[];
+      if (type === 1) {
+        this.consultingSliders = Array.from(eles) as HTMLDivElement[];
+      } else {
+        this.automationSliders = Array.from(eles) as HTMLDivElement[];
+      }
     }
     setInterval(() => {
-      this.StartAutomationSlideShow();
+      this.StartSlideShow(type);
     }, 3500);
   }
 
-  private PrepConsultingSlideShow() {
-    const eles = document.querySelectorAll('.consult-slide-it .img');
-    if (eles && eles.length > 0) {
-      this.consultingSliders = Array.from(eles) as HTMLDivElement[];
-    }
-    setInterval(() => {
-      this.StartConsultingSlideShow();
-    }, 3500);
+  private getMaxAndNextIndex(images: any[], currentIndex: number): [number, number] {
+    const maxIndex = images.length - 1;
+    return [maxIndex, currentIndex + 1 > maxIndex ? 0 : currentIndex + 1];
   }
 
-  private StartConsultingSlideShow(): void {
-    if (this.consultingSliders.length <= 0) {
+  private getParameters(type: number):
+    [number, number, number, HTMLDivElement[]] {
+    let max = -1, next = -1;
+    switch (type) {
+      case 1:
+        [max, next] =
+          this.getMaxAndNextIndex(this.consultingImages,
+            this.currentConsultingIndex);
+        return [max, next,
+          this.currentConsultingIndex,
+          this.consultingSliders];
+
+      default:
+        [max, next] =
+          this.getMaxAndNextIndex(this.automationImages,
+            this.currentAutomationIndex);
+        return [max, next,
+          this.currentAutomationIndex,
+          this.automationSliders];
+    }
+  }
+
+  private setParameters(type: number, next: number):
+    void {
+    switch (type) {
+      case 1:
+        this.currentConsultingIndex = next;
+        return;
+
+      default:
+        this.currentAutomationIndex = next;
+    }
+  }
+
+  private StartSlideShow(type: number): void {
+
+    let [max, next, currentIndex, sliders]
+      = this.getParameters(type);
+
+    if (sliders.length <= 0) {
       return;
     }
 
-    let maxIndex = this.consultingImages.length - 1;
-    const nextIndex = this.currentConsultingIndex + 1 > maxIndex ? 0 : this.currentConsultingIndex + 1;
-
-    const currentDiv = this.consultingSliders[this.currentConsultingIndex],
-      nextDiv = this.consultingSliders[nextIndex];
+    const currentDiv = sliders[currentIndex],
+      nextDiv = sliders[next];
 
     nextDiv.style.display = 'flex';
 
@@ -86,32 +120,7 @@ export class MainHomeComponent implements AfterViewInit {
       nextDiv.style.left = '0';
     }, 100);
 
-    this.currentConsultingIndex = nextIndex;
-  }
-
-  private StartAutomationSlideShow(): void {
-    if (this.automationSliders.length <= 0) {
-      return;
-    }
-
-    let maxIndex = this.automationImages.length - 1;
-    const nextIndex = this.currentAutomationIndex + 1 > maxIndex ? 0 : this.currentAutomationIndex + 1;
-
-    const currentDiv = this.automationSliders[this.currentAutomationIndex],
-      nextDiv = this.automationSliders[nextIndex];
-
-    nextDiv.style.display = 'flex';
-
-    setTimeout(() => {
-      currentDiv.style.display = 'none';
-      currentDiv.style.left = '500%';
-    }, 800);
-    setTimeout(() => {
-      currentDiv.style.left = '-500%';
-      nextDiv.style.left = '0';
-    }, 100);
-
-    this.currentAutomationIndex = nextIndex;
+    this.setParameters(type, next);
   }
 
   public Navigate(url: string): void {
