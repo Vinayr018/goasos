@@ -5,7 +5,8 @@ import { GoasosCommonModule } from "../common/common.module";
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import {
   ConsultBaseComponent, ConsultBankComponent,
-  ConsultDataAiComponent, ConsultMarketComponent
+  ConsultDataAiComponent, ConsultMarketComponent,
+  ConsultProductsComponent
 } from './components';
 
 const routes: Routes = [
@@ -23,9 +24,10 @@ const routes: Routes = [
     ConsultBankComponent,
     ConsultDataAiComponent,
     ConsultMarketComponent,
-    ConsultBaseComponent
+    ConsultBaseComponent,
+    ConsultProductsComponent
   ],
-  exports: [RouterModule],
+  exports: [RouterModule, ConsultProductsComponent],
   imports: [RouterModule.forChild(routes), CommonModule,
     GoasosCommonModule, GoasasMatModule]
 })
