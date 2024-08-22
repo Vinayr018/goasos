@@ -201,3 +201,78 @@ h4.products-header {
       }
   }
 }
+
+.mat-divider.contact {
+  margin: 10px 0;
+}
+
+// div.contact-container {
+//   background-color: white;
+//   border-radius: 4px;
+//   padding: 1em;
+//   box-shadow:
+//       0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+//       0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+//       0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+//   user-select: none;
+//   opacity: 0;
+//   animation: appear 0.4s ease-in 0s 1 forwards;
+//   &:nth-child(1) {
+//       animation-delay: 0.6s;
+//   }
+//   &:nth-child(2) {
+//       animation-delay: 0.8s;
+//   }
+//   &:nth-child(3) {
+//       animation-delay: 1s;
+//   }
+//   > p.heading {
+//       font-weight: 600;
+//       margin-bottom: 1em;
+//       text-align: center;
+//   }
+//   > div.cnt-rest {
+//       margin-top: 1em;
+//       &.call {
+//           display: flex;
+//           flex-direction: column;
+//           gap: 10px;
+//           > a {
+//               text-decoration: none;
+//               display: flex;
+//               justify-content: center;
+//               align-items: center;
+//               gap: 10px;
+//           }
+//       }
+//       &.social {
+//           > ul.social {
+//               list-style: none;
+//               display: flex;
+//               justify-content: center;
+//               gap: 10px;
+//               > li {
+//                   animation: rotate 0.4s ease-in-out 1.1s 1 forwards;
+//                   > a {
+//                       font-size: inherit;
+//                       > svg {
+//                           height: 1.3em;
+//                           > path {
+//                           }
+//                       }
+//                   }
+//                   &:nth-child(2) {
+//                       animation-delay: 1.2s;
+//                   }
+//                   &:nth-child(3) {
+//                       animation-delay: 1.3s;
+//                   }
+//               }
+//           }
+//       }
+//   }
+// }
+
+.mat-expansion-panel-header.contact-header {
+  font-weight: bold;
+}

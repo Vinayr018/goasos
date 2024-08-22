@@ -11,6 +11,8 @@ import { AutomationModule } from "../automation/automation.module";
 import { ConsultModule } from "../consult/consult.module";
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MainContactFormComponent } from './components/main-contact-form/main-contact-form.component';
+import { MainContactSocialComponent } from './components/main-contact-social/main-contact-social.component';
 
 const routes: Routes = [
     {
@@ -31,7 +33,9 @@ const routes: Routes = [
         MainContactComponent,
         MainProductComponent,
         ProductVideoComponent,
-        MainContactBranchComponent
+        MainContactBranchComponent,
+        MainContactFormComponent,
+        MainContactSocialComponent
     ],
     imports: [
         RouterModule.forChild(routes),

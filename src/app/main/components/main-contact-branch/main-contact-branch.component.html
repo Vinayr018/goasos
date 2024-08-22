@@ -1,1 +1,26 @@
-<p>main-contact-branch works!</p>
+<mat-accordion>
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header class="contact-header">
+            <mat-panel-title>{{heading}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="address-wrapper">
+            <div class="call">
+                <p class="heading">Call Us</p>
+                <div class="cnt-rest call">
+                    <a [href]="'tel:'+ sanitizePhoneNumber(c)" *ngFor="let c of numbers">
+                        <mat-icon fontIcon="call"></mat-icon>
+                        <span class="num">{{c}}</span>
+                    </a>
+                </div>
+            </div>
+            <mat-divider class="contact" />
+            <div class="location">
+                <p class="heading">Visit us</p>
+                <div class="cnt-rest location">
+                    <iframe [src]="domSanitizer.bypassSecurityTrustResourceUrl(location)" style="border:0;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

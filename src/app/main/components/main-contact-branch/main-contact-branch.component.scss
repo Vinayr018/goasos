@@ -1,0 +1,26 @@
+p.heading {
+    font-weight: 600;
+    margin-bottom: 1em;
+    text-align: center;
+}
+div.cnt-rest {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    > a {
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    &.location {
+        iframe {
+            max-width: 300px;
+            max-height: 200px;
+        }
+    }
+}
+
+.cnt-rest.location {
+}
