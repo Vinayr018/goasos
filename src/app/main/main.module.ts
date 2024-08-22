@@ -3,7 +3,8 @@ import { RouterModule, Routes } from "@angular/router";
 import {
     MainProductComponent, MainContactComponent,
     MainBaseComponent, MainHomeComponent,
-    MainAboutComponent, ProductVideoComponent
+    MainAboutComponent, ProductVideoComponent,
+    MainContactBranchComponent
 } from './components';
 import { GoasosCommonModule } from "../common/common.module";
 import { AutomationModule } from "../automation/automation.module";
@@ -29,7 +30,8 @@ const routes: Routes = [
         MainAboutComponent,
         MainContactComponent,
         MainProductComponent,
-        ProductVideoComponent
+        ProductVideoComponent,
+        MainContactBranchComponent
     ],
     imports: [
         RouterModule.forChild(routes),
