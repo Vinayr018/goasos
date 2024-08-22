@@ -6,7 +6,7 @@ div.main-contact {
     justify-content: space-evenly;
     align-items: center;
     height: 100%;
-    @media (max-width:784px) {
+    @media (max-width: 784px) {
         flex-direction: column;
     }
     > div.contact-rest {
@@ -14,5 +14,35 @@ div.main-contact {
         flex-direction: column;
         gap: 1em;
     }
-    
+}
+
+div.main-contacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    > div.contact-box {
+        max-width: 350px;
+        > app-main-contact-branch {
+        }
+    }
+    > div.contact-box:nth-of-type(1) {
+        > app-main-contact-branch {
+        }
+    }
+    > div.contact-box:nth-of-type(2) {
+        > app-main-contact-branch {
+        }
+    }
+    > div.contact-box:nth-of-type(3) {
+        > app-main-contact-branch {
+        }
+    }
+    > div.contact-box:nth-of-type(4) {
+        > app-main-contact-social {
+        }
+    }
+    > div.contact-box:nth-of-type(5) {
+        > app-main-contact-form {
+        }
+    }
 }
