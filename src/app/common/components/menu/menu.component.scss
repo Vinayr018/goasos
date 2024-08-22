@@ -23,7 +23,8 @@ div.consult-menu-wrapper {
             }
             > li {
                 cursor: pointer;
-                &:hover {
+                &:hover,
+                &.active {
                     background-color: #e5e6ea;
                 }
                 > a {

@@ -2,19 +2,19 @@
     <div class="menu-seg">
         <a class="menu-heading" (click)="ToggleMenu($event)">Consulting</a>
         <ul class="show">
-            <li><a (click)="LinkClicked()" routerLink="/consulting">Banking</a></li>
-            <li><a (click)="LinkClicked()"  routerLink="/consulting/market">Capital Markets</a></li>
-            <li><a (click)="LinkClicked()"  routerLink="/consulting/data">Data & AI</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/consulting">Banking</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()"  routerLink="/consulting/market">Capital Markets</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()"  routerLink="/consulting/data">Data & AI</a></li>
         </ul>
     </div>
     <div class="menu-seg">
         <a class="menu-heading" (click)="ToggleMenu($event)">Automation</a>
         <ul class="show">
-            <li><a (click)="LinkClicked()" routerLink="/automation">Home automation</a></li>
-            <li><a (click)="LinkClicked()" routerLink="/automation/office">Office automation</a></li>
-            <li><a (click)="LinkClicked()" routerLink="/automation/industry" [state]="{routeId:'five'}">Industry automation</a></li>
-            <li><a (click)="LinkClicked()" routerLink="/automation/security">Security automation</a></li>
-            <li><a (click)="LinkClicked()" routerLink="/automation/space">Space optimization</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/automation">Home automation</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/automation/office">Office automation</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/automation/industry" [state]="{routeId:'five'}">Industry automation</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/automation/security">Security automation</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/automation/space">Space optimization</a></li>
         </ul>
     </div>
 </div>
