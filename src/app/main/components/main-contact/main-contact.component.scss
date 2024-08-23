@@ -19,9 +19,20 @@ div.main-contact {
 div.main-contacts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
     gap: 1em;
+    @media (max-width:1131px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width:781px) {
+        grid-template-columns: 1fr;
+    }
     > div.contact-box {
         max-width: 350px;
+        @media (max-width:427px) {
+            width: 100%;
+        }
         > app-main-contact-branch {
         }
     }
