@@ -1,6 +1,9 @@
 import { NgModule } from "@angular/core";
-import { HeaderComponent, BaseComponent, 
-  BoxComponent, BrochureComponent,MenuComponent } from './components';
+import {
+  HeaderComponent, BaseComponent, BoxComponent,
+  BrochureComponent, MenuComponent, VideoBoxComponent,
+  VideoBrochureComponent
+} from './components';
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
@@ -11,7 +14,9 @@ import { CommonModule } from "@angular/common";
     BaseComponent,
     BoxComponent,
     BrochureComponent,
-    MenuComponent
+    MenuComponent,
+    VideoBoxComponent,
+    VideoBrochureComponent
   ],
   exports: [HeaderComponent, BaseComponent, BoxComponent,
     BrochureComponent, MenuComponent],
