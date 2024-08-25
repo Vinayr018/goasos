@@ -5,10 +5,10 @@
         </mat-expansion-panel-header>
         <div class="address-wrapper">
             <div class="call">
-                <p class="heading">Call Us</p>
+                <p class="heading">{{isEmail ? 'Write':'Call'}} Us</p>
                 <div class="cnt-rest call">
-                    <a [href]="'tel:'+ sanitizePhoneNumber(c)" *ngFor="let c of numbers">
-                        <mat-icon fontIcon="call"></mat-icon>
+                    <a [href]="sanitizePhoneNumber(c)" *ngFor="let c of numbers">
+                        <mat-icon [fontIcon]="isEmail ? 'mail': 'call'"></mat-icon>
                         <span class="num">{{c}}</span>
                     </a>
                 </div>

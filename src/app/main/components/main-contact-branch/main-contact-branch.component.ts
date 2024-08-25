@@ -10,10 +10,14 @@ export class MainContactBranchComponent {
   @Input({ required: true }) public heading!: string;
   @Input({ required: true }) public numbers!: string[];
   @Input({ required: true }) public location!: string;
+  @Input() public isEmail: boolean = false;
 
   constructor(public domSanitizer: DomSanitizer) { }
 
   public sanitizePhoneNumber(number: string): string {
-    return number.replace(/\s+/g, '').replace(/-/g, '');
+    let app = this.isEmail ? 'mailto:' : 'tel:';
+    let cleanUrl = number.replace(/\s+/g, '');
+    cleanUrl = this.isEmail ? cleanUrl : cleanUrl.replace(/-/g, '')
+    return `${app}${cleanUrl}`;
   }
 }
