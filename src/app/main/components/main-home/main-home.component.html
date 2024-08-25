@@ -1,20 +1,23 @@
 <div class="main-home-wrapper">
-    <div class="main-consult-wrapper">
-        <button mat-raised-button color="primary">Enter the world of software consulting</button>
-        <div class="img-wrapper consult-slide-it">
-            <div class="img" [attr.data-slide]="index" *ngFor="let im of consultingImages;let index=index">
-                <img [src]="base.AppendPath(im.src)" [alt]="im.alt" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-        </div>
-    </div>
-    <!--add here 1. "your concern is our innovation" all caps and blue color and should be in between slide shows.
--->
     <div class="main-automation-wrapper">
         <button mat-raised-button (click)="Navigate('automation')" color="primary">Enter the world of
             Automation</button>
         <div class="img-wrapper automation-slide-it">
             <div class="img" [attr.data-slide]="index" *ngFor="let im of automationImages;let index=index">
+                <img [src]="base.AppendPath(im.src)" [alt]="im.alt" loading="lazy">
+                <div class="overlay"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mission">
+        <em>
+            Your Concern Is Our Innovation
+        </em>
+    </div>
+    <div class="main-consult-wrapper">
+        <button mat-raised-button color="primary">Enter the world of software consulting</button>
+        <div class="img-wrapper consult-slide-it">
+            <div class="img" [attr.data-slide]="index" *ngFor="let im of consultingImages;let index=index">
                 <img [src]="base.AppendPath(im.src)" [alt]="im.alt" loading="lazy">
                 <div class="overlay"></div>
             </div>

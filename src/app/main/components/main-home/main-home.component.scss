@@ -64,4 +64,28 @@ div.main-home-wrapper {
             }
         }
     }
+    > div.mission {
+        padding: 2em;
+        background-color: white;
+        text-align: center;
+        margin-bottom: 1em;
+        > em {
+            color: #00a7f8;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: blink-neon 1s ease-out 0s infinite alternate-reverse;
+        }
+    }
+}
+
+@keyframes blink-neon {
+    to {
+        text-shadow:
+            0 0 5px #00a7f800,
+            0 0 10px #00a7f82e,
+            0 0 20px #00a7f85c,
+            0 0 40px #00a7f88f,
+            0 0 80px #00a7f8b8;
+    }
 }
