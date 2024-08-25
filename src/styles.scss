@@ -175,6 +175,9 @@ div.cards {
   }
   img {
       margin: 1em 0;
+      height: 155px;
+      max-width: 300px;
+      object-fit: cover;
   }
 }
 h4.products-header {

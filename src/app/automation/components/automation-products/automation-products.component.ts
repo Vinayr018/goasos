@@ -11,11 +11,11 @@ import { ProductVideo } from '../../../common/models';
 export class AutomationProductsComponent {
 
   public videos: ProductVideo[] = [
-    { videoLink: 'images/automation/home/gate_automation.mp4', content: 'Control the gate operation via mobile app.' },
-    { videoLink: 'images/automation/home/lights_and_fan.mp4', content: 'Control the lights and fans via mobile app.' },
-    { videoLink: 'images/automation/home/switch.mp4', content: 'electronic switch with light color control.' },
-    { videoLink: 'images/automation/home/window_blind_control.mp4', content: 'Control curtains/blinds via mobile app.' },
-    { videoLink: 'images/automation/home/voicecontrol.mp4', content: 'Control your home electronics via voice control (alexa).' },
+    { videoLink: 'images/automation/home/gate_automation.mp4', content: 'Outdoor gate automation.' },
+    { videoLink: 'images/automation/home/lights_and_fan.mp4', content: 'lights and fans automation.' },
+    { videoLink: 'images/automation/home/switch.mp4', content: 'Asthetic Light automation.' },
+    { videoLink: 'images/automation/home/window_blind_control.mp4', content: 'Curtain automation.' },
+    { videoLink: 'images/automation/home/voicecontrol.mp4', content: 'Voice control (alexa).' },
   ];
 
   public spaceVideos: ProductVideo[] = [
