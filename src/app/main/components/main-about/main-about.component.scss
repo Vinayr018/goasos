@@ -1,0 +1,27 @@
+div.wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 1em;
+    > p.mission {
+        margin: 1em 3em;
+        font-size: 1.5em;
+        color: #00a7f8;
+    }
+    > p.synaposis {
+        padding: 1em;
+    }
+    > div.automation-wrapper {
+        padding: 1em;
+        > p.header {
+            margin-bottom: 10px;
+        }
+        > ul {
+            margin-left: 40px;
+            > li {
+                > p {
+                }
+            }
+        }
+    }
+}
