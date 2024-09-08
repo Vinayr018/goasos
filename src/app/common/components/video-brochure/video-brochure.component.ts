@@ -17,13 +17,11 @@ export class VideoBrochureComponent implements AfterViewInit {
 
   constructor(public base: BaseLocationService, private router: Router) {
     const st = router.getCurrentNavigation()?.extras?.state;
-    console.log('bro0', st);
     this.focusedDiv = st ? st['routeId'] : undefined;
   }
 
   ngAfterViewInit(): void {
     const foundDiv = document.querySelector(`#${this.focusedDiv}`) as HTMLDivElement | undefined;
-    console.log('bro', this.focusedDiv);
     if (this.focusedDiv && foundDiv) {
       setTimeout(() => {
         foundDiv.scrollIntoView({ behavior: 'smooth' });
