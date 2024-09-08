@@ -9,6 +9,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { GoasosCommonModule } from "../common/common.module";
 import { CommonModule } from "@angular/common";
 import { GoasasMatModule } from "../mat/goasos-mat.module";
+import { AutomationDataService } from "./services/data.service";
 
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
   ],
   imports: [RouterModule.forChild(routes), GoasosCommonModule,
     CommonModule, GoasasMatModule],
-  exports: [RouterModule, AutomationProductsComponent]
+  exports: [RouterModule, AutomationProductsComponent],
+  providers: [AutomationDataService]
 })
 export class AutomationModule { }
