@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Box } from "../../common/models";
+import { Box, Video } from "../../common/models";
 
 @Injectable()
 export class AutomationDataService {
@@ -22,6 +22,14 @@ export class AutomationDataService {
             { img: '/images/automation/industry/sos.png', alt: 'SOS', header: 'Panic button/SoS/Emergency button', body: 'GPS & GPRS based device for raising panic alerts, alarms, triggering SoS and emergency requests configurable via mobile app. Location, vehicle & driver details sent regularly to cloud', id: 'five' },
             { img: '/images/automation/industry/substation.png', alt: 'substation', header: 'Power Substation Monitoring & Control', body: 'GPRS based IoT device, MODBUS RTU communication to fetch electrical parameters to monitor power quality from the control panel. Track changes in all electrical parameters, circuit breakers, Isolators & Relay status to identify the faults and suggest recovery tips to maintain the power quality', id: 'six' },
             { img: '/images/automation/industry/solar.png', alt: 'solar', header: 'Remote monitoring of Solar farm', body: 'GPRS based, condition monitoring of solar panel, MPPT charger & Battery, Retrofitting of custom sensors to measure power, Condition monitoring, Predictive maintenance of Solar plant equipment', id: 'seven' }
+        ];
+    }
+
+    public get IndustryVideos(): Video[] {
+        return [
+            { title: 'Blueport OBD-II interface with mobile', embed: true, poster: '', src: '0vTfGBHIq8s' },
+            { title: 'Industrial Remote monitoring', embed: true, poster: '', src: 'RDFjpO41RQ0' },
+            { title: 'Crevavi Konnect-Wi IoT', embed: true, poster: '', src: 'oLoU_j8Ot3Q' },
         ];
     }
 

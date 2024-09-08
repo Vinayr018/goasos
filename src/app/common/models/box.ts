@@ -5,3 +5,10 @@ export interface Box {
     body: string;
     id: string;
 }
+
+export interface Video {
+    title: string;
+    src: string;
+    embed: boolean;
+    poster: string;
+}
