@@ -1,4 +1,4 @@
-import { Box, Video } from "./box";
+import { Box, Video, VideoBox } from "./box";
 import { ProductVideo } from "./product-video";
 
-export { Box, ProductVideo, Video }
+export { Box, ProductVideo, Video, VideoBox }

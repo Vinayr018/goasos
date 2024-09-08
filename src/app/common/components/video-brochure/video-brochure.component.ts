@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input } from '@angular/core';
 import { BaseLocationService } from '../../services/base-location.service';
-import { Box } from '../../models';
+import { VideoBox } from '../../models';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class VideoBrochureComponent implements AfterViewInit {
 
   @Input({ required: true }) public title!: string;
 
-  @Input({ required: true }) public boxes!: Box[];
+  @Input({ required: true }) public boxes!: VideoBox[];
 
   constructor(public base: BaseLocationService, private router: Router) {
     const st = router.getCurrentNavigation()?.extras?.state;

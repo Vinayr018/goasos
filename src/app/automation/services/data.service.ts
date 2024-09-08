@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Box, Video } from "../../common/models";
+import { Box, Video, VideoBox } from "../../common/models";
 
 @Injectable()
 export class AutomationDataService {
@@ -50,11 +50,11 @@ export class AutomationDataService {
         ];
     }
 
-    public get Space(): Box[] {
+    public get Space(): VideoBox[] {
         return [
-            { img: '/images/automation/space/beddesk.png', alt: 'beddesk', header: 'Bed with storage and iDesk', body: 'Bed with storage and iDesk and comes in all sizes (Single bed, King size, queen size)', id: 'one' },
-            { img: '/images/automation/space/bedstorage.png', alt: 'bed storage', header: 'Bed with storage', body: 'Bed with storage and comes in all sizes (Single bed, King size, queen size)', id: 'two' },
-            { img: '/images/automation/space/bedsofa.png', alt: 'bed sofa', header: 'Bed with storage and Sofa', body: 'Bed with storage and Sofa and comes in all sizes (Single bed, King size, queen size)', id: 'three' },
+            { poster: '/images/automation/space/beddesk.png', src: 'images/automation/space/bed-with-desk.mp4', header: 'Bed with storage and iDesk', body: 'Bed with storage and iDesk and comes in all sizes (Single bed, King size, queen size)', id: 'one' },
+            { poster: '/images/automation/space/bedstorage.png', src: 'images/automation/space/bed-with-storage.mp4', header: 'Bed with storage', body: 'Bed with storage and comes in all sizes (Single bed, King size, queen size)', id: 'two' },
+            { poster: '/images/automation/space/bedsofa.png', src: 'images/automation/space/desk-control.mp4', header: 'Bed with storage and Sofa', body: 'Bed with storage and Sofa and comes in all sizes (Single bed, King size, queen size)', id: 'three' },
         ];
     }
 }

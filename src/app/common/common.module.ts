@@ -23,7 +23,8 @@ import { SafeVideoPipe } from "./pipes/safe-video.pipe";
     SafeVideoPipe,
   ],
   exports: [HeaderComponent, BaseComponent, BoxComponent,
-    BrochureComponent, MenuComponent, ProductGalleryComponent],
+    BrochureComponent, MenuComponent, ProductGalleryComponent,
+    VideoBrochureComponent],
   imports: [GoasasMatModule, RouterModule, CommonModule]
 })
 export class GoasosCommonModule { }
