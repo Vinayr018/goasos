@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Box, Video, VideoBox } from "../../common/models";
+import { Observable, of } from "rxjs";
 
 @Injectable()
 export class AutomationDataService {
@@ -13,8 +14,8 @@ export class AutomationDataService {
         ];
     }
 
-    public get Industry(): Box[] {
-        return [
+    public get Industry$(): Observable<Box[]> {
+        return of([
             { img: '/images/automation/industry/fms.png', alt: 'FMS', header: 'Fleet management system on cloud', body: 'Interface with ADAS processor for ADAS event recognition, Connects to cloud via GPRS through a cellular modem, Integrated GNSS for Navigation', id: 'one' },
             { img: '/images/automation/industry/machine.png', alt: 'machine', header: 'Machine Automation', body: 'Automate and monitor Air Compressors, Chillers, Generators, smart meters, Circuit breakers', id: 'two' },
             { img: '/images/automation/industry/coldstorage.png', alt: 'cold storage', header: 'Cold storage monitoring', body: 'BLE nodes to measure temperature and humidity, GPS sensor in ioT device will continuously keep track of location', id: 'three' },
@@ -22,15 +23,15 @@ export class AutomationDataService {
             { img: '/images/automation/industry/sos.png', alt: 'SOS', header: 'Panic button/SoS/Emergency button', body: 'GPS & GPRS based device for raising panic alerts, alarms, triggering SoS and emergency requests configurable via mobile app. Location, vehicle & driver details sent regularly to cloud', id: 'five' },
             { img: '/images/automation/industry/substation.png', alt: 'substation', header: 'Power Substation Monitoring & Control', body: 'GPRS based IoT device, MODBUS RTU communication to fetch electrical parameters to monitor power quality from the control panel. Track changes in all electrical parameters, circuit breakers, Isolators & Relay status to identify the faults and suggest recovery tips to maintain the power quality', id: 'six' },
             { img: '/images/automation/industry/solar.png', alt: 'solar', header: 'Remote monitoring of Solar farm', body: 'GPRS based, condition monitoring of solar panel, MPPT charger & Battery, Retrofitting of custom sensors to measure power, Condition monitoring, Predictive maintenance of Solar plant equipment', id: 'seven' }
-        ];
+        ]);
     }
 
-    public get IndustryVideos(): Video[] {
-        return [
+    public get IndustryVideos$(): Observable<Video[]> {
+        return of([
             { title: 'Blueport OBD-II interface with mobile', embed: true, poster: '', src: '0vTfGBHIq8s' },
             { title: 'Industrial Remote monitoring', embed: true, poster: '', src: 'RDFjpO41RQ0' },
             { title: 'Crevavi Konnect-Wi IoT', embed: true, poster: '', src: 'oLoU_j8Ot3Q' },
-        ];
+        ]);
     }
 
     public get Office(): Box[] {
@@ -50,11 +51,11 @@ export class AutomationDataService {
         ];
     }
 
-    public get Space(): VideoBox[] {
-        return [
+    public get Space$(): Observable<VideoBox[]> {
+        return of([
             { poster: '/images/automation/space/beddesk.png', src: 'images/automation/space/bed-with-desk.mp4', header: 'Bed with storage and iDesk', body: 'Bed with storage and iDesk and comes in all sizes (Single bed, King size, queen size)', id: 'one' },
             { poster: '/images/automation/space/bedstorage.png', src: 'images/automation/space/bed-with-storage.mp4', header: 'Bed with storage', body: 'Bed with storage and comes in all sizes (Single bed, King size, queen size)', id: 'two' },
             { poster: '/images/automation/space/bedsofa.png', src: 'images/automation/space/desk-control.mp4', header: 'Bed with storage and Sofa', body: 'Bed with storage and Sofa and comes in all sizes (Single bed, King size, queen size)', id: 'three' },
-        ];
+        ]);
     }
 }
