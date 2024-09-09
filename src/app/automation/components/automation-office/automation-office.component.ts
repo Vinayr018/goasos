@@ -8,5 +8,10 @@ import { AutomationDataService } from '../../services/data.service';
   styleUrl: './automation-office.component.scss'
 })
 export class AutomationOfficeComponent {
-  constructor(public service: AutomationDataService){}
+
+  public boxes: Box[];
+
+  constructor(private service: AutomationDataService) {
+    this.boxes = service.Office;
+  }
 }
