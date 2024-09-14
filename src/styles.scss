@@ -34,11 +34,11 @@ $md-primary: (
   )
 );
 
-$goasos-primary: mat.define-palette($md-primary);
-$goasos-accent: mat.define-palette($md-primary);
-$goasos-warn: mat.define-palette(mat.$red-palette);
+$goasos-primary: mat.m2-define-palette($md-primary);
+$goasos-accent: mat.m2-define-palette($md-primary);
+$goasos-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
-$goasos-theme: mat.define-light-theme(
+$goasos-theme: mat.m2-define-light-theme(
   (
     color: (
       primary: $goasos-primary,
