@@ -1,4 +1,5 @@
 $height: 200px;
+$breaking-point:671px;
 
 div.wrapper {
     display: grid;
@@ -7,9 +8,14 @@ div.wrapper {
     background-color: white;
     padding: 1em 2em;
     margin-bottom: 1em;
+    @media (max-width:$breaking-point) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
     > div.mobile-heade {
         display: none;
-        > h3 {
+        @media (max-width:$breaking-point) {
+            display: block;
         }
     }
     > div.img-wrapper {
@@ -17,6 +23,9 @@ div.wrapper {
         height: $height;
         overflow: hidden;
         background-color: rgb(241, 244, 247);
+        @media (max-width:427px) {
+            width: 100%;
+        }
         .slid {
             height: $height;
             width: 100%;
@@ -35,8 +44,9 @@ div.wrapper {
         align-items: flex-start;
         > h3.heade {
             margin: 0;
-        }
-        > p {
+            @media (max-width:$breaking-point) {
+                display: none;
+            }
         }
     }
 }
