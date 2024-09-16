@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="mobile-heade">
+        <h3>{{box.header}}</h3>
+    </div>
+    <div class="img-wrapper">
+        <c-carousel [interval]="0" [dark]="true">
+            <!-- <c-carousel-indicators></c-carousel-indicators> -->
+            <c-carousel-inner>
+                <c-carousel-item *ngFor="let slide of box.imgs">
+                    <img [src]="slide.src" alt="{{slide.alt}}" class="d-block slid" loading="lazy" />
+                    <c-carousel-caption class="d-none d-md-block">
+                        <h4 class="im-cap">{{slide.alt}}</h4>
+                    </c-carousel-caption>
+                </c-carousel-item>
+            </c-carousel-inner>
+            <c-carousel-control [routerLink] caption="Previous" direction="prev"></c-carousel-control>
+            <c-carousel-control [routerLink] caption="Next" direction="next"></c-carousel-control>
+        </c-carousel>
+    </div>
+    <div class="text-content">
+        <h3 class="heade">{{box.header}}</h3>
+        <p>{{box.body}}</p>
+    </div>
+</div>

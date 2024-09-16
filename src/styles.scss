@@ -1,6 +1,8 @@
 @use "@angular/material" as mat;
 @include mat.core();
 
+@import "@coreui/coreui/scss/coreui";
+
 $md-primary: (
   50: #e0f4fe,
   100: #b3e5fd,
@@ -76,6 +78,7 @@ body {
   font-family: "Ubuntu Sans", sans-serif;
   font-size: 1.1rem;
   background-color: rgb(241, 244, 247);
+  line-height: unset;
 }
 
 a {
@@ -199,7 +202,7 @@ h4.products-header {
       &::after {
           content: "\2715";
           position: absolute;
-          top: -1.3em;
+          top: -1em;
           padding: 10px;
       }
   }
@@ -279,3 +282,6 @@ h4.products-header {
 .mat-expansion-panel-header.contact-header {
   font-weight: bold;
 }
+// input, button, select, optgroup, textarea {
+//   font-size: ;
+// }

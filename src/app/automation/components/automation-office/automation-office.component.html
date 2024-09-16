@@ -1,1 +1,2 @@
-<app-brochure title="Office Automation" [boxes]="boxes"/>
+<!-- <app-brochure title="Office Automation" [boxes]="boxes"/> -->
+<app-slide-box *ngFor="let box of boxes" [box]="box" />

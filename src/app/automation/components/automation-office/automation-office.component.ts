@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Box } from '../../../common/models';
+import { Box, SlideBox } from '../../../common/models';
 import { AutomationDataService } from '../../services/data.service';
 
 @Component({
@@ -9,9 +9,10 @@ import { AutomationDataService } from '../../services/data.service';
 })
 export class AutomationOfficeComponent {
 
-  public boxes: Box[];
+  public boxes: SlideBox[];
 
   constructor(private service: AutomationDataService) {
+    // this.boxes = service.Office;
     this.boxes = service.Office;
   }
 }

@@ -1,0 +1,42 @@
+$height: 200px;
+
+div.wrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1em;
+    background-color: white;
+    padding: 1em 2em;
+    margin-bottom: 1em;
+    > div.mobile-heade {
+        display: none;
+        > h3 {
+        }
+    }
+    > div.img-wrapper {
+        width: 300px;
+        height: $height;
+        overflow: hidden;
+        background-color: rgb(241, 244, 247);
+        .slid {
+            height: $height;
+            width: 100%;
+            object-fit: contain;
+        }
+        h4.im-cap {
+            background: rgba(255,255,255,0.7);
+            box-shadow: 0 0 8px 0 rgba(0,0,0,0.4);
+        }
+    }
+    > div.text-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: center;
+        align-items: flex-start;
+        > h3.heade {
+            margin: 0;
+        }
+        > p {
+        }
+    }
+}

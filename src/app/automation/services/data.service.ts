@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Box, Video, VideoBox } from "../../common/models";
+import { Box, SlideBox, Video, VideoBox } from "../../common/models";
 import { Observable, of } from "rxjs";
 
 @Injectable()
@@ -34,12 +34,40 @@ export class AutomationDataService {
         ]);
     }
 
-    public get Office(): Box[] {
+    public get Office(): SlideBox[] {
         return [
-            { img: '/images/automation/office/access.jpg', alt: 'office acess', header: 'Access card automation', body: 'Automate office with Access cards.', id: 'one' },
-            { img: '/images/automation/office/conference.jpeg', alt: 'conference room automation', header: 'Conference room automation', body: 'Automate conference room.', id: 'two' },
-            { img: '/images/automation/office/overall.webp', alt: 'overall automation', header: 'Lights & CCTV automation', body: 'automatically control the lighting and cctv cameras with mobile devices', id: 'three' },
-            { img: '/images/automation/office/parking.gif', alt: 'parking', header: 'Parking automation', body: 'Parking automation', id: 'four' }
+            {
+                header: 'Timesheet Automation', body: 'Automate office Timesheet with Access cards, finger print & facial recognition.',
+                imgs: [
+                    { src: '/images/automation/office/new/probio.png', alt: 'ProBio Plus Series' },
+                    { src: '/images/automation/office/new/D32.png', alt: 'D3' },
+                    { src: '/images/automation/office/new/LX50.jpg', alt: 'LX50' },
+                    { src: '/images/automation/office/new/WL10.png', alt: 'WL10' }]
+            },
+            {
+                header: 'Access Control', body: 'Restrict the access of your office premise of Unauthorised access, we provide card based access control along with biometrics like facial recognistion and finger print.',
+                imgs: [
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240627/TS2000%20Plus_500x500.png', alt: 'TS1000 Plus Series' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240627/TS1000%20plus%20series_500x500.png', alt: 'TS1000 Plus Series' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240612/SBTL700_01.png', alt: 'SBTL700 Series' },
+                ]
+            },
+            {
+                header: 'Security', body: 'we provide wide range of products required to secure your office with bagage scanners, door frame metal detector & hand held metal detector.',
+                imgs: [
+                    { src: 'https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211217/4d6a9663cb6f56302e821c3767f4ac7e.png', alt: 'ZKX5030C scanner' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240223/ZKX4233A_03.png', alt: 'ZKX4233A scanner' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240704/ZK-D1010L_1-01.png', alt: 'ZK-D1010L' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20240613/ZK-D2110.png', alt: 'ZK-D2110' }]
+            },
+            {
+                header: 'Video Surveilliance', body: 'secure your office premises with video surveilliance with both Network and Analog cameras.',
+                imgs: [
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20230904/EL-54N28I.png', alt: 'EL-54N28I' },
+                    { src: 'https://new-website-file.s3.ap-southeast-1.amazonaws.com/images/20211221/aa4ca3a151cd6f70257a81c8e5c17ff5.png', alt: 'DL-854N28B-E3' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20230404/PS-32B10C.png', alt: 'PS-32B10C' },
+                    { src: 'https://d1agmp9y4cki1i.cloudfront.net/images/20230404/PL-32C20D.png', alt: 'PL-32C20D' }]
+            }
         ];
     }
 
