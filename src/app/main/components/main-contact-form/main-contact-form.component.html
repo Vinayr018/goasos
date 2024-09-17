@@ -2,19 +2,23 @@
     <form (ngSubmit)="SubmitQuery()" [formGroup]="formGroup">
         <p class="heading">Contact us</p>
         <div class="row1">
-            <label>
+            <label [ngClass]="!!ValidPhone ? 'er':''">
                 <span>Phone number</span>
                 <input type="text" formControlName="phone">
             </label>
+            <span class="er" *ngIf="ValidPhone==='required'">phone is required</span>
+            <span class="er" *ngIf="ValidPhone==='pattern'">phone is invalid</span>
         </div>
         <div class="row1">
-            <label>
+            <label [ngClass]="!!ValidEmail ? 'er':''">
                 <span>Email</span>
                 <input type="text" formControlName="email">
             </label>
+            <span class="er" *ngIf="ValidEmail==='required'">email is required</span>
+            <span class="er" *ngIf="ValidEmail==='email'">email is invalid</span>
         </div>
         <div class="row1">
-            <label>
+            <label [ngClass]="!!ValidCategory ? 'er':''">
                 <span>Category</span>
                 <mat-checkbox (change)="CategoryChangeEvent($event)" value="1">Home Automation</mat-checkbox>
                 <mat-checkbox (change)="CategoryChangeEvent($event)" value="2">Office Automation</mat-checkbox>
@@ -22,12 +26,14 @@
                 <mat-checkbox (change)="CategoryChangeEvent($event)" value="4">Security Automation</mat-checkbox>
                 <mat-checkbox (change)="CategoryChangeEvent($event)" value="5">Space Automation</mat-checkbox>
             </label>
+            <span class="er" *ngIf="ValidCategory==='required'">please select Category</span>
         </div>
         <div class="row1">
-            <label>
+            <label [ngClass]="!!ValidQuery ? 'er':''">
                 <span>Provide your requirement</span>
                 <textarea formControlName="query"></textarea>
             </label>
+            <span class="er" *ngIf="ValidQuery==='required'">please write your requirement</span>
         </div>
         <div class="row1 action">
             <button mat-raised-button color="primary" type="submit">Send</button>

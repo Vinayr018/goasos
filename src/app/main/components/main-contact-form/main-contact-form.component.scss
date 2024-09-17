@@ -22,6 +22,12 @@ div.contact-form {
             text-align: center;
         }
         > div.row1 {
+            > span.er {
+                color: red;
+                font-size: 0.9rem;
+                margin-bottom: 1.5em;
+                display: block;
+            }
             > label {
                 position: relative;
                 border: 1px solid;
@@ -29,6 +35,13 @@ div.contact-form {
                 display: inline-block;
                 height: max-content;
                 width: 100%;
+                &.er {
+                    border: 1px solid red;
+                    animation: shake 0.5s ease 0s 1 forwards;
+                    > span {
+                        color: red;
+                    }
+                }
                 > span {
                     position: absolute;
                     top: -20px;
