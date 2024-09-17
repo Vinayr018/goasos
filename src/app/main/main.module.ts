@@ -4,15 +4,15 @@ import {
     MainProductComponent, MainContactComponent,
     MainBaseComponent, MainHomeComponent,
     MainAboutComponent, ProductVideoComponent,
-    MainContactBranchComponent
+    MainContactBranchComponent, MainContactFormComponent,
+    MainContactSocialComponent
 } from './components';
 import { GoasosCommonModule } from "../common/common.module";
 import { AutomationModule } from "../automation/automation.module";
 import { ConsultModule } from "../consult/consult.module";
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { MainContactFormComponent } from './components/main-contact-form/main-contact-form.component';
-import { MainContactSocialComponent } from './components/main-contact-social/main-contact-social.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 const routes: Routes = [
     {
@@ -43,7 +43,8 @@ const routes: Routes = [
         GoasosCommonModule,
         AutomationModule,
         ConsultModule,
-        GoasasMatModule
+        GoasasMatModule,
+        ReactiveFormsModule
     ],
     exports: [RouterModule]
 })

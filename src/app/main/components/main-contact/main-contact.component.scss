@@ -20,7 +20,7 @@ div.main-contacts {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 1em;
     @media (max-width:1131px) {
         grid-template-columns: 1fr 1fr;
@@ -32,28 +32,6 @@ div.main-contacts {
         max-width: 350px;
         @media (max-width:427px) {
             width: 100%;
-        }
-        > app-main-contact-branch {
-        }
-    }
-    > div.contact-box:nth-of-type(1) {
-        > app-main-contact-branch {
-        }
-    }
-    > div.contact-box:nth-of-type(2) {
-        > app-main-contact-branch {
-        }
-    }
-    > div.contact-box:nth-of-type(3) {
-        > app-main-contact-branch {
-        }
-    }
-    > div.contact-box:nth-of-type(4) {
-        > app-main-contact-social {
-        }
-    }
-    > div.contact-box:nth-of-type(5) {
-        > app-main-contact-form {
         }
     }
 }

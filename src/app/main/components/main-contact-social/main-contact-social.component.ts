@@ -27,8 +27,6 @@ export class MainContactSocialComponent implements OnInit, OnDestroy, AfterViewI
     if (isInViewport) {
       this.AddAnimation(document.querySelector('ul.social') as HTMLUListElement);
     }
-
-    console.log('isDiv', this.div?.nativeElement, isInViewport);
   }
 
   private IsInViewport(element: HTMLDivElement | undefined): boolean {
@@ -46,7 +44,6 @@ export class MainContactSocialComponent implements OnInit, OnDestroy, AfterViewI
   }
 
   private AddAnimation(ul: HTMLUListElement): void {
-    console.log(ul.children);
     for (let index = 0; index < ul.children.length; index++) {
       const child = ul.children[index] as HTMLLIElement;
       child.style.animation = `rotate 0.4s ease-in-out ${1.1 + (index * 0.1)}s 1 forwards`;

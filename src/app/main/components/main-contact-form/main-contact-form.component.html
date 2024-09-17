@@ -1,20 +1,36 @@
 <div class="contact-form">
-    <form>
+    <form (ngSubmit)="SubmitQuery()" [formGroup]="formGroup">
         <p class="heading">Contact us</p>
-        <div class="row">
+        <div class="row1">
             <label>
-                <span>your email</span>
-                <input type="text">
+                <span>Phone number</span>
+                <input type="text" formControlName="phone">
             </label>
         </div>
-        <div class="row">
+        <div class="row1">
             <label>
-                <span>your query</span>
-                <textarea></textarea>
+                <span>Email</span>
+                <input type="text" formControlName="email">
             </label>
         </div>
-        <div class="row action">
-            <button mat-raised-button color="primary">Send</button>
+        <div class="row1">
+            <label>
+                <span>Category</span>
+                <mat-checkbox (change)="CategoryChangeEvent($event)" value="1">Home Automation</mat-checkbox>
+                <mat-checkbox (change)="CategoryChangeEvent($event)" value="2">Office Automation</mat-checkbox>
+                <mat-checkbox (change)="CategoryChangeEvent($event)" value="3">Industry Automation</mat-checkbox>
+                <mat-checkbox (change)="CategoryChangeEvent($event)" value="4">Security Automation</mat-checkbox>
+                <mat-checkbox (change)="CategoryChangeEvent($event)" value="5">Space Automation</mat-checkbox>
+            </label>
+        </div>
+        <div class="row1">
+            <label>
+                <span>Provide your requirement</span>
+                <textarea formControlName="query"></textarea>
+            </label>
+        </div>
+        <div class="row1 action">
+            <button mat-raised-button color="primary" type="submit">Send</button>
         </div>
     </form>
 </div>

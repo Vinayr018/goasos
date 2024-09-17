@@ -3,7 +3,7 @@ $bg-color: white;
 div.contact-form {
     padding: 1em 2em;
     background-color: $bg-color;
-    height: 520px;
+    // height: 520px;
     width: 350px;
     @media (max-width: 411px) {
         width: 100%;
@@ -21,7 +21,7 @@ div.contact-form {
             margin-bottom: 1em;
             text-align: center;
         }
-        > div.row {
+        > div.row1 {
             > label {
                 position: relative;
                 border: 1px solid;
