@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AutomationDataService } from '../../services/data.service';
-import { Box } from '../../../common/models';
+import { Box, VideoBox } from '../../../common/models';
 
 @Component({
   selector: 'app-automation-home',
@@ -9,7 +9,7 @@ import { Box } from '../../../common/models';
 })
 export class AutomationHomeComponent {
 
-  public boxes: Box[];
+  public boxes: VideoBox[];
 
   constructor(private service: AutomationDataService) {
     this.boxes = service.Home;

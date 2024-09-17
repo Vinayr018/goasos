@@ -5,12 +5,12 @@ import { Observable, of } from "rxjs";
 @Injectable()
 export class AutomationDataService {
 
-    public get Home(): Box[] {
+    public get Home(): VideoBox[] {
         return [
-            { img: '/images/automation/home/gateautomation.jpg', alt: 'gateautomation', header: 'Gate automation', body: 'Automating gate operation using mobile.', id: 'one' },
-            { img: '/images/automation/home/doorlock.jpg', alt: 'doorlock', header: 'Door automation', body: 'door lock operation automation using mobile.', id: 'two' },
-            { img: '/images/automation/home/light.png', alt: 'light', header: 'Lights automation', body: 'control the lighting with mobile devices with RGB to change the color', id: 'three' },
-            { img: '/images/automation/home/curtainautomation.jpg', alt: 'curtainautomation', header: 'Curtian automation', body: 'control curtians with mobile device', id: 'four' },
+            { header: 'Gate automation', src: '/images/automation/home/gate_automation.mp4', body: 'Automating gate operation using mobile. You Can Open and close the gate using mobile application remotely', id: 'one', poster: '' },
+            { header: 'Digital Door Lock and Video Door Phone', src: '/images/automation/home/door.mp4', body: 'Door lock operation automation using mobile. You can open and close the door digitally using mobile remotely. You can See the visitor or guest in the Indoor Monitor provided in the house  and door can be opened remotely', id: 'two', poster: '' },
+            { header: 'Lights automation', src: '/images/automation/home/lights_and_fan.mp4', body: 'Control the light operations including the colour and intensity of the light remotely using mobile and voice  and can also be scheduled. AC and Geyser can be scheduled with time. You can also schedule AC and Geyser w.r.t its proximity from mobile [i..e. : while returning from work based on distance from House AC or Geyser can be switched on, on leach home you can Save your time and can get the comfort]', id: 'three', poster: '' },
+            { header: 'Curtain automation', src: '/images/automation/home/window_blind_control.mp4', body: 'You can open and your curtain and Blind using mobile and voice. It can also be scheduled with time.', id: 'four', poster: '' },
         ];
     }
 
