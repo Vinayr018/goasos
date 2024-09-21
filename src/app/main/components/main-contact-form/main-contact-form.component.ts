@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
+import { IdentifierService } from '../../../common/services';
 
 @Component({
   selector: 'app-main-contact-form',
@@ -12,7 +13,7 @@ export class MainContactFormComponent {
   private categories: number[];
   private isSubmitted = false;
 
-  constructor() {
+  constructor(private iden: IdentifierService) {
     this.categories = [];
     this.formGroup = new FormGroup({
       phone: new FormControl<string>('', [Validators.required, Validators.pattern('^\\d{10}$')]),
@@ -128,6 +129,6 @@ export class MainContactFormComponent {
 
   public SubmitQuery(): void {
     this.isSubmitted = true;
-    console.log('submit', this.formGroup.getRawValue());
+    console.log('submit', this.formGroup.getRawValue(),this.iden.identifier);
   }
 }
