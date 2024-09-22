@@ -193,6 +193,14 @@ button.product-video-control {
   }
 }
 
+.goasos {
+  margin-top: 1em !important;
+  .mat-mdc-snackbar-surface {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
 div.cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

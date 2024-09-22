@@ -2,18 +2,22 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { IdentifierService } from '../../../common/services';
+import { ContactService } from '../../services/contact.service';
+import { ContactForm } from '../../models';
+import { provideHttpClient, withJsonpSupport } from '@angular/common/http';
 
 @Component({
   selector: 'app-main-contact-form',
   templateUrl: './main-contact-form.component.html',
-  styleUrl: './main-contact-form.component.scss'
+  styleUrl: './main-contact-form.component.scss',
+  providers: [ContactService]
 })
 export class MainContactFormComponent {
   public formGroup: FormGroup;
   private categories: number[];
   private isSubmitted = false;
 
-  constructor(private iden: IdentifierService) {
+  constructor(private iden: IdentifierService, private ser: ContactService) {
     this.categories = [];
     this.formGroup = new FormGroup({
       phone: new FormControl<string>('', [Validators.required, Validators.pattern('^\\d{10}$')]),
@@ -25,7 +29,7 @@ export class MainContactFormComponent {
 
   public get ValidQuery(): string {
     const crontol: AbstractControl<string> | null = this.formGroup.get('query');
-    
+
     if (!crontol) {
       return '';
     }
@@ -46,7 +50,7 @@ export class MainContactFormComponent {
 
   public get ValidCategory(): string {
     const crontol: AbstractControl<number[]> | null = this.formGroup.get('category');
-    
+
     if (!crontol) {
       return '';
     }
@@ -67,7 +71,7 @@ export class MainContactFormComponent {
 
   public get ValidPhone(): string {
     const crontol: AbstractControl<string> | null = this.formGroup.get('phone');
-    
+
     if (!crontol) {
       return '';
     }
@@ -88,7 +92,7 @@ export class MainContactFormComponent {
 
   public get ValidEmail(): string {
     const crontol: AbstractControl<string> | null = this.formGroup.get('email');
-    
+
     if (!crontol) {
       return '';
     }
@@ -129,6 +133,7 @@ export class MainContactFormComponent {
 
   public SubmitQuery(): void {
     this.isSubmitted = true;
-    console.log('submit', this.formGroup.getRawValue(),this.iden.identifier);
+    console.log('submit', this.formGroup.getRawValue(), this.iden.identifier);
+    this.ser.SendEmail(new ContactForm(this.formGroup.getRawValue(), this.iden.identifier));
   }
 }

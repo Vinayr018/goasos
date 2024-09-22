@@ -1,0 +1,15 @@
+div.wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    > div.my-icon {
+        .goasos-success {
+            color: green;
+        }
+        .goasos-error {
+            color: red;
+        }
+    }
+    > div.msg {
+    }
+}

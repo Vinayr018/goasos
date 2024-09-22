@@ -13,6 +13,7 @@ import { ConsultModule } from "../consult/consult.module";
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
+import { provideHttpClient } from "@angular/common/http";
 
 const routes: Routes = [
     {
@@ -44,8 +45,9 @@ const routes: Routes = [
         AutomationModule,
         ConsultModule,
         GoasasMatModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [provideHttpClient()]
 })
 export class MainModule { }

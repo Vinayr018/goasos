@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <div class="my-icon">
+        <mat-icon [ngClass]="type === 'Success' ? 'goasos-success': 'goasos-error'"
+            [fontIcon]="type === 'Success' ? 'check': 'priority_high'" />
+    </div>
+    <div class="msg">
+        {{message}}
+    </div>
+</div>

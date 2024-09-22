@@ -3,7 +3,7 @@ import {
   HeaderComponent, BaseComponent, BoxComponent,
   BrochureComponent, MenuComponent, VideoBoxComponent,
   VideoBrochureComponent, ProductGalleryComponent, VideoComponent,
-  SlideBoxComponent
+  SlideBoxComponent, SuccessSnackComponent
 } from './components';
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { RouterModule } from "@angular/router";
@@ -16,7 +16,6 @@ import {
   CarouselInnerComponent,
   CarouselItemComponent,
   ThemeDirective,
-  CarouselIndicatorsComponent,
   CarouselCaptionComponent
 } from '@coreui/angular';
 
@@ -33,10 +32,11 @@ import {
     VideoComponent,
     SafeVideoPipe,
     SlideBoxComponent,
+    SuccessSnackComponent,
   ],
   exports: [HeaderComponent, BaseComponent, BoxComponent,
     BrochureComponent, MenuComponent, ProductGalleryComponent,
-    VideoBrochureComponent, SlideBoxComponent],
+    VideoBrochureComponent, SlideBoxComponent, SuccessSnackComponent],
   imports: [GoasasMatModule, RouterModule, CommonModule,
     ThemeDirective, CarouselComponent,
     CarouselInnerComponent, CarouselItemComponent,
