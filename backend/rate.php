@@ -28,6 +28,7 @@ class RateLimit
         $dir = __DIR__ . DIRECTORY_SEPARATOR . "data" . DIRECTORY_SEPARATOR . "rate.json";
 
         $oldData = json_decode(file_get_contents($dir), true);
+        $oldData = $this->Cleanup($oldData, $currentTime);
         $canprocess = true;
 
         if (!isset($oldData[$id])) {
@@ -56,6 +57,17 @@ class RateLimit
 
         file_put_contents($dir, json_encode($oldData));
         return $canprocess;
+    }
+
+    private function Cleanup($data, $currentTime)
+    {
+        foreach ($data as $key => $value) {
+            // Check if 'time' field is older than 12 hours
+            if (($currentTime - $value['time']) > 43200) {
+                unset($data[$key]); // Delete the key
+            }
+        }
+        return $data;
     }
 
 }

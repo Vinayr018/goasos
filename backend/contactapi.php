@@ -24,7 +24,7 @@ if (!$canProceed) {
     exit;
 }
 
-echo 'should send email';
+echo json_encode(['shouldSendEmail' => true]);
 
 // $to = 'richrd77@gmail.com';  // Recipient email
 // $subject = 'Test Email';  // Subject of the email
