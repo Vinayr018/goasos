@@ -20,7 +20,7 @@ div.consult-menu-wrapper {
             transition: max-height 0.5s ease-in-out;
             overflow: hidden;
             &.show {
-                max-height: 200px;
+                max-height: 250px;
             }
             > li {
                 cursor: pointer;

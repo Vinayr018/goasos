@@ -1,0 +1,59 @@
+@mixin width-set {
+    width: 80%;
+    margin: 1em auto;
+    @media (max-width: 990px) {
+        width: 85%;
+    }
+}
+
+div.wrapper {
+    > h2 {
+        text-align: center;
+    }
+    > p.desc-solar {
+        @include width-set();
+        width: 70%;
+        > span.tab.tab2 {
+            @media (max-width: 576px) {
+                display: none;
+            }
+        }
+    }
+    > div.solar-images {
+        @include width-set();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+        @media (max-width: 576px) {
+            flex-direction: column;
+        }
+        > figure {
+            width: 350px;
+            @media (max-width: 456px) {
+                width: 80%;
+            }
+            > img {
+                display: inline-block;
+                height: 100%;
+                width: 100%;
+                border-radius: 4px;
+            }
+            > figcaption {
+                margin-top: 10px;
+            }
+        }
+    }
+    > div.video {
+        @include width-set();
+        text-align: center;
+        > iframe {
+            width: 350px;
+            height: 250px;
+            @media (max-width: 456px) {
+                width: 80%;
+                aspect-ratio: 1/1;
+            }
+        }
+    }
+}

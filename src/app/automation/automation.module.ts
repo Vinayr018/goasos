@@ -3,7 +3,8 @@ import {
   AutomationHomeComponent, AutomationBaseComponent,
   AutomationOfficeComponent, AutomationIndustryComponent,
   AutomationSecurityComponent, AutomationSpaceComponent,
-  AutomationProductsComponent, ProductVideoComponent
+  AutomationProductsComponent, ProductVideoComponent,
+  AutomationEnergyComponent
 } from './components';
 import { RouterModule, Routes } from "@angular/router";
 import { GoasosCommonModule } from "../common/common.module";
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'industry', component: AutomationIndustryComponent },
       { path: 'security', component: AutomationSecurityComponent },
       { path: 'space', component: AutomationSpaceComponent },
+      { path: 'energy', component: AutomationEnergyComponent },
     ]
   }
 ];
@@ -33,7 +35,8 @@ const routes: Routes = [
     AutomationSecurityComponent,
     AutomationSpaceComponent,
     AutomationProductsComponent,
-    ProductVideoComponent
+    ProductVideoComponent,
+    AutomationEnergyComponent
   ],
   imports: [RouterModule.forChild(routes), GoasosCommonModule,
     CommonModule, GoasasMatModule],
