@@ -39,6 +39,21 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "robots.txt",
+                "input": "src/",
+                "output": "/"
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "src/",
+                "output": "/"
+              },
+              {
+                "glob": "googlee4c67591605d7754.html",
+                "input": "src/",
+                "output": "/"
               }
             ],
             "styles": [
