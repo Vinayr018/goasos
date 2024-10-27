@@ -1,6 +1,6 @@
 <div class="consult-menu-wrapper">
     <div class="menu-seg">
-        <a class="menu-heading" (click)="ToggleMenu($event)">Automation</a>
+        <a class="menu-heading" (click)="ToggleMenu($event)" href="#">Automation</a>
         <ul class="show">
             <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/automation">Home automation</a></li>
             <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/automation/office">Office automation</a></li>
@@ -11,7 +11,7 @@
         </ul>
     </div>
     <div class="menu-seg">
-        <a class="menu-heading" (click)="ToggleMenu($event)">Consulting</a>
+        <a class="menu-heading" (click)="ToggleMenu($event)" href="#">Consulting</a>
         <ul class="show">
             <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()" routerLink="/consulting">Banking</a></li>
             <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a (click)="LinkClicked()"  routerLink="/consulting/market">Capital Markets</a></li>
