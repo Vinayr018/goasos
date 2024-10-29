@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MetaService } from '../../../common/services/meta.service';
+import { GoasosTitleService } from '../../../common/services/title.service';
 
 @Component({
   selector: 'app-main-about',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './main-about.component.scss'
 })
 export class MainAboutComponent {
-
+  constructor(private title: GoasosTitleService,
+    private meta: MetaService) {
+    title.UpdateTitle = 'About us';
+    meta.Description = 'about us or about goasos.com';
+    meta.Keywords = 'goasos, about us, about goasos.com';
+  }
 }

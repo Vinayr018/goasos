@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnInit, Renderer2 } from '@angular/core';
 import { BaseLocationService } from '../../../common/services/base-location.service';
 import { Router } from '@angular/router';
+import { GoasosTitleService } from '../../../common/services/title.service';
+import { MetaService } from '../../../common/services/meta.service';
 
 @Component({
   selector: 'app-main-home',
@@ -31,10 +33,15 @@ export class MainHomeComponent implements AfterViewInit {
   private consultingSliders: HTMLDivElement[];
 
   constructor(public base: BaseLocationService,
-    private router: Router
+    private router: Router,
+    private title: GoasosTitleService,
+    private meta: MetaService
   ) {
     this.automationSliders = [];
     this.consultingSliders = [];
+    title.UpdateTitle = 'Home';
+    meta.Description = 'Goasos home page';
+    meta.Keywords = 'goasos home page, enter the world of automation, enter the world of consulting, your concern is our innovation';
   }
 
   ngAfterViewInit(): void {
