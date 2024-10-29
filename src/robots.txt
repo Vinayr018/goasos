@@ -1,3 +1,3 @@
 User-agent: *
-Disallow: /
-Allow: /product
+Allow: /
+Sitemap: https://goasos.com/sitemap.xml
