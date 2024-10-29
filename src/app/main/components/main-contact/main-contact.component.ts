@@ -8,8 +8,8 @@ import { MetaService } from '../../../common/services/meta.service';
   styleUrl: './main-contact.component.scss'
 })
 export class MainContactComponent {
-  constructor(private title: GoasosTitleService,
-    private meta: MetaService) {
+  constructor(title: GoasosTitleService,
+    meta: MetaService) {
     title.UpdateTitle = 'Contact us';
     meta.Description = 'goasos contact form, locations and social media links';
     meta.Keywords = 'goasos, indiranagar branch bangalore, bhubaneswar branch, cuttack branch, locatios, call, email';

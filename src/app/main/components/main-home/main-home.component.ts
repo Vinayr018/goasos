@@ -34,8 +34,8 @@ export class MainHomeComponent implements AfterViewInit {
 
   constructor(public base: BaseLocationService,
     private router: Router,
-    private title: GoasosTitleService,
-    private meta: MetaService
+    title: GoasosTitleService,
+    meta: MetaService
   ) {
     this.automationSliders = [];
     this.consultingSliders = [];

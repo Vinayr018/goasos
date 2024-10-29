@@ -2,6 +2,8 @@ import { Component, OnDestroy } from '@angular/core';
 import { Box, VideoBox } from '../../../common/models';
 import { AutomationDataService } from '../../services/data.service';
 import { Subscription } from 'rxjs';
+import { GoasosTitleService } from '../../../common/services/title.service';
+import { MetaService } from '../../../common/services/meta.service';
 
 @Component({
   selector: 'app-automation-space',
@@ -13,9 +15,13 @@ export class AutomationSpaceComponent implements OnDestroy {
 
   public videos: VideoBox[] = [];
 
-  constructor(private service: AutomationDataService) {
+  constructor(service: AutomationDataService, title: GoasosTitleService, meta: MetaService) {
     this.subs = [];
     this.subs.push(service.Space$.subscribe(v => this.videos = v));
+
+    title.UpdateTitle = 'Space Optimization';
+    meta.Description = 'space automation products in bangalore, bhubabeshwar, cuttak, USA';
+    meta.Keywords = 'space automation, space automation in bangalore, space automation in indiranagar, space automation in bengaluru, space automation in bhubaneshwar, space automation in cuttack, , space automation in usa';
   }
 
   ngOnDestroy(): void {
