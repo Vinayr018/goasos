@@ -1,73 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <!-- Main Routes -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"> <!-- Main Routes -->
     <url>
         <loc>https://goasos.com/</loc>
-        <lastmod>2024-10-30</lastmod>
+        <lastmod>2024-11-01</lastmod>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://goasos.com/about</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.8</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://goasos.com/contact</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.8</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.7</priority>
     </url>
     <url>
         <loc>https://goasos.com/product</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.8</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.7</priority>
     </url>
 
     <!-- Automation Routes -->
     <url>
         <loc>https://goasos.com/automation</loc>
-        <lastmod>2024-10-30</lastmod>
+        <lastmod>2024-11-01</lastmod>
         <priority>0.8</priority>
+        <video:video>
+            <video:title>gate automation</video:title>
+            <video:description>control gate completely automated</video:description>
+            <video:thumbnail_loc>https://goasos.com/images/automation/home/gateautomation.jpg</video:thumbnail_loc>
+            <video:content_loc>https://goasos.com/images/automation/home/gate_automation.mp4</video:content_loc>
+            <video:duration>44</video:duration>
+            <video:publication_date>2024-10-30T01:15:28+05:30</video:publication_date>
+        </video:video>
+        <video:video>
+            <video:title>automated door lock</video:title>
+            <video:description>control home door completely from phone</video:description>
+            <video:thumbnail_loc>https://goasos.com/images/automation/home/doorlock.jpg</video:thumbnail_loc>
+            <video:content_loc>https://goasos.com/images/automation/home/door.mp4</video:content_loc>
+            <video:duration>41</video:duration>
+            <video:publication_date>2024-10-30T01:15:28+05:30</video:publication_date>
+        </video:video>
+        <video:video>
+            <video:title>light and fans automation</video:title>
+            <video:description>control home appliances completely from phone</video:description>
+            <video:thumbnail_loc>https://goasos.com/images/automation/home/light.jpg</video:thumbnail_loc>
+            <video:content_loc>https://goasos.com/images/automation/home/lights_and_fan.mp4</video:content_loc>
+            <video:duration>109</video:duration>
+            <video:publication_date>2024-10-30T01:15:28+05:30</video:publication_date>
+        </video:video>
+        <video:video>
+            <video:title>blinds automation</video:title>
+            <video:description>control home blinders completely from phone</video:description>
+            <video:thumbnail_loc>https://goasos.com/images/automation/home/light.jpg</video:thumbnail_loc>
+            <video:content_loc>https://goasos.com/images/automation/home/window_blind_control.mp4</video:content_loc>
+            <video:duration>33</video:duration>
+            <video:publication_date>2024-10-30T01:15:28+05:30</video:publication_date>
+        </video:video>
     </url>
     <url>
         <loc>https://goasos.com/automation/office</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.7</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://goasos.com/automation/industry</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.7</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://goasos.com/automation/security</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.7</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://goasos.com/automation/space</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.7</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.8</priority>
+        <video:video>
+            <video:thumbnail_loc>https://goasos.com/images/automation/space/beddesk.png</video:thumbnail_loc>
+            <video:title>Bed with desk</video:title>
+            <video:description>bed with hidden desk, fully automated</video:description>
+            <video:content_loc>https://goasos.com/images/automation/space/bed-with-desk.mp4</video:content_loc>
+            <video:duration>30</video:duration>
+            <video:publication_date>2024-10-30T01:15:28+05:30</video:publication_date>
+        </video:video>
+        <video:video>
+            <video:thumbnail_loc>https://goasos.com/images/automation/space/bedstorage.png</video:thumbnail_loc>
+            <video:title>Bed with storage</video:title>
+            <video:description>bed with hidden storage, fully automated</video:description>
+            <video:content_loc>https://goasos.com/images/automation/space/bed-with-storage.mp4</video:content_loc>
+            <video:duration>24</video:duration>
+            <video:publication_date>2024-10-30T01:15:28+05:30</video:publication_date>
+        </video:video>
+        <video:video>
+            <video:thumbnail_loc>https://goasos.com/images/automation/space/bedsofa.png</video:thumbnail_loc>
+            <video:title>desk with adjustable height</video:title>
+            <video:description>bed with adjustable height, fully automated</video:description>
+            <video:content_loc>https://goasos.com/images/automation/space/desk-control.mp4</video:content_loc>
+            <video:duration>08</video:duration>
+            <video:publication_date>2024-10-30T01:15:28+05:30</video:publication_date>
+        </video:video>
     </url>
     <url>
         <loc>https://goasos.com/automation/energy</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.7</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.8</priority>
     </url>
 
     <!-- Consulting Routes -->
     <url>
         <loc>https://goasos.com/consulting</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.8</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.5</priority>
     </url>
     <url>
         <loc>https://goasos.com/consulting/market</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.7</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.5</priority>
     </url>
     <url>
         <loc>https://goasos.com/consulting/data</loc>
-        <lastmod>2024-10-30</lastmod>
-        <priority>0.7</priority>
+        <lastmod>2024-11-01</lastmod>
+        <priority>0.5</priority>
     </url>
 </urlset>
