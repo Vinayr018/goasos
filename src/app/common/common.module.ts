@@ -3,7 +3,7 @@ import {
   HeaderComponent, BaseComponent, BoxComponent,
   BrochureComponent, MenuComponent, VideoBoxComponent,
   VideoBrochureComponent, ProductGalleryComponent, VideoComponent,
-  SlideBoxComponent, SuccessSnackComponent
+  SlideBoxComponent, SuccessSnackComponent, SeoMetaComponent
 } from './components';
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { RouterModule } from "@angular/router";
@@ -33,10 +33,12 @@ import {
     SafeVideoPipe,
     SlideBoxComponent,
     SuccessSnackComponent,
+    SeoMetaComponent,
   ],
   exports: [HeaderComponent, BaseComponent, BoxComponent,
     BrochureComponent, MenuComponent, ProductGalleryComponent,
-    VideoBrochureComponent, SlideBoxComponent, SuccessSnackComponent],
+    VideoBrochureComponent, SlideBoxComponent, SuccessSnackComponent,
+    SeoMetaComponent],
   imports: [GoasasMatModule, RouterModule, CommonModule,
     ThemeDirective, CarouselComponent,
     CarouselInnerComponent, CarouselItemComponent,

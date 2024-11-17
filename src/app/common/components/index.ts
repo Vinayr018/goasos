@@ -4,6 +4,7 @@ import { BrochureComponent } from "./brochure/brochure.component";
 import { HeaderComponent } from "./header/header.component";
 import { MenuComponent } from "./menu/menu.component";
 import { ProductGalleryComponent } from "./product-gallery/product-gallery.component";
+import { SeoMetaComponent } from "./seo-meta/seo-meta.component";
 import { SlideBoxComponent } from "./slide-box/slide-box.component";
 import { SuccessSnackComponent } from "./success-snack/success-snack.component";
 import { VideoBoxComponent } from "./video-box/video-box.component";
@@ -16,5 +17,5 @@ export {
     MenuComponent, VideoBoxComponent,
     VideoBrochureComponent, ProductGalleryComponent,
     VideoComponent, SlideBoxComponent,
-    SuccessSnackComponent
+    SuccessSnackComponent, SeoMetaComponent
 }
