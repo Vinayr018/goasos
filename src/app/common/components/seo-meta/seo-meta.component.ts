@@ -36,7 +36,7 @@ export class SeoMetaComponent implements OnInit, OnDestroy {
           "bestRating": 5
         },
         "author": {
-          "@type": "Team",
+          "@type": "Person",
           "name": "Goasos dev team"
         }
       },
