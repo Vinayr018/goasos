@@ -1,26 +1,64 @@
 <div class="main-home-wrapper">
-    <div class="main-automation-wrapper">
-        <button mat-raised-button (click)="Navigate('automation')" color="primary">Enter the world of
-            Automation</button>
-        <div class="img-wrapper automation-slide-it">
-            <div class="img" [attr.data-slide]="index" *ngFor="let im of automationImages;let index=index">
-                <img [src]="base.AppendPath(im.src)" [alt]="im.alt" loading="lazy">
-                <div class="overlay"></div>
-            </div>
+    <section class="hero-section block">
+        <h1>Smart Automation Solutions for Homes, Offices and Industries - Serving Bangalore, Bhubaneswar & Cuttack</h1>
+        <p>Empowering businesses with smart home, office, industrial and energy automation along with expert software
+            consulting in Banking, Capital Markets, and Data & AI - serving Bangalore, Bhubaneswar, and Cuttack.</p>
+        <div class="actions">
+            <a routerLink="contact" class="pri">Request a Demo</a>
+            <a routerLink="contact" class="sec">Contact Us&nbsp;&nbsp;&rarr;</a>
         </div>
-    </div>
-    <div class="mission">
-        <em>
-            Your Concern Is Our Innovation
-        </em>
-    </div>
-    <div class="main-consult-wrapper">
-        <button mat-raised-button color="primary">Enter the world of software consulting</button>
-        <div class="img-wrapper consult-slide-it">
-            <div class="img" [attr.data-slide]="index" *ngFor="let im of consultingImages;let index=index">
-                <img [src]="base.AppendPath(im.src)" [alt]="im.alt" loading="lazy">
-                <div class="overlay"></div>
-            </div>
-        </div>
-    </div>
+    </section>
+    <section class="about block">
+        <h2>About Us</h2>
+        <section class="grid">
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>who we are:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>At GOAS, we combine smart automation products with consulting expertise to help businesses and
+                        homeowners embrace the digital future. Our mission is to empower organizations across industries
+                        by
+                        delivering comprehensive, tailored solutions that drive operational efficiency, reduce costs and
+                        foster
+                        innovation.</p>
+                </mat-card-content>
+            </mat-card>
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>our key strengths:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <ul class="card-lst">
+                        <li><strong>Comprehensive Offerings:</strong>Home, Office, Industrial & Energy Automation
+                            Solutions.
+                        </li>
+                        <li><strong>Expert Consulting:</strong>Software consulting in Banking & Financial Services,
+                            Capital
+                            Markets, and Data & AI.</li>
+                        <li>Local expertise in Bangalore, Bhubaneswar, and Cuttack.</li>
+                    </ul>
+                </mat-card-content>
+            </mat-card>
+            <mat-card appearance="outlined">
+                <mat-card-header>
+                    <mat-card-title>
+                        <h3>The Automation Advantage:</h3>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <ul class="card-lst">
+                        <li>Increased Operational Efficiency</li>
+                        <li>Significant Cost Reduction</li>
+                        <li>Enhanced Security</li>
+                    </ul>
+                </mat-card-content>
+            </mat-card>
+        </section>
+        <a routerLink="about">Learn More About Us&nbsp;&nbsp;&rarr;</a>
+    </section>
 </div>

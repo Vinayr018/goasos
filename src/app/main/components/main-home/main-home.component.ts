@@ -39,8 +39,8 @@ export class MainHomeComponent implements AfterViewInit {
   ) {
     this.automationSliders = [];
     this.consultingSliders = [];
-    title.UpdateTitle = 'Home';
-    meta.Description = 'Goasos home page';
+    title.UpdateTitle = 'Smart Automation Solutions | Automation Services Company in India | GOAS';
+    meta.Description = 'Empowering businesses with smart home, office, industrial and energy automation along with expert software consulting in Banking, Capital Markets, and Data & AI - serving Bangalore, Bhubaneswar, and Cuttack.';
     meta.Keywords = 'goasos home page, enter the world of automation, enter the world of consulting, your concern is our innovation';
   }
 

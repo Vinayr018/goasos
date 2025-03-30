@@ -1,91 +1,74 @@
+$primary-color: #00a7f8;
+
 div.main-home-wrapper {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    > div.main-consult-wrapper,
-    > div.main-automation-wrapper {
-        background-color: white;
-        height: 70vh;
-        border-radius: 5px;
-    }
-    > div.main-consult-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        > button {
-        }
-    }
-    > div.main-automation-wrapper,
-    > div.main-consult-wrapper {
-        position: relative;
-        overflow: hidden;
+    > section.block {
         margin-bottom: 1em;
-        > div.img-wrapper {
-            position: relative;
-            height: 100%;
-            > div.img {
-                position: absolute;
-                inset: 0;
+        &.hero-section {
+            padding-bottom: 1em;
+            > h1 {
+                @media (max-width: 938px) {
+                    font-size: 1.6rem;
+                }
+                @media (max-width: 677px) {
+                    font-size: 1.5rem;
+                }
+            }
+            > div.actions {
+                display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: left 0.6s ease-in-out;
-                left: 500%;
-                display: none;
-                &:nth-child(1) {
-                    display: flex;
-                    left: 0;
+                gap: 1em;
+                @media (max-width: 431px) {
+                    flex-direction: column;
                 }
-                > img {
-                    display: inline-block;
-                    height: 100%;
-                    object-fit: contain;
-                }
-                > div.overlay {
-                    position: absolute;
-                    inset: 0;
-                    background-color: rgba(0, 0, 0, 0);
-                    transition: background-color 0.5s;
-                }
-                &:hover {
-                    > div.overlay {
-                        background-color: rgba(0, 0, 0, 0.6);
+                > a {
+                    padding: 0.5em 1em;
+                    cursor: pointer;
+                    border-radius: 4px;
+                    text-decoration: none;
+                    &.pri {
+                        color: white;
+                        background-color: $primary-color;
+                        border: 1px solid $primary-color;
+                        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+                        &:hover {
+                            background-color: $primary-color;
+                            color: white;
+                        }
+                    }
+                    &.sec {
+                        color: $primary-color;
                     }
                 }
             }
         }
-        > button {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            top: 50%;
-            left: 50%;
-            z-index: 2;
-            &:hover + .img-wrapper .img .overlay {
-                background-color: rgba(0, 0, 0, 0.6);
+        &.about {
+            text-align: center;
+            > h2 {
+                // text-align: center;
+            }
+            > section.grid {
+                text-align: initial;
+                display: grid;
+                grid-template-columns: 70%;
+                @media (max-width: 770px) {
+                    grid-template-columns: 85%;
+                }
+                gap: 1em;
+                justify-content: center;
+                align-content: center;
+                margin-bottom: 1em;
+                ul.card-lst {
+                    margin-left: 1.5em;
+                }
+            }
+            > a {
+                margin-top: 0.5em;
+                color: $primary-color;
             }
         }
-    }
-    > div.mission {
-        padding: 2em;
-        background-color: white;
-        text-align: center;
-        margin-bottom: 1em;
-        > em {
-            color: #00a7f8;
-            font-size: 1.5em;
-            font-weight: bold;
-            text-transform: uppercase;
-            animation: blink-neon 1s ease-out 0s infinite alternate-reverse;
-        }
-    }
-}
-
-@keyframes blink-neon {
-    to {
-        text-shadow:
-            0 0 5px #00a7f800,
-            0 0 10px #00a7f82e,
-            0 0 20px #00a7f85c,
-            0 0 40px #00a7f88f,
-            0 0 80px #00a7f8b8;
     }
 }

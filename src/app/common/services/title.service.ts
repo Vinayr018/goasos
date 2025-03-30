@@ -6,6 +6,6 @@ export class GoasosTitleService {
     constructor(private title: Title) { }
 
     public set UpdateTitle(val: string) {
-        this.title.setTitle(`${val} : Goasos`);
+        this.title.setTitle(`${val}`);
     }
 }
