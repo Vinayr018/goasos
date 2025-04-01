@@ -6,6 +6,43 @@ div.main-home-wrapper {
     gap: 1em;
     > section.block {
         margin-bottom: 1em;
+        &.client {
+            > p {
+                font-size: 1.3rem;
+            }
+            > div.client-logos {
+                display: grid;
+                grid-template-columns: 200px 200px 200px 200px 200px;
+                @media (max-width: 1139px) {
+                    grid-template-columns: 200px 200px 200px;
+                    margin-left: 1em;
+                }
+                @media (max-width: 748px) {
+                    grid-template-columns: 200px 200px;
+                    margin-left: 1em;
+                }
+                @media (max-width: 526px) {
+                    grid-template-columns: 200px;
+                    margin-left: 1em;
+                }
+                gap: 2em;
+                padding: 1em 0;
+                // justify-content: center;
+                align-items: center;
+                > img {
+                    display: inline-block;
+                    height: 100px;
+                    width: 100%;
+                    background-color: white;
+                }
+                > a {
+                    text-decoration: none;
+                    color: inherit;
+                    font-family: inherit;
+                    font-size: inherit;
+                }
+            }
+        }
         &.hero-section {
             padding-bottom: 1em;
             > h1 {
@@ -33,7 +70,9 @@ div.main-home-wrapper {
                         color: white;
                         background-color: $primary-color;
                         border: 1px solid $primary-color;
-                        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+                        transition:
+                            background-color 0.5s ease-in-out,
+                            color 0.5s ease-in-out;
                         &:hover {
                             background-color: $primary-color;
                             color: white;
@@ -67,6 +106,31 @@ div.main-home-wrapper {
             }
             > a {
                 margin-top: 0.5em;
+                color: $primary-color;
+            }
+        }
+        &.home-automation {
+            > h2 {
+            }
+            > div.auto-sol {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1em;
+            }
+        }
+        &.consulting {
+            > h2 {
+                margin-bottom: 0.7em;
+            }
+            > section.consul-type {
+                margin-bottom: 0.7em;
+                > h3 {
+                    margin: 0.4em 0;
+                }
+                > p {
+                }
+            }
+            > a {
                 color: $primary-color;
             }
         }
