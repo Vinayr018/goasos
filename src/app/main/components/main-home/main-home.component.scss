@@ -1,12 +1,29 @@
 $primary-color: #00a7f8;
+$bg-color: white;
+$hero-bg: #a1cfe48a;
+
+@mixin sec-cta {
+    color: $primary-color;
+    border: 1px solid;
+}
+
+@mixin anchor-btn {
+    padding: 0.5em 1em;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+}
 
 div.main-home-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
     > section.block {
-        margin-bottom: 1em;
+        padding: 3em 2em;
         &.client {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 2em;
+            background-color: $bg-color;
             > p {
                 font-size: 1.3rem;
             }
@@ -35,23 +52,39 @@ div.main-home-wrapper {
                     width: 100%;
                     background-color: white;
                 }
-                > a {
-                    text-decoration: none;
-                    color: inherit;
-                    font-family: inherit;
-                    font-size: inherit;
-                }
+            }
+            > a {
+                text-decoration: none;
+                color: inherit;
+                font-family: inherit;
+                font-size: inherit;
+                @include anchor-btn();
+                @include sec-cta();
             }
         }
         &.hero-section {
             padding-bottom: 1em;
+            margin-bottom: 0;
+            height: 70vh;
+            background-color: $hero-bg;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            > * {
+                max-width: 80%;
+                margin: 1em auto;
+            }
             > h1 {
+                width: 55ch;
                 @media (max-width: 938px) {
                     font-size: 1.6rem;
                 }
                 @media (max-width: 677px) {
                     font-size: 1.5rem;
                 }
+            }
+            > p {
+                width: 83ch;
             }
             > div.actions {
                 display: flex;
@@ -62,10 +95,7 @@ div.main-home-wrapper {
                     flex-direction: column;
                 }
                 > a {
-                    padding: 0.5em 1em;
-                    cursor: pointer;
-                    border-radius: 4px;
-                    text-decoration: none;
+                    @include anchor-btn();
                     &.pri {
                         color: white;
                         background-color: $primary-color;
@@ -79,23 +109,22 @@ div.main-home-wrapper {
                         }
                     }
                     &.sec {
-                        color: $primary-color;
+                        @include sec-cta();
                     }
                 }
             }
         }
         &.about {
-            text-align: center;
+            padding-left: 0;
             > h2 {
-                // text-align: center;
+                margin-left: 1em;
+                margin-bottom: 0.8em;
             }
             > section.grid {
                 text-align: initial;
                 display: grid;
-                grid-template-columns: 70%;
-                @media (max-width: 770px) {
-                    grid-template-columns: 1fr;
-                }
+                grid-template-columns: 1fr 1fr 1fr;
+                margin-bottom: 1em;
                 gap: 1em;
                 justify-content: center;
                 align-content: center;
@@ -105,37 +134,61 @@ div.main-home-wrapper {
                 }
             }
             > a {
-                margin-top: 0.5em;
-                color: $primary-color;
+                display: inline-block;
+                @include sec-cta();
+                @include anchor-btn();
             }
         }
         &.home-automation {
+            padding-left: 0;
             > h2 {
+                margin-left: 1em;
+                margin-bottom: 0.8em;
             }
             > div.auto-sol {
                 display: grid;
-                grid-template-columns: 1fr 1fr;
-                @media (max-width:733px) {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                @media (max-width: 733px) {
                     grid-template-columns: 1fr;
                     justify-content: center;
                 }
                 gap: 1em;
+                a.card-cta {
+                    color: $primary-color;
+                    cursor: pointer;
+                    padding: 0.5em;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .space-it {
+                    justify-content: space-between;
+                }
             }
         }
         &.consulting {
+            padding-left: 0;
             > h2 {
+                padding-left: 1em;
                 margin-bottom: 0.7em;
             }
-            > section.consul-type {
-                margin-bottom: 0.7em;
-                > h3 {
-                    margin: 0.4em 0;
-                }
-                > p {
+            > section.consult-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 1em;
+                > section.consul-type {
+                    margin-bottom: 0.7em;
+                    > h3 {
+                        margin: 0.4em 0;
+                    }
+                    > p {
+                    }
                 }
             }
             > a {
-                color: $primary-color;
+                display: inline-block;
+                @include sec-cta();
+                @include anchor-btn();
             }
         }
         &.locations {
@@ -145,14 +198,14 @@ div.main-home-wrapper {
             > div.locals {
                 display: grid;
                 grid-template-columns: 500px 500px 500px;
-                @media (max-width:1300px) {
+                @media (max-width: 1300px) {
                     grid-template-columns: 500px 500px;
                 }
-                @media (max-width:1049px) {
+                @media (max-width: 1049px) {
                     grid-template-columns: 500px;
                     justify-content: center;
                 }
-                @media (max-width:600px) {
+                @media (max-width: 600px) {
                     grid-template-columns: 1fr;
                     justify-content: center;
                 }
