@@ -6,12 +6,19 @@ import { Meta } from '@angular/platform-browser';
 import { filter, map } from 'rxjs';
 import { GoasosTitleService } from './common/services/title.service';
 import { MetaService } from './common/services/meta.service';
+import { AnalyticsService } from './common/services/analytics.service';
+import { UserAnalyticsEvents } from './common/models/analytics';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  providers: [IdentifierService, CanonicalService, GoasosTitleService, MetaService]
+  providers: [IdentifierService, 
+    CanonicalService, 
+    GoasosTitleService,
+    MetaService,
+    AnalyticsService,
+  UserAnalyticsEvents]
 })
 export class AppComponent {
   title = 'goasos';
