@@ -1,3 +1,62 @@
+$breaking-point: 1376px;
+$bg-color: rgb(241, 244, 247);
+
+div.main-wrapper {
+    overflow: hidden;
+    > div.main-header {
+        margin-bottom: 10px;
+    }
+    > div.main-body {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        height: calc(100vh - 89px);
+        @media (max-width: $breaking-point) {
+            grid-template-columns: 1fr;
+            position: relative;
+        }
+        > div.main-menu {
+            padding: 1em;
+            padding-top: 10px;
+            height: 100%;
+            > button.mobile-show {
+                display: none;
+            }
+            @media (max-width: $breaking-point) {
+                position: absolute;
+                left: -263px;
+                top: 0;
+                bottom: 0;
+                background-color: $bg-color;
+                z-index: 3;
+                box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+                transition: left 0.6s ease-in-out;
+                &.show {
+                    left: 0;
+                }
+                > button.mobile-show {
+                    display: inline-block;
+                    position: absolute;
+                    top: 50%;
+                    right: -40px;
+                    background: $bg-color;
+                    padding: 2px 10px;
+                    font-size: 1.4em;
+                    border: transparent;
+                    outline: none;
+                }
+            }
+        }
+        > div.main-content {
+            padding: 1em;
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100%;
+        }
+    }
+}
+
+
+
 div.main-wrapper {
     overflow: hidden;
     > div.main-header {

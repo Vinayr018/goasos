@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IdentifierService } from './common/services';
 import { CanonicalService } from './common/services/canonical.service';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
@@ -25,5 +25,19 @@ export class AppComponent {
   constructor(private ser: IdentifierService, private link: CanonicalService
   ) {
     link.AddLink();
+  }
+
+  @ViewChild('men') private menuDiv!: ElementRef<HTMLDivElement>
+
+  public ShowSideMenu(): void {
+    this.menuDiv.nativeElement.classList.add('show');
+  }
+
+  public HideSideMenu(): void {
+    this.menuDiv.nativeElement.classList.remove('show');
+  }
+
+  getRouteAnimationData() {
+    // return this.contexts.getContext('primary')?.route?.component;
   }
 }

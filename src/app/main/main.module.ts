@@ -16,14 +16,10 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { provideHttpClient } from "@angular/common/http";
 
 const routes: Routes = [
-    {
-        path: '', component: MainBaseComponent, children: [
-            { path: '', component: MainHomeComponent, pathMatch: 'full' },
-            { path: 'about', component: MainAboutComponent },
-            { path: 'contact', component: MainContactComponent },
-            { path: 'product', component: MainProductComponent },
-        ]
-    }
+    { path: '', component: MainHomeComponent, pathMatch: 'full' },
+    { path: 'about', component: MainAboutComponent },
+    { path: 'contact', component: MainContactComponent },
+    { path: 'product', component: MainProductComponent },
 ]
 
 @NgModule({

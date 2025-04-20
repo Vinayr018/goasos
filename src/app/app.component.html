@@ -1,1 +1,16 @@
-<router-outlet />
+<div class="main-wrapper">
+    <div class="main-header">
+        <app-header />
+    </div>
+    <div class="main-body">
+        <div class="main-menu" #men>
+            <app-menu (menuClickEvent)="HideSideMenu()"/>
+            <button class="mobile-show" aria-label="menu for direct links" (click)="ShowSideMenu()">&#x2630;</button>
+        </div>
+        <div class="main-content" (click)="HideSideMenu()">
+            <main [@routeAnimations]="getRouteAnimationData()">
+                <router-outlet/>
+            </main>
+        </div>
+    </div>
+</div>

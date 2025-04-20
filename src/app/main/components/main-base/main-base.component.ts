@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { slideInAnimation } from '../../../common/route.animation';
 import { ChildrenOutletContexts } from '@angular/router';
 import { BaseLocationService } from '../../../common/services/base-location.service';
@@ -17,5 +17,15 @@ export class MainBaseComponent {
 
   getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.component;
+  }
+
+  @ViewChild('men') private menuDiv!: ElementRef<HTMLDivElement>
+
+  public ShowSideMenu(): void {
+    this.menuDiv.nativeElement.classList.add('show');
+  }
+
+  public HideSideMenu(): void {
+    this.menuDiv.nativeElement.classList.remove('show');
   }
 }

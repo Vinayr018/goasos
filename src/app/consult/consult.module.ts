@@ -10,14 +10,10 @@ import {
 } from './components';
 
 const routes: Routes = [
-  {
-    path: 'consulting', component: ConsultBaseComponent, children: [
-      { path: '', component: ConsultBankComponent, pathMatch: 'full' },
-      { path: 'market', component: ConsultMarketComponent },
-      { path: 'data', component: ConsultDataAiComponent },
-    ]
-  }
-];
+  { path: 'bank', component: ConsultBankComponent },
+  { path: 'market', component: ConsultMarketComponent },
+  { path: 'data', component: ConsultDataAiComponent },
+]
 
 @NgModule({
   declarations: [

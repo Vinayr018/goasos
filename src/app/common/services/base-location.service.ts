@@ -1,7 +1,9 @@
 import { APP_BASE_HREF } from "@angular/common";
 import { Inject, Injectable } from "@angular/core";
 
-@Injectable()
+@Injectable({
+    providedIn:'root'
+})
 export class BaseLocationService {
     constructor(@Inject(APP_BASE_HREF) private base: string) {
     }

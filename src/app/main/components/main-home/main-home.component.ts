@@ -12,8 +12,7 @@ import { AnalyticsService } from '../../../common/services/analytics.service';
 })
 export class MainHomeComponent {
 
-  constructor(public base: BaseLocationService,
-    private router: Router,
+  constructor(private router: Router,
     title: GoasosTitleService,
     meta: MetaService,
     public analytics: AnalyticsService
