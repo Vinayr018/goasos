@@ -14,9 +14,9 @@ import { AutomationDataService } from "./services/data.service";
 
 const routes: Routes = [
   {
-    path: 'automation', component: AutomationBaseComponent, children: [
-      { path: '', pathMatch: 'full', redirectTo: 'home' },
-      { path: 'home', component: AutomationHomeComponent },
+    path: '', component: AutomationBaseComponent, children: [
+      // { path: '', pathMatch: 'full', redirectTo: 'home' },
+      { path: 'smart-home-automation-solutions', component: AutomationHomeComponent },
       { path: 'office', component: AutomationOfficeComponent },
       { path: 'industry', component: AutomationIndustryComponent },
       { path: 'security', component: AutomationSecurityComponent },
