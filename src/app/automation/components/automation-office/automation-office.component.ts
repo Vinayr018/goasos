@@ -11,12 +11,9 @@ import { MetaService } from '../../../common/services/meta.service';
 })
 export class AutomationOfficeComponent {
 
-  public boxes: SlideBox[];
-
-  constructor(service: AutomationDataService, title: GoasosTitleService, meta: MetaService) {
-    this.boxes = service.Office;
-    title.UpdateTitle = 'Office automation';
-    meta.Description = 'office automation products in bangalore, bhubabeshwar, cuttak, USA';
+  constructor(title: GoasosTitleService, meta: MetaService) {
+    title.UpdateTitle = 'Office Automation Solutions Provider | Smart Office Systems in Bangalore, Bhubaneswar & Cuttack';
+    meta.Description = 'Boost your business productivity with our advanced office automation solutions. From smart lighting and access control to AI-powered systems—available in Bangalore, Bhubaneswar and Cuttack. Get a quote today!';
     meta.Keywords = 'office automation, office automation in bangalore, office automation in indiranagar, office automation in bengaluru, office automation in bhubaneshwar, office automation in cuttack, , office automation in usa';
   }
 }
