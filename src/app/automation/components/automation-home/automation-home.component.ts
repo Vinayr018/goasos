@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { AutomationDataService } from '../../services/data.service';
-import { Box, VideoBox } from '../../../common/models';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 
@@ -11,12 +9,9 @@ import { MetaService } from '../../../common/services/meta.service';
 })
 export class AutomationHomeComponent {
 
-  public boxes: VideoBox[];
-
-  constructor(service: AutomationDataService, title: GoasosTitleService, meta: MetaService) {
-    this.boxes = service.Home;
-    title.UpdateTitle = 'Home automation';
-    meta.Description = 'home automation products in bangalore, bhubabeshwar, cuttak, USA';
-    meta.Keywords = 'home automation, home automation in bangalore, home automation in indiranagar, home automation in bengaluru, home automation in bhubaneshwar, home automation in cuttack, , home automation in usa';
+  constructor(title: GoasosTitleService,
+    meta: MetaService) {
+    title.UpdateTitle = 'Smart Home Automation Solutions | Best Home Automation Company in Bangalore, Bhubaneswar & Cuttack | GOAS';
+    meta.Description = 'Looking for smart home automation solutions? We offer smart lighting, security systems, voice-controlled devices, and AI-powered smart home setups in Bangalore, Bhubaneswar & Cuttack. Upgrade your home today!';
   }
 }
