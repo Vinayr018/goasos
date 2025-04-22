@@ -26,6 +26,10 @@ $hero-bg: #a1cfe48a;
     margin: 0.3em 0;
 }
 
+.highlight-text{
+    color: $primary-color;
+}
+
 section.block {
     padding: 2em 1em;
     padding-bottom: 1em;
@@ -97,6 +101,11 @@ section.block {
                     @media (max-width: 567px) {
                         padding: 0.5em 1.5em;
                     }
+                    @media (max-width:607px) {
+                        border: transparent;
+                        text-decoration: underline;
+                        padding: 0;
+                    }
                 }
             }
         }
@@ -109,17 +118,10 @@ section.block {
                 align-items: center;
                 gap: 1em;
                 padding-top: 0.5em;
+                flex-wrap: wrap;
                 > img {
                     height: 50px;
                     object-fit: contain;
-                }
-                > img:nth-of-type(1) {
-                }
-                > img:nth-of-type(2) {
-                }
-                > img:nth-of-type(3) {
-                }
-                > img:nth-of-type(4) {
                 }
             }
         }
@@ -139,6 +141,14 @@ section.block {
         > div.automation-cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            @media (max-width: 1154px) {
+                grid-template-columns: 700px;
+                margin: 0 auto;
+                width: fit-content;
+            }
+            @media (max-width: 774px) {
+                grid-template-columns: 1fr;
+            }
             gap: 1em;
             ul.card-list {
                 list-style-type: none;
