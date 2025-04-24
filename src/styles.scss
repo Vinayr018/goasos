@@ -85,6 +85,10 @@ a {
   font-family: inherit;
   font-size: inherit;
 }
+$primary-color: #00a7f8;
+.highlight-text{
+  color: $primary-color;
+}
 
 @keyframes shake {
   0% {
