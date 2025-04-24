@@ -1,0 +1,16 @@
+<section class="block hero">
+    <h1>{{h1}}</h1>
+    <p>{{p}}</p>
+    <ng-content select="[actions]"></ng-content>
+    <div class="trust" *ngIf="showCLient">
+        <p>Trusted by leading organizations across industries</p>
+        <div class="client-logos">
+            <img src="https://kpmg.com/content/experience-fragments/kpmgpublic/in/en/site/header/master/_jcr_content/root/header/logo.coreimg.svg/1732260814565/logo.svg"
+                alt="KPMG">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Siemens_AG_logo.svg/1200px-Siemens_AG_logo.svg.png"
+                alt="Siemens">
+            <img src="https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/logo.svg" alt="Capgemini">
+            <img src="https://www.milkbasket.com/assets/img/logo/mb-logo-horizontal.png" alt="Capgemini">
+        </div>
+    </div>
+</section>

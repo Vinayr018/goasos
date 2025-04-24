@@ -2,6 +2,7 @@ import { BaseComponent } from "./base/base.component";
 import { BoxComponent } from "./box/box.component";
 import { BrochureComponent } from "./brochure/brochure.component";
 import { HeaderComponent } from "./header/header.component";
+import { HeroComponent } from "./hero/hero.component";
 import { MenuComponent } from "./menu/menu.component";
 import { ProductGalleryComponent } from "./product-gallery/product-gallery.component";
 import { SeoMetaComponent } from "./seo-meta/seo-meta.component";
@@ -17,5 +18,6 @@ export {
     MenuComponent, VideoBoxComponent,
     VideoBrochureComponent, ProductGalleryComponent,
     VideoComponent, SlideBoxComponent,
-    SuccessSnackComponent, SeoMetaComponent
+    SuccessSnackComponent, SeoMetaComponent,
+    HeroComponent
 }
