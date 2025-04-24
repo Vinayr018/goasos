@@ -6,3 +6,9 @@
         <a class="sec" href="">Request a Free Consultation&nbsp;&nbsp;&rarr;</a>
     </div>
 </app-hero>
+<section class="dough">
+    <div *ngFor="let chart of charts" class="chart">
+        <h4>{{ chart.label }}</h4>
+        <canvas [id]="chart.id" width="200" height="200"></canvas>
+    </div>
+</section>

@@ -1,0 +1,16 @@
+$bgcolor:white;
+
+section.dough {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    padding: 1em;
+    background-color: $bgcolor;
+    > div.chart {
+        > h4 {
+            margin-bottom: 0.5em;
+        }
+        > canvas {
+        }
+    }
+}
