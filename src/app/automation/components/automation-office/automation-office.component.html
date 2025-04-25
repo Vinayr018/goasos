@@ -7,8 +7,16 @@
     </div>
 </app-hero>
 <section class="dough">
-    <div *ngFor="let chart of charts" class="chart">
-        <h4>{{ chart.label }}</h4>
-        <canvas [id]="chart.id" width="200" height="200"></canvas>
+    <h2>Why Automate Your Office?</h2>
+    <p>Businesses that implement office automation solutions report:</p>
+    <div class="graph">
+        <div *ngFor="let chart of charts" class="chart">
+            <h4>{{ chart.label }}</h4>
+            <canvas [id]="chart.id" width="200" height="200"></canvas>
+        </div>
     </div>
+
+    <p>Our tailored office automation systems integrate seamlessly with your existing infrastructure to create a
+        smarter, more efficient workplace.</p>
+    <a href="#" class="highlight-text">Get Free Consultation Today&nbsp;&nbsp;&rarr;</a>
 </section>

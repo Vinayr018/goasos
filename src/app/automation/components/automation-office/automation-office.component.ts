@@ -18,10 +18,10 @@ export class AutomationOfficeComponent implements AfterViewInit {
   }
 
   charts = [
-    { label: 'Admin Task Reduction', value: 40, color: '#4CAF50', id: 'canvas1' },
-    { label: 'Operational Cost Decrease', value: 35, color: '#2196F3', id: 'canvas2' },
-    { label: 'Document Accuracy Improvement', value: 60, color: '#FF9800', id: 'canvas3' },
-    { label: 'Employee Satisfaction Increase', value: 50, color: '#9C27B0', id: 'canvas4' }
+    { label: '40% reduction in time spent on administrative tasks', value: 40, color: '#4CAF50', id: 'canvas1' },
+    { label: '35% decrease in operational costs', value: 35, color: '#2196F3', id: 'canvas2' },
+    { label: '60% improvement in document processing accuracy', value: 60, color: '#FF9800', id: 'canvas3' },
+    { label: '50% increase in employee satisfaction', value: 50, color: '#9C27B0', id: 'canvas4' }
   ];
 
   ngAfterViewInit(): void {

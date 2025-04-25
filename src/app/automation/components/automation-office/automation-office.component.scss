@@ -1,16 +1,46 @@
-$bgcolor:white;
+$bgcolor: white;
 
 section.dough {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1em;
     padding: 1em;
+    padding-left: 2em;
     background-color: $bgcolor;
-    > div.chart {
-        > h4 {
-            margin-bottom: 0.5em;
+    > h2 {
+    }
+    > p {
+        margin: 0.7em 0;
+    }
+    > div.graph {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        @media (max-width: 1172px) {
+            grid-template-columns: 1fr 1fr 1fr;
         }
-        > canvas {
+        @media (max-width: 980px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 702px) {
+            grid-template-columns: 1fr;
+        }
+        gap: 1em;
+        > div.chart {
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+            @media (max-width: 702px) {
+                width: fit-content;
+                margin: 0 auto;
+            }
+            > h4 {
+                margin-bottom: 0.5em;
+                @media (max-width: 702px) {
+                    max-width: 27ch;
+                }
+            }
+            > canvas {
+                @media (max-width: 1172px) {
+                    margin-bottom: 0.5em;
+                }
+            }
         }
     }
 }
