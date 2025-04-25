@@ -1,0 +1,35 @@
+@mixin strong-points {
+    &::after {
+        content: ":";
+    }
+    margin-left: 0.3em;
+    margin-right: 0.4em;
+}
+
+@mixin list-spacing {
+    margin: 0.3em 0;
+}
+
+section.block.locations {
+    padding: 1em;
+    padding-bottom: 1em;
+    > h2 {
+        margin-bottom: 0.25em;
+    }
+    > p:nth-of-type(1) {
+    }
+    > ul {
+        list-style-type: none;
+        > li {
+            @include list-spacing();
+            > strong {
+                @include strong-points();
+            }
+        }
+    }
+    > p:nth-of-type(2) {
+        margin: 0.25em 0;
+    }
+    > p.highlight-text {
+    }
+}

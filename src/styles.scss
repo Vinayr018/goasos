@@ -89,6 +89,20 @@ $primary-color: #00a7f8;
 .highlight-text{
   color: $primary-color;
 }
+@mixin list-spacing {
+  margin: 0.3em 0;
+}
+ul.card-list {
+  list-style-type: none;
+  margin-top: 0.5em;
+  > li {
+      @include list-spacing();
+      &::before {
+          content: "-";
+          margin-right: 0.5em;
+      }
+  }
+}
 
 @keyframes shake {
   0% {

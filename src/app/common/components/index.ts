@@ -6,6 +6,7 @@ import { HeroComponent } from "./hero/hero.component";
 import { MenuComponent } from "./menu/menu.component";
 import { ProductGalleryComponent } from "./product-gallery/product-gallery.component";
 import { SeoMetaComponent } from "./seo-meta/seo-meta.component";
+import { ServiceAreasComponent } from "./service-areas/service-areas.component";
 import { SlideBoxComponent } from "./slide-box/slide-box.component";
 import { SuccessSnackComponent } from "./success-snack/success-snack.component";
 import { VideoBoxComponent } from "./video-box/video-box.component";
@@ -19,5 +20,5 @@ export {
     VideoBrochureComponent, ProductGalleryComponent,
     VideoComponent, SlideBoxComponent,
     SuccessSnackComponent, SeoMetaComponent,
-    HeroComponent
+    HeroComponent, ServiceAreasComponent
 }
