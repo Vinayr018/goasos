@@ -32,52 +32,53 @@ export class AutomationOfficeComponent implements AfterViewInit {
 
   drawPieChart(canvasId: string, percentage: number, color: string) {
     const canvas = document.getElementById(canvasId) as HTMLCanvasElement;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
 
-    const size = canvas.width;
-    const center = size / 2;
-    const radius = center - 15;
-    const lineWidth = 30;
-    let current = 0;
-    const duration = 1000;
-    const stepTime = 10;
-    const steps = duration / stepTime;
-    const increment = percentage / steps;
+  const size = canvas.width;
+  const centerX = size / 2;
+  const centerY = size / 1.1; // shift down
+  const radius = centerX - 17;
+  const lineWidth = 35;
+  let current = 0;
+  const duration = 1000;
+  const stepTime = 10;
+  const steps = duration / stepTime;
+  const increment = percentage / steps;
 
-    const animate = () => {
-      ctx.clearRect(0, 0, size, size);
+  const animate = () => {
+    ctx.clearRect(0, 0, size, size);
 
-      // Draw background arc (full ring)
-      ctx.beginPath();
-      ctx.arc(center, center, radius, 0, 2 * Math.PI);
-      ctx.strokeStyle = '#f0f0f0';
-      ctx.lineWidth = lineWidth;
-      ctx.lineCap = 'butt';
-      ctx.stroke();
+    // Background arc (track)
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, Math.PI, 0);
+    ctx.strokeStyle = '#E0E0E0';
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = 'butt';
+    ctx.stroke();
 
-      // Foreground arc (progress)
-      const endAngle = (current / 100) * 2 * Math.PI;
-      ctx.beginPath();
-      ctx.arc(center, center, radius, -0.5 * Math.PI, endAngle - 0.5 * Math.PI);
-      ctx.strokeStyle = color;
-      ctx.lineWidth = lineWidth;
-      ctx.lineCap = 'round'; // <-- rounded ends
-      ctx.stroke();
+    
 
-      // Text
-      ctx.fillStyle = '#000';
-      ctx.font = '16px Arial';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(`${Math.round(current)}%`, center, center);
+    const endAngle = Math.PI + (current / 100) * Math.PI;
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, radius, Math.PI, endAngle);
+    ctx.strokeStyle = color;;
+    ctx.lineWidth = lineWidth;
+    ctx.stroke();
 
-      if (current < percentage) {
-        current += increment;
-        requestAnimationFrame(animate);
-      }
-    };
+    // Center text
+    ctx.fillStyle = '#000';
+    ctx.font = '16px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(`${Math.round(current)}%`, centerX, centerY - radius / 2);
 
-    animate();
+    if (current < percentage) {
+      current += increment;
+      requestAnimationFrame(animate);
+    }
+  };
+
+  animate();
   }
 }
