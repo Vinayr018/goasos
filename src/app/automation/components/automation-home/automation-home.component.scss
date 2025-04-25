@@ -61,19 +61,6 @@ section.block {
             text-align: center;
         }
     }
-    &.locations {
-        > p {
-        }
-        > ul {
-            list-style-type: none;
-            > li {
-                @include list-spacing();
-                > strong {
-                    @include strong-points();
-                }
-            }
-        }
-    }
     &.working {
         > h2 {
         }
