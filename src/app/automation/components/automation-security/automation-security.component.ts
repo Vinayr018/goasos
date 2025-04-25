@@ -11,13 +11,9 @@ import { MetaService } from '../../../common/services/meta.service';
 })
 export class AutomationSecurityComponent {
 
-  public boxes: Box[];
-
-  constructor(service: AutomationDataService, title: GoasosTitleService, meta: MetaService) {
-    this.boxes = service.Security;
-
-    title.UpdateTitle = 'Security automation';
-    meta.Description = 'security automation products in bangalore, bhubabeshwar, cuttak, USA';
+  constructor(title: GoasosTitleService, meta: MetaService) {
+    title.UpdateTitle = 'Centralized Video Surveillance Systems | CCTV Installation Services in Bangalore, Bhubaneswar & Cuttack';
+    meta.Description = 'Secure your spaces with solar-powered CCTV camera systems and centralized video surveillance. Expert installation across Bangalore, Bhubaneswar and Cuttack. Trusted security for homes, offices & industries. Contact us today!';
     meta.Keywords = 'security automation, security automation in bangalore, security automation in indiranagar, security automation in bengaluru, security automation in bhubaneshwar, security automation in cuttack, , security automation in usa';
   }
 }

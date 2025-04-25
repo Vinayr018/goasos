@@ -15,8 +15,8 @@ import { AutomationDataService } from "./services/data.service";
 const routes: Routes = [
   { path: 'smart-home-automation-solutions', component: AutomationHomeComponent },
   { path: 'smart-office-automation-solutions', component: AutomationOfficeComponent },
-  { path: 'industry', component: AutomationIndustryComponent },
-  { path: 'security', component: AutomationSecurityComponent },
+  { path: 'industrial-automation-solutions', component: AutomationIndustryComponent },
+  { path: 'cctv-video-surveillance-security-cameras', component: AutomationSecurityComponent },
   { path: 'space', component: AutomationSpaceComponent },
   { path: 'energy', component: AutomationEnergyComponent },
 ]
