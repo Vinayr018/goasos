@@ -5,3 +5,35 @@
         <a class="sec" href="">Schedule Free Consultation&nbsp;&nbsp;&rarr;</a>
     </div>
 </app-hero>
+<section class="content">
+    <h2>Comprehensive Industrial Automation Services</h2>
+    <p>At GOAS, we bring together IoT, AI and cloud technologies to deliver industry-specific solutions with measurable
+        impact. Here are some of the key benefits of Industrial automation:</p>
+    <ul class="card-list">
+        <li>Minimize downtime & manual errors</li>
+        <li>Maximize output & energy efficiency</li>
+        <li>Improve worker safety & real-time monitoring</li>
+        <li>Integrate predictive maintenance</li>
+        <li>Centralize system control & data visibility</li>
+    </ul>
+    <a href="#" class="highlight-text">Book a Free On-Site Assessment Today&nbsp;&nbsp;&rarr;</a>
+</section>
+<section class="types">
+    <h2>Our Industrial Automation Solutions</h2>
+    <div class="type" *ngFor="let ty of content">
+        <div class="icon"><img [src]="'/images/automation/industry/'+ty.icon+'.png'" [alt]="ty.alt"></div>
+        <div class="content">
+            <h3>{{ty.h3}}</h3>
+            <p>{{ty.p}}</p>
+            <div class="sub-content" *ngFor="let sub of ty.points">
+                <h4>{{sub.h4}}</h4>
+                <ul class="card-list">
+                    <ng-content *ngFor="let pt of sub.points">
+                        <li>{{pt}}</li>
+                    </ng-content>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="highlight-text">Request a Custom Quote</p>
+</section>
