@@ -1,1 +1,90 @@
-<app-video-brochure title="Space Optimization" [boxes]="videos"/>
+<app-hero [showCLient]="true"
+    h1="Space-Saving Furniture & Solutions for Modern Homes | Bangalore, Bhubaneswar & Cuttack"
+    p="Discover compact, modular, and multi-functional furniture for homes & offices in Bangalore, Bhubaneswar & Cuttack. Explore foldable beds, smart desks and innovative storage solutions. Upgrade your home today!">
+    <div class="actions" actions>
+        <a class="sec" href="">Request a Demo&nbsp;&nbsp;&rarr;</a>
+    </div>
+</app-hero>
+<section class="types">
+    <h2>Our Space Optimization Solutions</h2>
+    <p>Transform Every Corner with Multi-Functional Designs</p>
+    <div class="cards">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <h3>Bed with Storage and iDesk Combination</h3>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <p><strong>The ultimate home office solution for compact spaces</strong></p>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Combines a bed, foldable desk, and under-bed storage (ideal for laptops, books, or seasonal
+                    clothing).</p>
+                <mat-card-footer>
+                    <p><strong>Available in all sizes:</strong></p>
+                    <ul class="card-list">
+                        <li>Single bed with iDesk (90cm x 190cm)</li>
+                        <li>Queen size with iDesk (150cm x 200cm)</li>
+                        <li>King size with iDesk (180cm x 200cm)</li>
+                    </ul>
+                </mat-card-footer>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <h3>Multi-Functional Bed with Storage</h3>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <p><strong>Maximize bedroom space with smart storage solutions</strong></p>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Our space-saving beds with integrated storage are engineered to eliminate the need for additional
+                    storage furniture, freeing up valuable floor space in your bedroom.</p>
+                <mat-card-footer>
+                    <p><strong>Available in all sizes:</strong></p>
+                    <ul class="card-list">
+                        <li>Single bed with storage (90cm x 190cm)</li>
+                        <li>Queen size with storage (150cm x 200cm)</li>
+                        <li>King size with storage (180cm x 200cm)</li>
+                    </ul>
+                </mat-card-footer>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>
+                    <h3>Bed with Storage and Sofa Combination</h3>
+                </mat-card-title>
+                <mat-card-subtitle>
+                    <p><strong>Three-in-one solution: bed, storage, and seating</strong></p>
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Turns into a stylish sofa by day, becomes a cozy bed by night—with smart storage built-in.</p>
+                <mat-card-footer>
+                    <p><strong>Available in all sizes:</strong></p>
+                    <ul class="card-list">
+                        <li>Single bed with sofa (90cm x 190cm)</li>
+                        <li>Queen size with sofa (150cm x 200cm)</li>
+                        <li>King size with sofa (180cm x 200cm)</li>
+                    </ul>
+                </mat-card-footer>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <a class="highlight-text" href="#">Request a Custom Quote</a>
+</section>
+<section class="home">
+    <h2>Perfect for Every Home</h2>
+    <div class="homes" *ngFor="let h of homes">
+        <h3>{{h.h3}}</h3>
+        <p>{{h.p}}</p>
+    </div>
+    <a href="#" class="highlight-text">Request a Custom Quote</a>
+</section>
+<app-service-areas header="We proudly offer complete design, delivery and installation services in:"
+    bangalore="and surrounding areas" bhubaneshwar="and surrounding areas"
+    cuttack="and surrounding areas"></app-service-areas>

@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'smart-office-automation-solutions', component: AutomationOfficeComponent },
   { path: 'industrial-automation-solutions', component: AutomationIndustryComponent },
   { path: 'cctv-video-surveillance-security-cameras', component: AutomationSecurityComponent },
-  { path: 'space', component: AutomationSpaceComponent },
+  { path: 'space-saving-furniture-solutions', component: AutomationSpaceComponent },
   { path: 'energy', component: AutomationEnergyComponent },
 ]
 

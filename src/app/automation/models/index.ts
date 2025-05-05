@@ -17,3 +17,8 @@ export interface SecurityTypes {
     imgalt: string;
     points: string[];
 }
+
+export interface SpaceHomes {
+    h3: string;
+    p: string;
+}
