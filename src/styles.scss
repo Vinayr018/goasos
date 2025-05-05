@@ -1,7 +1,6 @@
 @use "@angular/material" as mat;
 @include mat.core();
 
-
 $md-primary: (
   50: #e0f4fe,
   100: #b3e5fd,
@@ -86,7 +85,7 @@ a {
   font-size: inherit;
 }
 $primary-color: #00a7f8;
-.highlight-text{
+.highlight-text {
   color: $primary-color;
 }
 @mixin list-spacing {
@@ -96,11 +95,11 @@ ul.card-list {
   list-style-type: none;
   margin-top: 0.5em;
   > li {
-      @include list-spacing();
-      &::before {
-          content: "-";
-          margin-right: 0.5em;
-      }
+    @include list-spacing();
+    &::before {
+      content: "-";
+      margin-right: 0.5em;
+    }
   }
 }
 
@@ -206,6 +205,19 @@ button.product-video-control {
     color: #00a7f8;
     > .ico {
       fill: #00a7f8;
+    }
+  }
+}
+
+ul.strong-bullet-points {
+  list-style: none;
+  > li {
+    > strong {
+      &::after {
+        content: "-";
+        margin-left: 6px;
+        margin-right: 8px;
+      }
     }
   }
 }
