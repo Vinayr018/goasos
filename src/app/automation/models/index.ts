@@ -10,3 +10,10 @@ export interface IndustryContent {
     icon: string;
     alt: string;
 }
+
+export interface SecurityTypes {
+    title: string;
+    imgSrc: string;
+    imgalt: string;
+    points: string[];
+}

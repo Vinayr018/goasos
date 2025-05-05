@@ -1,7 +1,26 @@
 <app-hero [showCLient]="true"
-    p="Whether it’s your home, office or industrial plant—security starts with smart surveillance. Our cutting-edge CCTV cameras and centralized video surveillance systems offer real-time monitoring, remote access, and AI-powered alerts to protect what matters most. Expert installation across Bangalore, Bhubaneswar and Cuttack."
+    p="Whether it's your home, office or industrial plant—security starts with smart surveillance. Our cutting-edge CCTV cameras and centralized video surveillance systems offer real-time monitoring, remote access, and AI-powered alerts to protect what matters most. Expert installation across Bangalore, Bhubaneswar and Cuttack."
     h1="Centralized Video Surveillance Systems & CCTV Installation Services in Bangalore, Bhubaneswar & Cuttack">
     <div class="actions" actions>
         <a class="sec" href="">Request Security Assessment&nbsp;&nbsp;&rarr;</a>
     </div>
 </app-hero>
+<section class="types">
+    <h2>Our Security Solutions</h2>
+    <div class="cards">
+        <mat-card *ngFor="let c of types">
+            <mat-card-header>
+                <mat-card-title>{{c.title}}</mat-card-title>
+            </mat-card-header>
+            <img loading="lazy" mat-card-image [src]="'/images/automation/security/'+c.imgSrc+'.png'" [alt]="c.imgalt">
+            <mat-card-content>
+                <ul class="card-list">
+                    <ng-container *ngFor="let point of c.points">
+                        <li>{{point}}</li>
+                    </ng-container>
+                </ul>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <p class="highlight-text">Request a Custom Quote</p>
+</section>
