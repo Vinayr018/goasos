@@ -1,16 +1,26 @@
+@mixin strong-points {
+    &::after {
+        content: ":";
+    }
+    margin-left: 0.3em;
+    margin-right: 0.4em;
+}
+
+@mixin list-spacing {
+    margin: 0.3em 0;
+}
+
 section.content {
     padding: 1em;
 }
 
 section.types {
     padding: 1em;
-    > h2 {
-    }
     > div.type {
         padding: 0.5em;
         display: grid;
         grid-template-columns: 50px 1fr;
-        @media (max-width:752px) {
+        @media (max-width: 752px) {
             grid-template-columns: 30px 1fr;
         }
         gap: 10px;
@@ -23,15 +33,20 @@ section.types {
             }
         }
         > div.content {
-            > h3 {
-            }
-            > p {
-            }
             > div.sub-content {
                 margin: 0.5em 0;
-                > h4 {
-                }
-                
+            }
+        }
+    }
+}
+
+section.working {
+    > ul {
+        list-style-type: none;
+        > li {
+            @include list-spacing();
+            > strong {
+                @include strong-points();
             }
         }
     }
