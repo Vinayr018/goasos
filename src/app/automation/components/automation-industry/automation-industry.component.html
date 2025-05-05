@@ -21,7 +21,7 @@
 <section class="types">
     <h2>Our Industrial Automation Solutions</h2>
     <div class="type" *ngFor="let ty of content">
-        <div class="icon"><img [src]="'/images/automation/industry/'+ty.icon+'.png'" [alt]="ty.alt"></div>
+        <div class="icon"><img loading="lazy" [src]="'/images/automation/industry/'+ty.icon+'.png'" [alt]="ty.alt"></div>
         <div class="content">
             <h3>{{ty.h3}}</h3>
             <p>{{ty.p}}</p>
