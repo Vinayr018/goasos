@@ -1,0 +1,98 @@
+@use "sass:math";
+
+$pri-color: #00a7f8;
+$bg-color: white;
+$color: black;
+$arr-btn-width: 20px;
+$arr-width: ($arr-btn-width - 5px);
+
+div.wrapper {
+    border: 1px solid #101010; // center 2px #101010, out and in 1px #606060
+    position: relative;
+    padding-right: $arr-btn-width;
+    padding: 5px;
+    &:focus,
+    &:focus-within,
+    &:active,
+    &:focus-visible {
+        border: 2px solid #101010;
+        box-shadow:
+            0 0 0 1px #606060,
+            inset 0 0 0 1px #606060;
+    }
+    > div.selected-items {
+        > span {
+            background-color: $pri-color;
+            color: $bg-color;
+            display: inline-block;
+            padding: 4px 7px;
+            margin: 0 6px;
+            border-radius: 4px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+            &:first-of-type {
+                margin-left: 0;
+            }
+        }
+    }
+    > button.triangle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: $arr-btn-width;
+        &.open {
+            > span {
+                transform: rotate(27deg) translateX(3px);
+            }
+        }
+        > span {
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: math.div($arr-width, 2) solid transparent;
+            border-bottom: math.div($arr-width, 2) solid transparent;
+            border-left: $arr-width solid $color;
+            transform: rotate(-28deg) translateX(3px);
+            transform-origin: center;
+        }
+    }
+    > ul {
+        position: absolute;
+        top: 1em;
+        left: 0;
+        z-index: 10;
+        background-color: $bg-color;
+        display: inline-block;
+        list-style: none;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        &.open {
+            max-height: 150px; //TODO: revisit this
+        }
+        > li {
+            padding: 5px 15px;
+            cursor: pointer;
+            &.selected {
+                color: $pri-color;
+            }
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+            &:first-of-type {
+                padding-top: 10px;
+            }
+            &:last-of-type {
+                padding-bottom: 10px;
+            }
+            > span {
+                color: inherit;
+                font-family: inherit;
+            }
+        }
+    }
+}

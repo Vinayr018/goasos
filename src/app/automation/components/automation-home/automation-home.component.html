@@ -4,7 +4,7 @@ p="Transform your home into a smart, secure and energy-efficient space with our 
 solutions. We offer smart lighting, security systems, voice-controlled devices, and AI-powered smart home setups
 in Bengaluru, Bhubaneswar & Cuttack.">
     <div class="actions" actions>
-        <a class="sec" href="">Schedule Free Home Automation Consultation&nbsp;&nbsp;&rarr;</a>
+        <a class="sec" [href]="cont.PopulateContactLocation()">Schedule Free Home Automation Consultation&nbsp;&nbsp;&rarr;</a>
     </div>
 </app-hero>
 <section class="block why">
@@ -16,7 +16,7 @@ in Bengaluru, Bhubaneswar & Cuttack.">
         <li><strong>Energy Efficiency</strong>Automate lights, curtains & appliances to reduce energy waste.</li>
         <li><strong>Expert Installation</strong>We customize solutions for apartments, villas & commercial spaces.</li>
     </ul>
-    <a class="sec highlight-text" href="">Get a Free Consultation Today&nbsp;&nbsp;&rarr;</a>
+    <a class="sec highlight-text" [href]="cont.PopulateContactLocation()">Get a Free Consultation Today&nbsp;&nbsp;&rarr;</a>
 </section>
 <section class="block products">
     <h2>Our Home Automation Solutions</h2>
@@ -102,3 +102,4 @@ in Bengaluru, Bhubaneswar & Cuttack.">
     </ul>
     <p>Contact Us Today: <a class="highlight-text" href="tel:+919999999999">+91&nbsp;99999&nbsp;99999</a></p>
 </section>
+<app-contact h2="Tesing 1234"></app-contact>

@@ -1,0 +1,50 @@
+<section class="contact" id="contact-section">
+    <h2>{{h2}}</h2>
+    <p>Contact us to request a demo or schedule a consultation.</p>
+    <form>
+        <div class="row">
+            <label for="name">Full Name</label>
+            <div class="control">
+                <input type="text" id="name">
+                <div class="errors">
+                    <ul>
+                        <li><span>Error</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="email">Email Address</label>
+            <div class="control">
+                <input type="email" id="email">
+                <div class="errors">
+                    <ul>
+                        <li><span>Error</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="phone">Phone Number</label>
+            <div class="control">
+                <input type="text" id="phone">
+                <div class="errors">
+                    <ul>
+                        <li><span>Error</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="interest">Interested In</label>
+            <div class="control">
+                <app-select />
+                <div class="errors">
+                    <ul>
+                        <li><span>Error</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

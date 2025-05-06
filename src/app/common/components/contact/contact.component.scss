@@ -1,0 +1,49 @@
+section#contact-section {
+    padding: 1em;
+    > h2 {
+        margin-bottom: 8px;
+    }
+    > p {
+    }
+    > form {
+        background-color: #fff;
+        box-shadow:
+            0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+            0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+            0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 4px;
+        max-width: 500px;
+        padding: 1em;
+        > div.row {
+            margin: 5px 0;
+            display: flex;
+            align-items: flex-start;
+            > label {
+                flex: 0.3;
+                margin-top: 5px;
+            }
+            > div.control {
+                flex: 0.7;
+                > input,
+                select {
+                    padding: 5px;
+                    font-size: inherit;
+                    font-family: inherit;
+                    display: block;
+                    width: 100%;
+                }
+                > div.errors {
+                    > ul {
+                        list-style: none;
+                        > li {
+                            > span {
+                                color: red;
+                                font-size: 0.9rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
