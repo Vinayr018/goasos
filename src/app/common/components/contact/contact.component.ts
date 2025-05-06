@@ -7,4 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class ContactComponent {
   @Input({ required: true }) public h2!: string;
+
+  public SelectChange(d: any): void {
+    console.log(d);
+  }
 }

@@ -1,14 +1,12 @@
 <div class="wrapper" (click)="ToggleMenu()">
     <div class="selected-items">
-        <span>1</span>
-        <span>2</span>
+        <ng-container *ngFor="let item of SelectedItemList"><span>{{item}}</span></ng-container>
     </div>
     <button class="triangle" [ngClass]="IsMenuActive ? 'open' : ''" type="button"
         (click)="ToggleMenu()"><span></span></button>
     <ul [ngClass]="IsMenuActive ? 'open':''">
-        <li><span>1</span></li>
-        <li><span>2</span></li>
-        <li><span>3</span></li>
-        <li><span>4</span></li>
+        <ng-container *ngFor="let item of items">
+            <li (click)="ItemClickEvent(item, $event)"><span>{{item.value}}</span></li>
+        </ng-container>
     </ul>
 </div>
