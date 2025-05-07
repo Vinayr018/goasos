@@ -38,19 +38,15 @@ export class SelectComponent implements OnInit, OnDestroy, ControlValueAccessor 
     this.eventattached = () => { };
   }
   writeValue(obj: any): void {
-    console.log('control,write', obj, this.selectedItems, Array.isArray(obj))
     this.selectedItems = Array.isArray(obj) ? obj : [];
   }
   registerOnChange(fn: any): void {
-    console.log('control,change', fn, this.selectedItems)
     this.onChange = fn;
   }
   registerOnTouched(fn: any): void {
-    console.log('control,touch', fn, this.selectedItems)
     this.onTouch = fn;
   }
   setDisabledState?(isDisabled: boolean): void {
-    console.log('control,disable', isDisabled, this.selectedItems);
     this.isDisabled = isDisabled;
   }
 

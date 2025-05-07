@@ -1,14 +1,14 @@
 <section class="contact" id="contact-section">
     <h2>{{h2}}</h2>
     <p>Contact us to request a demo or schedule a consultation.</p>
-    <form [formGroup]="contactGroup" (ngSubmit)="FormSubmit()">
+    <form [formGroup]="helper.contactGroup" (ngSubmit)="FormSubmit()">
         <div class="row">
             <label for="name">Full Name</label>
             <div class="control">
                 <input type="text" formControlName="name" id="name">
-                <div class="errors">
+                <div class="errors" [ngClass]="helper.HasError(helper.NameControl) ? 'err':''">
                     <ul>
-                        <li><span>Error</span></li>
+                        <li><span>{{helper.ErrorMessage(helper.NameControl)}}</span></li>
                     </ul>
                 </div>
             </div>
@@ -17,9 +17,9 @@
             <label for="email">Email Address</label>
             <div class="control">
                 <input type="email" formControlName="email" id="email">
-                <div class="errors">
+                <div class="errors" [ngClass]="helper.HasError(helper.EmailControl) ? 'err':''">
                     <ul>
-                        <li><span>Error</span></li>
+                        <li><span>{{helper.ErrorMessage(helper.EmailControl)}}</span></li>
                     </ul>
                 </div>
             </div>
@@ -28,9 +28,9 @@
             <label for="phone">Phone Number</label>
             <div class="control">
                 <input type="text" formControlName="phone" id="phone">
-                <div class="errors">
+                <div class="errors" [ngClass]="helper.HasError(helper.PhoneControl) ? 'err':''">
                     <ul>
-                        <li><span>Error</span></li>
+                        <li><span>{{helper.ErrorMessage(helper.PhoneControl)}}</span></li>
                     </ul>
                 </div>
             </div>
@@ -38,10 +38,10 @@
         <div class="row">
             <label for="interest">Interested In</label>
             <div class="control">
-                <app-select id="interest" [items]="MapServices" formControlName="interest" />
-                <div class="errors">
+                <app-select id="interest" [items]="helper.Services" formControlName="interest" />
+                <div class="errors" [ngClass]="helper.HasError(helper.InterestControl) ? 'err':''">
                     <ul>
-                        <li><span>Error</span></li>
+                        <li><span>{{helper.ErrorMessage(helper.InterestControl)}}</span></li>
                     </ul>
                 </div>
             </div>
@@ -49,10 +49,10 @@
         <div class="row">
             <label for="location">Location</label>
             <div class="control">
-                <app-select id="location" [items]="Locations" formControlName="location" />
-                <div class="errors">
+                <app-select id="location" [items]="helper.Locations" formControlName="location" />
+                <div class="errors" [ngClass]="helper.HasError(helper.LocationControl) ? 'err':''">
                     <ul>
-                        <li><span>Error</span></li>
+                        <li><span>{{helper.ErrorMessage(helper.LocationControl)}}</span></li>
                     </ul>
                 </div>
             </div>
@@ -61,9 +61,9 @@
             <label for="mg">Message</label>
             <div class="control">
                 <textarea id="mg"></textarea>
-                <div class="errors">
+                <div class="errors" [ngClass]="helper.HasError(helper.MessageControl) ? 'err':''">
                     <ul>
-                        <li><span>Error</span></li>
+                        <li><span>{{helper.ErrorMessage(helper.MessageControl)}}</span></li>
                     </ul>
                 </div>
             </div>

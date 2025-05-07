@@ -47,6 +47,10 @@ section#contact-section {
                     width: 100%;
                 }
                 > div.errors {
+                    display: none;
+                    &.err{
+                        display: block;
+                    }
                     > ul {
                         list-style: none;
                         > li {
