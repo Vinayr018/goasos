@@ -12,6 +12,10 @@ div.wrapper {
     padding-right: $arr-btn-width;
     // padding: 5px;
     min-height: 2em;
+    @media (max-width: 565px) {
+        min-width: 200px;
+        width: auto;
+    }
     &:focus,
     &:focus-within,
     &:active,
