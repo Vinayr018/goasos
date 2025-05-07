@@ -89,7 +89,7 @@ export class SelectComponent implements OnInit, OnDestroy, ControlValueAccessor 
   }
 
   private MultiSelect(val: CustomSelectOption) {
-    let foundIndex = this.selectedItems.findIndex(i => i === val);
+    let foundIndex = this.selectedItems.findIndex(i => i.key === val.key);
     if (foundIndex === -1) {
       this.selectedItems.push(val);
     } else {
