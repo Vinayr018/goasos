@@ -1,11 +1,11 @@
 <section class="contact" id="contact-section">
     <h2>{{h2}}</h2>
     <p>Contact us to request a demo or schedule a consultation.</p>
-    <form>
+    <form [formGroup]="contactGroup" (ngSubmit)="FormSubmit()">
         <div class="row">
             <label for="name">Full Name</label>
             <div class="control">
-                <input type="text" id="name">
+                <input type="text" formControlName="name" id="name">
                 <div class="errors">
                     <ul>
                         <li><span>Error</span></li>
@@ -16,7 +16,7 @@
         <div class="row">
             <label for="email">Email Address</label>
             <div class="control">
-                <input type="email" id="email">
+                <input type="email" formControlName="email" id="email">
                 <div class="errors">
                     <ul>
                         <li><span>Error</span></li>
@@ -27,7 +27,7 @@
         <div class="row">
             <label for="phone">Phone Number</label>
             <div class="control">
-                <input type="text" id="phone">
+                <input type="text" formControlName="phone" id="phone">
                 <div class="errors">
                     <ul>
                         <li><span>Error</span></li>
@@ -38,13 +38,38 @@
         <div class="row">
             <label for="interest">Interested In</label>
             <div class="control">
-                <app-select [items]="[{key:'1', value:'One'},{key:'2', value: 'Two'}]" (change)="SelectChange($event)" />
+                <app-select id="interest" [items]="MapServices" formControlName="interest" />
                 <div class="errors">
                     <ul>
                         <li><span>Error</span></li>
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <label for="location">Location</label>
+            <div class="control">
+                <app-select id="location" [items]="Locations" formControlName="location" />
+                <div class="errors">
+                    <ul>
+                        <li><span>Error</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="mg">Message</label>
+            <div class="control">
+                <textarea id="mg"></textarea>
+                <div class="errors">
+                    <ul>
+                        <li><span>Error</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <button type="submit">Request Your Consultation</button>
         </div>
     </form>
 </section>

@@ -20,6 +20,7 @@ import {
   CarouselCaptionComponent,
 } from '@coreui/angular';
 import { SelectComponent } from './components/select/select.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -48,8 +49,10 @@ import { SelectComponent } from './components/select/select.component';
   imports: [GoasasMatModule, RouterModule, CommonModule,
     ThemeDirective, CarouselComponent,
     CarouselInnerComponent, CarouselItemComponent,
-    CarouselControlComponent, CarouselCaptionComponent
-  ]
+    CarouselControlComponent, CarouselCaptionComponent,
+    ReactiveFormsModule
+  ],
+  providers: []
 
 
 })

@@ -10,7 +10,7 @@ div.wrapper {
     border: 1px solid #101010; // center 2px #101010, out and in 1px #606060
     position: relative;
     padding-right: $arr-btn-width;
-    padding: 5px;
+    // padding: 5px;
     min-height: 2em;
     &:focus,
     &:focus-within,
@@ -27,14 +27,8 @@ div.wrapper {
             color: $bg-color;
             display: inline-block;
             padding: 4px 7px;
-            margin: 0 6px;
+            margin: 6px;
             border-radius: 4px;
-            &:last-of-type {
-                margin-right: 0;
-            }
-            &:first-of-type {
-                margin-left: 0;
-            }
         }
     }
     > button.triangle {
@@ -73,7 +67,7 @@ div.wrapper {
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
         border-radius: 4px;
         &.open {
-            max-height: 150px; //TODO: revisit this
+            max-height: 170px; //TODO: revisit this
         }
         > li {
             padding: 5px 15px;
