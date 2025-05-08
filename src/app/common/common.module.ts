@@ -4,7 +4,8 @@ import {
   BrochureComponent, MenuComponent, VideoBoxComponent,
   VideoBrochureComponent, ProductGalleryComponent, VideoComponent,
   SlideBoxComponent, SuccessSnackComponent, SeoMetaComponent,
-  HeroComponent, ServiceAreasComponent, ContactComponent
+  HeroComponent, ServiceAreasComponent, ContactComponent,
+  FloatContactComponent
 } from './components';
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { RouterModule } from "@angular/router";
@@ -41,11 +42,13 @@ import { ReactiveFormsModule } from "@angular/forms";
     ServiceAreasComponent,
     ContactComponent,
     SelectComponent,
+    FloatContactComponent,
   ],
   exports: [HeaderComponent, BaseComponent, BoxComponent,
     BrochureComponent, MenuComponent, ProductGalleryComponent,
     VideoBrochureComponent, SlideBoxComponent, SuccessSnackComponent,
-    SeoMetaComponent, HeroComponent, ServiceAreasComponent, ContactComponent],
+    SeoMetaComponent, HeroComponent, ServiceAreasComponent, ContactComponent,
+  FloatContactComponent],
   imports: [GoasasMatModule, RouterModule, CommonModule,
     ThemeDirective, CarouselComponent,
     CarouselInnerComponent, CarouselItemComponent,

@@ -51,6 +51,12 @@ div.main-wrapper {
             overflow-y: auto;
             overflow-x: hidden;
             height: 100%;
+            > section.float-contact {
+                position: fixed;
+                bottom: 2em;
+                right: 2em;
+                z-index: 4;
+            }
         }
     }
 }

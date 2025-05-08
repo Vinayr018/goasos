@@ -2,6 +2,7 @@ import { BaseComponent } from "./base/base.component";
 import { BoxComponent } from "./box/box.component";
 import { BrochureComponent } from "./brochure/brochure.component";
 import { ContactComponent } from "./contact/contact.component";
+import { FloatContactComponent } from "./float-contact/float-contact.component";
 import { HeaderComponent } from "./header/header.component";
 import { HeroComponent } from "./hero/hero.component";
 import { MenuComponent } from "./menu/menu.component";
@@ -22,5 +23,5 @@ export {
     VideoComponent, SlideBoxComponent,
     SuccessSnackComponent, SeoMetaComponent,
     HeroComponent, ServiceAreasComponent,
-    ContactComponent
+    ContactComponent, FloatContactComponent
 }
