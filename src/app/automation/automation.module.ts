@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'industrial-automation-solutions', component: AutomationIndustryComponent },
   { path: 'cctv-video-surveillance-security-cameras', component: AutomationSecurityComponent },
   { path: 'space-saving-furniture-solutions', component: AutomationSpaceComponent },
-  { path: 'energy', component: AutomationEnergyComponent },
+  { path: 'solar-energy-solutions', component: AutomationEnergyComponent },
 ]
 
 @NgModule({
