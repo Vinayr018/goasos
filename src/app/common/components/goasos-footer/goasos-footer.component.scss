@@ -6,40 +6,48 @@ footer.wrapper {
     background-color: #ffffff;
     > div.footer-top {
         display: flex;
-        justify-content: space-evenly;
         align-items: flex-start;
-
+        justify-content: space-between;
+        @media (max-width: 1341px) {
+            flex-direction: column;
+            gap: 2em;
+        }
         > div.top-section {
-            &.links {
-                > ul {
-                    display: flex;
-                    flex-direction: column;
-                    > li > a {
-                        text-decoration: underline;
-                    }
-                }
+            @media (max-width: 1341px) {
+                text-align: center;
+                width: 100%;
             }
-            > img {
-                display: block;
+        }
+        > div.top-bottom {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            flex: 0.9;
+            @media (max-width: 1341px) {
+                width: 100%;
             }
-            > p {
-            }
-            > strong {
-                margin-bottom: 12px;
-                display: block;
-            }
-            > ul {
-                list-style: none;
+            @media (max-width: 572px) {
+                flex-direction: column;
                 gap: 10px;
-                font-size: 0.9rem;
-                > li {
-                    > a {
-                        text-decoration: none;
-                        > img,
-                        svg {
-                            display: block;
-                            height: 1.5em;
-                            object-fit: contain;
+            }
+            > div.section {
+                > strong {
+                    margin-bottom: 12px;
+                    display: block;
+                }
+                > ul {
+                    list-style: none;
+                    gap: 10px;
+                    font-size: 0.9rem;
+                    > li {
+                        > a {
+                            text-decoration: none;
+                            > img,
+                            svg {
+                                display: block;
+                                height: 1.5em;
+                                object-fit: contain;
+                            }
                         }
                     }
                 }
