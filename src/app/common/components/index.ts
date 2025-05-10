@@ -14,6 +14,7 @@ import { SuccessSnackComponent } from "./success-snack/success-snack.component";
 import { VideoBoxComponent } from "./video-box/video-box.component";
 import { VideoBrochureComponent } from "./video-brochure/video-brochure.component";
 import { VideoComponent } from "./video/video.component";
+import { GoasosFooterComponent } from "./goasos-footer/goasos-footer.component";
 
 export {
     HeaderComponent, BaseComponent,
@@ -23,5 +24,6 @@ export {
     VideoComponent, SlideBoxComponent,
     SuccessSnackComponent, SeoMetaComponent,
     HeroComponent, ServiceAreasComponent,
-    ContactComponent, FloatContactComponent
+    ContactComponent, FloatContactComponent,
+    GoasosFooterComponent
 }
