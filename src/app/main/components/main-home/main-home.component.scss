@@ -37,7 +37,7 @@ div.main-home-wrapper {
             }
             > div.client-logos {
                 display: grid;
-                grid-template-columns: 200px 200px 200px 200px 200px;
+                grid-template-columns: 200px 200px 200px 200px;
                 @media (max-width: 1139px) {
                     grid-template-columns: 200px 200px 200px;
                     margin-left: 1em;
@@ -252,7 +252,7 @@ div.main-home-wrapper {
             > div.locals {
                 display: grid;
                 grid-template-columns: 500px 500px 500px;
-                @media (max-width: 1938px) {
+                @media (max-width: 1905px) {
                     grid-template-columns: 500px 500px;
                 }
                 @media (max-width: 1049px) {
