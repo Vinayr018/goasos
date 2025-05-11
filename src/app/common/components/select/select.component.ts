@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output, Renderer2 } from '@angular/core';
+import { Component, ElementRef, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
 import { CustomSelectOption } from '../../models';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -13,6 +13,10 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   }]
 })
 export class SelectComponent implements OnInit, OnDestroy, ControlValueAccessor {
+
+  @ViewChild('wrap') private div!: ElementRef<HTMLDivElement>;
+  @ViewChild('options') private options!: ElementRef<HTMLUListElement>;
+
   private isMenuOpen: boolean = false;
   private clickEventCalled: boolean = false;
   private selectedItems: CustomSelectOption[] = [];
@@ -65,6 +69,12 @@ export class SelectComponent implements OnInit, OnDestroy, ControlValueAccessor 
     this.onTouch();
     this.clickEventCalled = true;
     this.isMenuOpen = !this.isMenuOpen;
+
+    this.adjustPositionOfOptions();
+  }
+
+  private adjustPositionOfOptions(): void {
+    this.options.nativeElement.style.top = `${this.div.nativeElement.getBoundingClientRect().height}px`;
   }
 
   private HandleClickEventOfBody(event: MouseEvent): void {
@@ -77,6 +87,7 @@ export class SelectComponent implements OnInit, OnDestroy, ControlValueAccessor 
   }
 
   public ItemClickEvent(val: CustomSelectOption, ev: MouseEvent): void {
+    this.adjustPositionOfOptions();
     this.ChangeInit(ev);
 
     this.MultiSelect(val);

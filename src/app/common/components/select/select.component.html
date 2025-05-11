@@ -1,10 +1,10 @@
-<div class="wrapper" (click)="ToggleMenu()">
+<div class="wrapper" (click)="ToggleMenu()" #wrap>
     <div class="selected-items">
         <ng-container *ngFor="let item of SelectedItemList"><span>{{item}}</span></ng-container>
     </div>
     <button class="triangle" [ngClass]="IsMenuActive ? 'open' : ''" type="button"
         (click)="ToggleMenu()"><span></span></button>
-    <ul [ngClass]="IsMenuActive ? 'open':''">
+    <ul [ngClass]="IsMenuActive ? 'open':''" #options>
         <ng-container *ngFor="let item of items">
             <li (click)="ItemClickEvent(item, $event)"><span>{{item.value}}</span></li>
         </ng-container>

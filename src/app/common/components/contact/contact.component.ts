@@ -1,6 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { CustomSelectOption } from '../../models';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { ContactHelperService } from '../../services/contact-helper.service';
 
 @Component({
@@ -11,6 +9,9 @@ import { ContactHelperService } from '../../services/contact-helper.service';
 export class ContactComponent {
 
   @Input({ required: true }) public h2!: string;
+
+  
+  // const height = div.getBoundingClientRect().height;
 
   constructor(public helper: ContactHelperService) { }
 
