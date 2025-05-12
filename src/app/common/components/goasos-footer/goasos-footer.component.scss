@@ -37,7 +37,6 @@ footer.wrapper {
                 }
                 > ul {
                     list-style: none;
-                    gap: 10px;
                     font-size: 0.9rem;
                     > li {
                         > a {
@@ -49,6 +48,14 @@ footer.wrapper {
                                 object-fit: contain;
                             }
                         }
+                    }
+                }
+                &.links {
+                    li {
+                        margin: 6px 0;
+                    }
+                    a {
+                        text-decoration: underline !important;
                     }
                 }
             }
