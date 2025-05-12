@@ -1,10 +1,10 @@
 <div class="wrapper">
     <input type="text">
-    <div class="flag">
+    <button class="flag" type="button" (click)="ToggleDDL()">
         <img [src]="'images/'+selectedOption.value" [alt]="selectedOption.key">
         <mat-icon fontIcon="arrow_drop_down"></mat-icon>
-    </div>
-    <ul>
+    </button>
+    <ul [ngClass]="isMenuOpen ? 'show':''">
         <li *ngFor="let country of options"><img [src]="'images/'+country.value" [alt]="country.key"></li>
     </ul>
 </div>

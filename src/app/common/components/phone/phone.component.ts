@@ -16,5 +16,11 @@ export class PhoneComponent {
 
   public selectedOption: CustomSelectOption = this.india;
 
+  public isMenuOpen: boolean = false;
+
+  public ToggleDDL(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
 
 }

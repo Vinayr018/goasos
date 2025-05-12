@@ -2,7 +2,7 @@ div.wrapper {
     position: relative;
     min-height: calc(1rem + 20px);
     min-width: 100px;
-    overflow: hidden;
+    // overflow: hidden;
     border: 1px solid #101010;
     &:focus,
     &:focus-within,
@@ -20,7 +20,7 @@ div.wrapper {
         background-color: transparent;
         padding-left: 60px;
     }
-    > div.flag {
+    > button.flag {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -30,6 +30,8 @@ div.wrapper {
         bottom: 0;
         gap: 5px;
         padding: 0 5px;
+        background-color: transparent;
+        border: transparent;
         > img {
             display: block;
             width: 1em;
@@ -43,7 +45,28 @@ div.wrapper {
     > ul {
         max-height: 0;
         overflow: hidden;
+        position: absolute;
+        top: 34px;
+        background-color: white;
+        z-index: 4;
+        width: 50px;
+        text-align: center;
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+        &.show {
+            max-height: 100px;
+        }
         > li {
+            padding: 2px 1px;
+            cursor: pointer;
+            &:first-of-type {
+                padding-top: 4px;
+            }
+            &:last-of-type {
+                padding-bottom: 4px;
+            }
+            &:hover {
+                background-color: rgba(215, 215, 215, 0.5);
+            }
             > img {
                 width: 20px;
                 display: inline-block;
