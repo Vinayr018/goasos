@@ -1,3 +1,5 @@
+$animation-time: 0.7s;
+
 div.wrapper {
     position: relative;
     min-height: calc(1rem + 20px);
@@ -19,6 +21,7 @@ div.wrapper {
         inset: 0;
         background-color: transparent;
         padding-left: 60px;
+        outline: none;
     }
     > button.flag {
         display: flex;
@@ -32,6 +35,11 @@ div.wrapper {
         padding: 0 5px;
         background-color: transparent;
         border: transparent;
+        &.show {
+            > mat-icon {
+                transform: rotate(180deg);
+            }
+        }
         > img {
             display: block;
             width: 1em;
@@ -40,6 +48,7 @@ div.wrapper {
         > mat-icon {
             height: 1em;
             width: 1em;
+            transition: transform $animation-time;
         }
     }
     > ul {
@@ -52,6 +61,7 @@ div.wrapper {
         width: 50px;
         text-align: center;
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.3);
+        transition: max-height $animation-time;
         &.show {
             max-height: 100px;
         }
