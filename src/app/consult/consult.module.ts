@@ -10,7 +10,7 @@ import {
 } from './components';
 
 const routes: Routes = [
-  { path: 'bank', component: ConsultBankComponent },
+  { path: 'software-consulting-services', component: ConsultBankComponent },
   { path: 'market', component: ConsultMarketComponent },
   { path: 'data', component: ConsultDataAiComponent },
 ]
