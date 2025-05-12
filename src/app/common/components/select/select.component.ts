@@ -62,7 +62,7 @@ export class SelectComponent implements OnInit, OnDestroy, ControlValueAccessor 
     this.eventattached();
   }
 
-  public ToggleMenu(): void {
+  public ToggleMenu(event: MouseEvent, isFromButton: boolean): void {
     if (this.isDisabled) {
       return;
     }
@@ -71,10 +71,14 @@ export class SelectComponent implements OnInit, OnDestroy, ControlValueAccessor 
     this.isMenuOpen = !this.isMenuOpen;
 
     this.adjustPositionOfOptions();
+
+    if (isFromButton) {
+      event.stopPropagation();
+    }
   }
 
   private adjustPositionOfOptions(): void {
-    console.log(this.options.nativeElement.style.maxHeight,'px')
+    console.log(this.options.nativeElement.style.maxHeight, 'px')
     this.options.nativeElement.style.top = `${this.div.nativeElement.getBoundingClientRect().height}px`;
   }
 
