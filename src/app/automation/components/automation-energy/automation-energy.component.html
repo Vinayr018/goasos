@@ -2,7 +2,8 @@
     p="Harness the power of solar and smart energy automation with GOAS. We offer end-to-end solar panel installation and smart energy management systems for homes, offices, and industrial sites in Bangalore, Bhubaneswar and Cuttack. Save energy, reduce costs, and go green today!"
     [showCLient]="true">
     <div class="actions" actions>
-        <a class="sec" href="">Request Free Consultation&nbsp;&nbsp;&rarr;</a>
+        <a class="sec" (click)="CaptureClicks('energy_automation_hero')" [href]="cont.PopulateContactLocation()">Request
+            Free Consultation&nbsp;&nbsp;&rarr;</a>
     </div>
 </app-hero>
 <section class="products">
@@ -16,7 +17,9 @@
             <li>Battery backup and energy storage solutions</li>
         </ul>
     </div>
-    <a class="btn sec" href="">Request a Free Consultation</a>
+    <a class="btn sec" (click)="CaptureClicks('energy_automation_installation')"
+        [href]="cont.PopulateContactLocation()">Request
+        a Free Consultation</a>
 </section>
 <section class="why products">
     <h2>Benefits of Solar + Energy Automation</h2>
@@ -30,8 +33,9 @@
             <li>Automate energy usage for greater efficiency</li>
         </ul>
     </div>
-    <a class="btn sec" href="">Request a Free Consultation</a>
+    <a class="btn sec" (click)="CaptureClicks('energy_automation_benefits')"
+        [href]="cont.PopulateContactLocation()">Request a Free Consultation</a>
 </section>
 <app-service-areas header="We provide local, personalized service in:" bangalore="and surrounding areas"
     bhubaneshwar="and surrounding areas" cuttack="and surrounding areas"></app-service-areas>
-<app-contact h2="Ready to Switch to Solar Power?"/>
+<app-contact h2="Ready to Switch to Solar Power?" />

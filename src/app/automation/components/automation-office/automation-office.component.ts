@@ -3,6 +3,8 @@ import { Box, SlideBox } from '../../../common/models';
 import { AutomationDataService } from '../../services/data.service';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
+import { AnalyticsService } from '../../../common/services/analytics.service';
+import { ContactLocationService } from '../../../common/services/contact-location.service';
 
 @Component({
   selector: 'app-automation-office',
@@ -11,7 +13,10 @@ import { MetaService } from '../../../common/services/meta.service';
 })
 export class AutomationOfficeComponent implements AfterViewInit {
 
-  constructor(title: GoasosTitleService, meta: MetaService) {
+  constructor(title: GoasosTitleService,
+    meta: MetaService,
+    public analytics: AnalyticsService,
+    public cont: ContactLocationService) {
     title.UpdateTitle = 'Office Automation Solutions Provider | Smart Office Systems in Bangalore, Bhubaneswar & Cuttack';
     meta.Description = 'Boost your business productivity with our advanced office automation solutions. From smart lighting and access control to AI-powered systems—available in Bangalore, Bhubaneswar and Cuttack. Get a quote today!';
     meta.Keywords = 'office automation, office automation in bangalore, office automation in indiranagar, office automation in bengaluru, office automation in bhubaneshwar, office automation in cuttack, , office automation in usa';
@@ -32,53 +37,57 @@ export class AutomationOfficeComponent implements AfterViewInit {
 
   drawPieChart(canvasId: string, percentage: number, color: string) {
     const canvas = document.getElementById(canvasId) as HTMLCanvasElement;
-  const ctx = canvas.getContext('2d');
-  if (!ctx) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
-  const size = canvas.width;
-  const centerX = size / 2;
-  const centerY = size / 1.1; // shift down
-  const radius = centerX - 17;
-  const lineWidth = 35;
-  let current = 0;
-  const duration = 1000;
-  const stepTime = 10;
-  const steps = duration / stepTime;
-  const increment = percentage / steps;
+    const size = canvas.width;
+    const centerX = size / 2;
+    const centerY = size / 1.1; // shift down
+    const radius = centerX - 17;
+    const lineWidth = 35;
+    let current = 0;
+    const duration = 1000;
+    const stepTime = 10;
+    const steps = duration / stepTime;
+    const increment = percentage / steps;
 
-  const animate = () => {
-    ctx.clearRect(0, 0, size, size);
+    const animate = () => {
+      ctx.clearRect(0, 0, size, size);
 
-    // Background arc (track)
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, Math.PI, 0);
-    ctx.strokeStyle = '#E0E0E0';
-    ctx.lineWidth = lineWidth;
-    ctx.lineCap = 'butt';
-    ctx.stroke();
+      // Background arc (track)
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, Math.PI, 0);
+      ctx.strokeStyle = '#E0E0E0';
+      ctx.lineWidth = lineWidth;
+      ctx.lineCap = 'butt';
+      ctx.stroke();
 
-    
 
-    const endAngle = Math.PI + (current / 100) * Math.PI;
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, radius, Math.PI, endAngle);
-    ctx.strokeStyle = color;;
-    ctx.lineWidth = lineWidth;
-    ctx.stroke();
 
-    // Center text
-    ctx.fillStyle = '#000';
-    ctx.font = '16px Arial';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(`${Math.round(current)}%`, centerX, centerY - radius / 2);
+      const endAngle = Math.PI + (current / 100) * Math.PI;
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius, Math.PI, endAngle);
+      ctx.strokeStyle = color;;
+      ctx.lineWidth = lineWidth;
+      ctx.stroke();
 
-    if (current < percentage) {
-      current += increment;
-      requestAnimationFrame(animate);
-    }
-  };
+      // Center text
+      ctx.fillStyle = '#000';
+      ctx.font = '16px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(`${Math.round(current)}%`, centerX, centerY - radius / 2);
 
-  animate();
+      if (current < percentage) {
+        current += increment;
+        requestAnimationFrame(animate);
+      }
+    };
+
+    animate();
+  }
+
+  public CaptureClicks(cta: string): void {
+    this.analytics.HomeCtaEvent(cta);
   }
 }

@@ -2,7 +2,8 @@
     p="We offer a comprehensive suite of Industrial Automation Solutions designed to improve operational efficiency, enhance safety and deliver smart control across your facilities. Our systems are fully integrated with IoT, cloud and real-time analytics —available in Bangalore, Bhubaneswar & Cuttack."
     h1="Industrial Automation Solutions for Smart, Scalable Growth | Bangalore, Bhubaneswar & Cuttack">
     <div class="actions" actions>
-        <a class="sec" href="">Schedule Free Consultation&nbsp;&nbsp;&rarr;</a>
+        <a class="sec" (click)="CaptureClicks('industry_automation_hero')"
+            [href]="cont.PopulateContactLocation()">Schedule Free Consultation&nbsp;&nbsp;&rarr;</a>
     </div>
 </app-hero>
 <section class="content">
@@ -16,12 +17,14 @@
         <li>Integrate predictive maintenance</li>
         <li>Centralize system control & data visibility</li>
     </ul>
-    <a href="#" class="highlight-text">Book a Free On-Site Assessment Today&nbsp;&nbsp;&rarr;</a>
+    <a (click)="CaptureClicks('industry_automation_assesment')" [href]="cont.PopulateContactLocation()"
+        class="highlight-text">Book a Free On-Site Assessment Today&nbsp;&nbsp;&rarr;</a>
 </section>
 <section class="types">
     <h2>Our Industrial Automation Solutions</h2>
     <div class="type" *ngFor="let ty of content">
-        <div class="icon"><img loading="lazy" [src]="'/images/automation/industry/'+ty.icon+'.png'" [alt]="ty.alt"></div>
+        <div class="icon"><img loading="lazy" [src]="'/images/automation/industry/'+ty.icon+'.png'" [alt]="ty.alt">
+        </div>
         <div class="content">
             <h3>{{ty.h3}}</h3>
             <p>{{ty.p}}</p>
@@ -38,13 +41,10 @@
     <p class="highlight-text">Request a Custom Quote</p>
 </section>
 <section>
-    <app-service-areas
-    footer=""
-    header="We work closely with clients across industrial hubs in:"
-    bangalore="Supporting businesses throughout the city and surrounding commercial zones"
-    bhubaneshwar="Supporting businesses throughout the city and surrounding commercial zones"
-    cuttack="Supporting businesses throughout the city and surrounding commercial zones"
-    ></app-service-areas>
+    <app-service-areas footer="" header="We work closely with clients across industrial hubs in:"
+        bangalore="Supporting businesses throughout the city and surrounding commercial zones"
+        bhubaneshwar="Supporting businesses throughout the city and surrounding commercial zones"
+        cuttack="Supporting businesses throughout the city and surrounding commercial zones"></app-service-areas>
 </section>
 <section class="working">
     <h2>Our Implementation Process</h2>
@@ -55,4 +55,4 @@
         <li><strong>Step&nbsp;4</strong>Training & Support</li>
     </ul>
 </section>
-<app-contact h2="Start Your Automation Journey"/>
+<app-contact h2="Start Your Automation Journey" />

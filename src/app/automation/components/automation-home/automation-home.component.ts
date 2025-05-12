@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { ContactLocationService } from '../../../common/services/contact-location.service';
+import { AnalyticsService } from '../../../common/services/analytics.service';
 
 @Component({
   selector: 'app-automation-home',
@@ -12,8 +13,13 @@ export class AutomationHomeComponent {
 
   constructor(title: GoasosTitleService,
     meta: MetaService,
-    public cont: ContactLocationService) {
+    public cont: ContactLocationService,
+    public analytics: AnalyticsService) {
     title.UpdateTitle = 'Smart Home Automation Solutions | Best Home Automation Company in Bangalore, Bhubaneswar & Cuttack | GOAS';
     meta.Description = 'Looking for smart home automation solutions? We offer smart lighting, security systems, voice-controlled devices, and AI-powered smart home setups in Bangalore, Bhubaneswar & Cuttack. Upgrade your home today!';
+  }
+
+  public CaptureClicks(cta: string): void {
+    this.analytics.HomeCtaEvent(cta);
   }
 }

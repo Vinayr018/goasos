@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { SpaceHomes } from '../../models';
+import { AnalyticsService } from '../../../common/services/analytics.service';
+import { ContactLocationService } from '../../../common/services/contact-location.service';
 
 @Component({
   selector: 'app-automation-space',
@@ -20,9 +22,16 @@ export class AutomationSpaceComponent {
     { h3: 'Growing Families', p: 'Adapt your existing home to accommodate new family members without the need for costly renovation or relocation.' },
   ];
 
-  constructor(title: GoasosTitleService, meta: MetaService) {
+  constructor(title: GoasosTitleService,
+    meta: MetaService,
+    public analytics: AnalyticsService,
+    public cont: ContactLocationService) {
     title.UpdateTitle = 'Space-Saving Furniture & Solutions | Bangalore, Bhubaneswar & Cuttack';
     meta.Description = 'Discover compact, modular, and multi-functional furniture for homes & offices in Bangalore, Bhubaneswar & Cuttack. Explore foldable beds, smart desks & innovative storage solutions. Upgrade your home today!';
     meta.Keywords = 'space automation, space automation in bangalore, space automation in indiranagar, space automation in bengaluru, space automation in bhubaneshwar, space automation in cuttack, , space automation in usa';
+  }
+
+  public CaptureClicks(cta: string): void {
+    this.analytics.HomeCtaEvent(cta);
   }
 }

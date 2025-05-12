@@ -4,6 +4,8 @@ import { Box } from '../../../common/models';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { SecurityTypes } from '../../models';
+import { AnalyticsService } from '../../../common/services/analytics.service';
+import { ContactLocationService } from '../../../common/services/contact-location.service';
 
 @Component({
   selector: 'app-automation-security',
@@ -19,9 +21,16 @@ export class AutomationSecurityComponent {
     { title: 'App-Controlled Surveillance', imgSrc: 'app-cc', imgalt: 'app CCTV', points: ['Real-time mobile alerts on movement detection', 'View multiple camera feeds from anywhere', 'Centralized control via easy-to-use dashboard'] },
     { title: 'Centralized Video Management', imgSrc: 'mon-cc', imgalt: 'monitor CCTV', points: ['Monitor multiple sites from one control panel', 'Record, replay, and analyze video feeds', 'Scalable from small homes to large industrial setups'] },
   ];
-  constructor(title: GoasosTitleService, meta: MetaService) {
+  constructor(title: GoasosTitleService,
+    meta: MetaService,
+    public analytics: AnalyticsService,
+    public cont: ContactLocationService) {
     title.UpdateTitle = 'Centralized Video Surveillance Systems | CCTV Installation Services in Bangalore, Bhubaneswar & Cuttack';
     meta.Description = 'Secure your spaces with solar-powered CCTV camera systems and centralized video surveillance. Expert installation across Bangalore, Bhubaneswar and Cuttack. Trusted security for homes, offices & industries. Contact us today!';
     meta.Keywords = 'security automation, security automation in bangalore, security automation in indiranagar, security automation in bengaluru, security automation in bhubaneshwar, security automation in cuttack, , security automation in usa';
+  }
+
+  public CaptureClicks(cta: string): void {
+    this.analytics.HomeCtaEvent(cta);
   }
 }

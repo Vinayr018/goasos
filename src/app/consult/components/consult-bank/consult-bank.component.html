@@ -2,7 +2,8 @@
     p="Elevate your business with our expert software consulting services in Bangalore, Bhubaneswar, and Cuttack. Specialized in Banking & Financial Services, Capital Markets Solutions, and Data & AI Services."
     [showCLient]="true">
     <div class="actions" actions>
-        <a class="sec" href="">Request Your Consultation&nbsp;&nbsp;&rarr;</a>
+        <a class="sec" (click)="CaptureClicks('consulting_hero')" [href]="cont.PopulateContactLocation()">Request Your
+            Consultation&nbsp;&nbsp;&rarr;</a>
     </div>
 </app-hero>
 <section class="types">
@@ -81,7 +82,8 @@
             </mat-card-content>
         </mat-card>
     </div>
-    <a href="" class="highlight-text">Unlock Data-Driven Growth&nbsp;&nbsp;&rarr;</a>
+    <a (click)="CaptureClicks('consulting_what')" [href]="cont.PopulateContactLocation()" class="highlight-text">Unlock
+        Data-Driven Growth&nbsp;&nbsp;&rarr;</a>
 </section>
 <section class="process">
     <h2>Our Process</h2>
@@ -92,12 +94,12 @@
         <li><strong>Implementation</strong>End-to-end delivery with testing, documentation and training</li>
         <li><strong>Optimization</strong>We ensure scalability, performance and continuous improvement</li>
     </ul>
-    <a href="" class="highlight-text">Request Your Consultation</a>
+    <a (click)="CaptureClicks('consulting_process')" [href]="cont.PopulateContactLocation()"
+        class="highlight-text">Request Your Consultation</a>
 </section>
 <app-service-areas
     header="GOAS provides localized delivery and personalized support across India's key innovation hubs:"
     bangalore="Fintech-focused consulting for startups, digital banks & investment firms"
     bhubaneshwar="Software strategy and automation support for public sector banks & SMEs"
     cuttack="Affordable AI and data analytics solutions for regional businesses" />
-<app-contact h2="Take Action Today"/>
-
+<app-contact h2="Take Action Today" />

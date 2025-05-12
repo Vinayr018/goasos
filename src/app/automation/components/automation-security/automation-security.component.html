@@ -2,7 +2,8 @@
     p="Whether it's your home, office or industrial plant—security starts with smart surveillance. Our cutting-edge CCTV cameras and centralized video surveillance systems offer real-time monitoring, remote access, and AI-powered alerts to protect what matters most. Expert installation across Bangalore, Bhubaneswar and Cuttack."
     h1="Centralized Video Surveillance Systems & CCTV Installation Services in Bangalore, Bhubaneswar & Cuttack">
     <div class="actions" actions>
-        <a class="sec" href="">Request Security Assessment&nbsp;&nbsp;&rarr;</a>
+        <a class="sec" (click)="CaptureClicks('security_automation_assesment')"
+            [href]="cont.PopulateContactLocation()">Request Security Assessment&nbsp;&nbsp;&rarr;</a>
     </div>
 </app-hero>
 <section class="types">
@@ -22,7 +23,7 @@
             </mat-card-content>
         </mat-card>
     </div>
-    <p class="highlight-text">Request a Custom Quote</p>
+    <a (click)="CaptureClicks('industry_automation_assesment')" [href]="cont.PopulateContactLocation()" class="highlight-text">Request a Custom Quote</a>
 </section>
 <section class="indus">
     <h2>Industry-Specific CCTV Installation Services</h2>
@@ -40,4 +41,4 @@
         bangalore="and surrounding areas" bhubaneshwar="and surrounding areas"
         cuttack="and surrounding areas"></app-service-areas>
 </section>
-<app-contact h2="Ready to Upgrade Your Security?"/>
+<app-contact h2="Ready to Upgrade Your Security?" />

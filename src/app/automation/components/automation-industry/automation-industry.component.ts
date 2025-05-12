@@ -1,10 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Box, Video } from '../../../common/models';
-import { AutomationDataService } from '../../services/data.service';
-import { Subscription } from 'rxjs';
+import { Component } from '@angular/core';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { IndustryContent } from '../../models';
+import { AnalyticsService } from '../../../common/services/analytics.service';
+import { ContactLocationService } from '../../../common/services/contact-location.service';
 
 @Component({
   selector: 'app-automation-industry',
@@ -56,9 +55,17 @@ export class AutomationIndustryComponent {
     }
   ];
 
-  constructor(title: GoasosTitleService, meta: MetaService) {
+  constructor(title: GoasosTitleService,
+    meta: MetaService,
+    public analytics: AnalyticsService,
+    public cont: ContactLocationService
+  ) {
     title.UpdateTitle = 'Industrial Automation Solutions Provider | Factory Automation Systems in Bangalore, Bhubaneswar & Cuttack';
     meta.Description = 'Transform your manufacturing with our advanced industrial automation solutions. From machine automation solutions to cloud-based solutions, we deliver customized systems that boost efficiency and reduce costs—available in Bangalore, Bhubaneswar & Cuttack.';
     meta.Keywords = 'industry automation, industry automation in bangalore, industry automation in indiranagar, industry automation in bengaluru, industry automation in bhubaneshwar, industry automation in cuttack, , industry automation in usa';
+  }
+
+  public CaptureClicks(cta: string): void {
+    this.analytics.HomeCtaEvent(cta);
   }
 }
