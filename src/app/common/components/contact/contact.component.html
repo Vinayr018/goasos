@@ -27,7 +27,7 @@
         <div class="row">
             <label for="phone">Phone Number</label>
             <div class="control">
-                <app-phone />
+                <app-phone formControlName="phone" (codechange)="helper.UpdatePhoneFormatValidation($event)" />
                 <div class="errors" [ngClass]="helper.HasError(helper.PhoneControl) ? 'err':''">
                     <ul>
                         <li><span>{{helper.ErrorMessage(helper.PhoneControl)}}</span></li>
@@ -70,6 +70,13 @@
         </div>
         <div class="row">
             <button type="submit">Request Your Consultation</button>
+        </div>
+        <div class="row">
+            <p class="highlight-text">Call Now:
+                <a href="tel:+919845812673">Bengaluru&nbsp;&nbsp;+91-98458 12673</a>
+                <a href="tel:+919845812673">Bhubaneswar&nbsp;&nbsp;+91-98458 12673</a>
+                <a href="tel:+919845812673">Cuttack&nbsp;&nbsp;+91-98458 12673</a>
+            </p>
         </div>
     </form>
 </section>

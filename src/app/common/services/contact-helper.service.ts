@@ -30,7 +30,9 @@ export class ContactHelperService {
       email: 'Not a valid email'
     },
     phone: {
-      required: 'Phone number is required for communication purposes'
+      required: 'Phone number is required for communication purposes',
+      unknown: 'Our services are available only in India and the US.',
+      pattern: 'Invalid phone number'
     },
     interest: {
       required: 'Please select atleast 1 field you are interested in'
@@ -57,7 +59,7 @@ export class ContactHelperService {
     this.contactGroup = new FormGroup({
       name: new FormControl<string>('', [Validators.required]),
       email: new FormControl<string>('', [Validators.required, Validators.email]),
-      phone: new FormControl<string>('', [Validators.required]),
+      phone: new FormControl<string>('', [Validators.required, Validators.pattern(this.regEx['IN'])]),
       interest: new FormControl<CustomSelectOption[]>([], [Validators.required]),
       location: new FormControl<CustomSelectOption[]>([], [Validators.required]),
       message: new FormControl<string>('', [Validators.required])
@@ -106,7 +108,7 @@ export class ContactHelperService {
     if (!field) {
       return undefined;
     }
-    
+
     const errorKey = !!control.errors ? Object.keys(control.errors)[0] : undefined;
 
     if (!errorKey) {
@@ -129,6 +131,25 @@ export class ContactHelperService {
     });
 
     return name;
+  }
+
+  private regEx: Record<string, string> = {
+    IN: '^[6-9]\\d{9}$',
+    US: '^(?:\\([2-9]\\d{2}\\)\\s?|[2-9]\\d{2}[-.\\s]?)[2-9]\\d{2}[-.\\s]?\\d{4}$'
+  };
+
+  public UpdatePhoneFormatValidation(newVal: CustomSelectOption): void {
+    this.PhoneControl.clearValidators();
+    const matchingRegex = this.regEx[newVal.key]
+    console.log(matchingRegex);
+    if (!matchingRegex) {
+      this.PhoneControl.setErrors({ unknown: true });
+      this.PhoneControl.updateValueAndValidity();
+      return;
+    }
+
+    this.PhoneControl.setValidators(Validators.pattern(matchingRegex));
+    this.PhoneControl.updateValueAndValidity();
   }
 
 }

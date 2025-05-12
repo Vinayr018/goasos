@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <input type="text">
+    <input type="text" (keydown)="Val($event)">
     <button class="flag" type="button" (click)="ToggleDDL()" [ngClass]="isMenuOpen ? 'show':''">
         <img [src]="'images/'+selectedOption.value" [alt]="selectedOption.key">
         <mat-icon fontIcon="arrow_drop_down"></mat-icon>

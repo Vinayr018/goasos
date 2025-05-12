@@ -10,13 +10,13 @@ export class ContactComponent {
 
   @Input({ required: true }) public h2!: string;
 
-  
+
   // const height = div.getBoundingClientRect().height;
 
   constructor(public helper: ContactHelperService) { }
 
   public FormSubmit(): void {
-    console.log('formSubmit', this.helper.IsFormValid, this.helper.contactValue);
+    console.log('formSubmit', this.helper.IsFormValid, this.helper.contactValue, this.helper.PhoneControl.errors);
   }
 
 
