@@ -1,5 +1,6 @@
 <section class="contact" id="contact-section">
     <h2>{{h2}}</h2>
+    <h3 *ngIf="!!h3">{{h3}}</h3>
     <p>Contact us to request a demo or schedule a consultation.</p>
     <form [formGroup]="helper.contactGroup" (ngSubmit)="FormSubmit()">
         <div class="row">
