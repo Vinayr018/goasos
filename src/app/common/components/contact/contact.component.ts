@@ -1,5 +1,7 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { ContactHelperService } from '../../services/contact-helper.service';
+import { ContactService } from '../../services/contact.service';
+import { ContactModel } from '../../models';
 
 @Component({
   selector: 'app-contact',
@@ -11,12 +13,15 @@ export class ContactComponent {
   @Input({ required: true }) public h2!: string;
   @Input() public h3: string;
 
-  constructor(public helper: ContactHelperService) {
+  constructor(public helper: ContactHelperService, private ser: ContactService) {
     this.h3 = '';
   }
 
   public FormSubmit(): void {
-    console.log('formSubmit', this.helper.IsFormValid, this.helper.contactValue, this.helper.PhoneControl.errors);
+    console.log('formSubmit', this.helper.IsFormValid, this.helper.contactValue, this.helper.countryCode);
+    if (this.helper.IsFormValid) {
+      this.ser.SendEmailNew(new ContactModel(this.helper.contactValue, this.helper.countryCode!));
+    }
   }
 
 

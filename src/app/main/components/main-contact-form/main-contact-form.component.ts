@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatCheckboxChange } from '@angular/material/checkbox';
 import { IdentifierService } from '../../../common/services';
-import { ContactService } from '../../services/contact.service';
+import { ContactService } from '../../../common/services/contact.service';
 import { ContactForm } from '../../models';
 import { provideHttpClient, withJsonpSupport } from '@angular/common/http';
 

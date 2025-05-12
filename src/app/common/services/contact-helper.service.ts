@@ -55,6 +55,8 @@ export class ContactHelperService {
     return this.contactGroup.getRawValue();
   }
 
+  public countryCode: CustomSelectOption;
+
   constructor() {
     this.contactGroup = new FormGroup({
       name: new FormControl<string>('', [Validators.required]),
@@ -64,6 +66,7 @@ export class ContactHelperService {
       location: new FormControl<CustomSelectOption[]>([], [Validators.required]),
       message: new FormControl<string>('', [Validators.required])
     });
+    this.countryCode = new CustomSelectOption('IN', 'india.webp');
   }
 
   public Locations: CustomSelectOption[] = this._locations.map(l => new CustomSelectOption(l, l));
@@ -150,6 +153,7 @@ export class ContactHelperService {
 
     this.PhoneControl.setValidators(Validators.pattern(matchingRegex));
     this.PhoneControl.updateValueAndValidity();
+    this.countryCode = newVal;
   }
 
 }

@@ -61,7 +61,7 @@
         <div class="row">
             <label for="mg">Message</label>
             <div class="control">
-                <textarea id="mg"></textarea>
+                <textarea id="mg" formControlName="message"></textarea>
                 <div class="errors" [ngClass]="helper.HasError(helper.MessageControl) ? 'err':''">
                     <ul>
                         <li><span>{{helper.ErrorMessage(helper.MessageControl)}}</span></li>
