@@ -1,0 +1,54 @@
+div.wrapper {
+    position: relative;
+    min-height: calc(1rem + 20px);
+    min-width: 100px;
+    overflow: hidden;
+    border: 1px solid #101010;
+    &:focus,
+    &:focus-within,
+    &:active,
+    &:focus-visible {
+        border: 2px solid #101010;
+        box-shadow:
+            0 0 0 1px #606060,
+            inset 0 0 0 1px #606060;
+    }
+    > input {
+        border: transparent;
+        position: absolute;
+        inset: 0;
+        background-color: transparent;
+        padding-left: 60px;
+    }
+    > div.flag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        gap: 5px;
+        padding: 0 5px;
+        > img {
+            display: block;
+            width: 1em;
+            object-fit: contain;
+        }
+        > mat-icon {
+            height: 1em;
+            width: 1em;
+        }
+    }
+    > ul {
+        max-height: 0;
+        overflow: hidden;
+        > li {
+            > img {
+                width: 20px;
+                display: inline-block;
+                object-fit: contain;
+            }
+        }
+    }
+}

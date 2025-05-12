@@ -5,6 +5,7 @@ $bg-color: white;
 $color: black;
 $arr-btn-width: 25px;
 $arr-width: ($arr-btn-width - 10px);
+$animation-time: 0.7s;
 
 div.wrapper {
     border: 1px solid #101010; // center 2px #101010, out and in 1px #606060
@@ -41,20 +42,11 @@ div.wrapper {
         top: 0;
         bottom: 0;
         width: $arr-btn-width;
+        background-color: transparent;
+        border: transparent;
+        transition: transform $animation-time;
         &.open {
-            > span {
-                transform: rotate(27deg) translateX(6px);
-            }
-        }
-        > span {
-            display: block;
-            width: 0;
-            height: 0;
-            border-top: math.div($arr-width, 2) solid transparent;
-            border-bottom: math.div($arr-width, 2) solid transparent;
-            border-left: $arr-width solid $color;
-            transform: rotate(-28deg) translateX(6px);
-            transform-origin: center;
+            transform: rotate(180deg);
         }
     }
     > ul {
@@ -70,6 +62,7 @@ div.wrapper {
         overflow: hidden;
         box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
         border-radius: 4px;
+        transition: max-height $animation-time;
         &.open {
             max-height: 170px; //TODO: revisit this
         }

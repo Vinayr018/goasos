@@ -15,6 +15,7 @@ import { VideoBoxComponent } from "./video-box/video-box.component";
 import { VideoBrochureComponent } from "./video-brochure/video-brochure.component";
 import { VideoComponent } from "./video/video.component";
 import { GoasosFooterComponent } from "./goasos-footer/goasos-footer.component";
+import { PhoneComponent } from "./phone/phone.component";
 
 export {
     HeaderComponent, BaseComponent,
@@ -25,5 +26,5 @@ export {
     SuccessSnackComponent, SeoMetaComponent,
     HeroComponent, ServiceAreasComponent,
     ContactComponent, FloatContactComponent,
-    GoasosFooterComponent
+    GoasosFooterComponent, PhoneComponent
 }

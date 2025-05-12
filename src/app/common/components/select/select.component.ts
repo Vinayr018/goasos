@@ -74,6 +74,7 @@ export class SelectComponent implements OnInit, OnDestroy, ControlValueAccessor 
   }
 
   private adjustPositionOfOptions(): void {
+    console.log(this.options.nativeElement.style.maxHeight,'px')
     this.options.nativeElement.style.top = `${this.div.nativeElement.getBoundingClientRect().height}px`;
   }
 
