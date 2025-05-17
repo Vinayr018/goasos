@@ -3,9 +3,31 @@
     <nav #nav>
         <ul>
             <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
-            <li routerLinkActive="active"><a routerLink="/product">Products</a></li>
-            <li routerLinkActive="active"><a routerLink="/contact">Contact Us</a></li>
             <li routerLinkActive="active"><a routerLink="/about">About Us</a></li>
+            <li>
+                <a [matMenuTriggerFor]="me" style="text-decoration: underline;cursor: pointer;">Products & Solutions</a>
+                <mat-menu #me>
+                    <ul class="drop-menu">
+                        <li><a routerLink="/smart-home-automation-solutions">Home automation</a></li>
+                        <li><a routerLink="/smart-office-automation-solutions">Office automation</a></li>
+                        <li><a routerLink="/industrial-automation-solutions">Industry automation</a></li>
+                        <li><a routerLink="/solar-energy-solutions">Energy automation</a></li>
+                    </ul>
+                </mat-menu>
+            </li>
+            <li routerLinkActive="active"><a routerLink="/software-consulting-services">Consulting Services</a></li>
+            <li>
+                <a [matMenuTriggerFor]="meloc" style="text-decoration: underline;cursor: pointer;">Our Locations</a>
+                <mat-menu #meloc>
+                    <ul class="drop-menu">
+                        <li><a routerLink="/">Bangalore</a></li>
+                        <li><a routerLink="/">Bhubaneshwar</a></li>
+                        <li><a routerLink="/">Cuttack</a></li>
+                    </ul>
+                </mat-menu>
+            </li>
+            <li routerLinkActive="active"><a routerLink="/i">Resources</a></li>
+            <li routerLinkActive="active"><a routerLink="/contact">Contact Us</a></li>
         </ul>
     </nav>
     <button class="ham" (click)="ShowHeaderMenu()" aria-label="menu for main links">

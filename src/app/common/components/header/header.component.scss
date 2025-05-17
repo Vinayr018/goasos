@@ -46,7 +46,7 @@ header {
         display: none;
         border: transparent;
         background: transparent;
-        @media (max-width:$breaking-point) {
+        @media (max-width: $breaking-point) {
             display: inline-block;
         }
         > span {

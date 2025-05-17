@@ -363,3 +363,13 @@ h4.products-header {
 // input, button, select, optgroup, textarea {
 //   font-size: ;
 // }
+
+ul.drop-menu {
+  > li {
+    padding: 10px 15px;
+    &:hover,
+    &.active {
+      color: #00a7f8;
+    }
+  }
+}
