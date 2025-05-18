@@ -7,11 +7,12 @@ import { MainContactComponent } from "./main-contact/main-contact.component";
 import { MainHomeComponent } from "./main-home/main-home.component";
 import { MainProductComponent } from "./main-product/main-product.component";
 import { ProductVideoComponent } from "./product-video/product-video.component";
+import { MainGeoComponent } from "./main-geo/main-geo.component";
 
 export {
     MainBaseComponent, MainHomeComponent,
     MainAboutComponent, ProductVideoComponent,
     MainContactComponent, MainProductComponent,
     MainContactBranchComponent, MainContactFormComponent,
-    MainContactSocialComponent
+    MainContactSocialComponent, MainGeoComponent
 }

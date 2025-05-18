@@ -7,6 +7,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatListModule } from '@angular/material/list';
 
 const matModules: any[] = [
     MatButtonModule,
@@ -17,6 +19,8 @@ const matModules: any[] = [
     MatCheckboxModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatBottomSheetModule,
+    MatListModule
 ];
 
 @NgModule({

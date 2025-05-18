@@ -5,7 +5,7 @@ import {
     MainBaseComponent, MainHomeComponent,
     MainAboutComponent, ProductVideoComponent,
     MainContactBranchComponent, MainContactFormComponent,
-    MainContactSocialComponent
+    MainContactSocialComponent, MainGeoComponent
 } from './components';
 import { GoasosCommonModule } from "../common/common.module";
 import { AutomationModule } from "../automation/automation.module";
@@ -32,7 +32,8 @@ const routes: Routes = [
         ProductVideoComponent,
         MainContactBranchComponent,
         MainContactFormComponent,
-        MainContactSocialComponent
+        MainContactSocialComponent,
+        MainGeoComponent
     ],
     imports: [
         RouterModule.forChild(routes),
