@@ -1,6 +1,7 @@
 section.wrapper {
     > section.map {
         background-color: #eeeeee;
+        padding: 10px;
         > div.detail {
             display: flex;
             justify-content: space-evenly;
@@ -23,6 +24,12 @@ section.wrapper {
         > img {
             display: block;
             margin: 1em auto;
+        }
+        > p {
+            margin: auto;
+            width: fit-content;
+            color: red;
+            font-weight: 900;
         }
     }
     > section.social {
