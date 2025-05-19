@@ -130,10 +130,4 @@ export class MainContactFormComponent {
     catCrontol.patchValue(this.categories);
     catCrontol.setErrors(this.categories.length > 0 ? null : { required: true });
   }
-
-  public SubmitQuery(): void {
-    this.isSubmitted = true;
-    console.log('submit', this.formGroup.getRawValue(), this.iden.identifier);
-    this.ser.SendEmail(new ContactForm(this.formGroup.getRawValue(), this.iden.identifier));
-  }
 }

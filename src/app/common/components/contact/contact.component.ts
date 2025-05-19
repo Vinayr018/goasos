@@ -23,7 +23,6 @@ export class ContactComponent {
   }
 
   public FormSubmit(): void {
-    console.log('formSubmit', this.helper.IsFormValid, this.helper.contactValue, this.helper.countryCode);
     if (this.helper.IsFormValid) {
       this.ser.SendEmailNew(new ContactModel(this.helper.contactValue, this.helper.countryCode!));
     }
