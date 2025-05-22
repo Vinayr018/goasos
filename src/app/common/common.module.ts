@@ -5,7 +5,8 @@ import {
   VideoBrochureComponent, ProductGalleryComponent, VideoComponent,
   SlideBoxComponent, SuccessSnackComponent, SeoMetaComponent,
   HeroComponent, ServiceAreasComponent, ContactComponent,
-  FloatContactComponent, GoasosFooterComponent, PhoneComponent
+  FloatContactComponent, GoasosFooterComponent, PhoneComponent,
+  InterestComponent, SelectComponent
 } from './components';
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { RouterModule } from "@angular/router";
@@ -20,9 +21,7 @@ import {
   ThemeDirective,
   CarouselCaptionComponent,
 } from '@coreui/angular';
-import { SelectComponent } from './components/select/select.component';
 import { ReactiveFormsModule } from "@angular/forms";
-
 
 @NgModule({
   declarations: [
@@ -46,12 +45,13 @@ import { ReactiveFormsModule } from "@angular/forms";
     FloatContactComponent,
     GoasosFooterComponent,
     PhoneComponent,
+    InterestComponent,
   ],
   exports: [HeaderComponent, BaseComponent, BoxComponent,
     BrochureComponent, MenuComponent, ProductGalleryComponent,
     VideoBrochureComponent, SlideBoxComponent, SuccessSnackComponent,
     SeoMetaComponent, HeroComponent, ServiceAreasComponent, ContactComponent,
-    FloatContactComponent, GoasosFooterComponent],
+    FloatContactComponent, GoasosFooterComponent, InterestComponent],
   imports: [GoasasMatModule, RouterModule, CommonModule,
     ThemeDirective, CarouselComponent,
     CarouselInnerComponent, CarouselItemComponent,

@@ -43,3 +43,10 @@ export class ContactModel {
         return `${isds[code.key]} ${numb}`;
     }
 }
+
+export interface Interest {
+    h3: string;
+    p: string;
+    cta: string;
+    link: string;
+}

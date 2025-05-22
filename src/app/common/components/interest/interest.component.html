@@ -1,0 +1,16 @@
+<section class="wrapper">
+    <h2>You May Also Be Interested In:</h2>
+    <div class="cards">
+        <mat-card *ngFor="let c of data">
+            <mat-card-header>
+                <h3>{{c.h3}}</h3>
+            </mat-card-header>
+            <mat-card-content style="flex:1;">
+                <p class="card-content">{{c.p}}</p>
+            </mat-card-content>
+            <mat-card-actions class="act">
+                <a class="card-action" [routerLink]="'/'+c.link">{{c.cta}}&nbsp;&rarr;</a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</section>

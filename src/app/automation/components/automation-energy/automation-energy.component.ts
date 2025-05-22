@@ -3,6 +3,7 @@ import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { ContactLocationService } from '../../../common/services/contact-location.service';
 import { AnalyticsService } from '../../../common/services/analytics.service';
+import { Interest } from '../../../common/models';
 
 @Component({
   selector: 'app-automation-energy',
@@ -10,6 +11,13 @@ import { AnalyticsService } from '../../../common/services/analytics.service';
   styleUrl: './automation-energy.component.scss'
 })
 export class AutomationEnergyComponent {
+
+  public others: Interest[] = [
+    { h3: 'Home Automation Solutions:', p: 'Transform your living space with intelligent systems that enhance comfort, security, and energy efficiency.', cta: 'Make Your Home Smarter', link: 'smart-home-automation-solutions' },
+    { h3: 'Office Automation Services:', p: 'Streamline workplace operations with smart systems that boost productivity and strengthen security.', cta: 'Optimize Your Office', link: 'smart-office-automation-solutions' },
+    { h3: 'Industrial Automation Systems:', p: 'Optimize your industrial operations with robust, cloud-based solutions.', cta: 'Boost Production', link: 'industrial-automation-solutions' },
+  ];
+
   constructor(title: GoasosTitleService,
     meta: MetaService,
     public analytics: AnalyticsService,

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component } from '@angular/core';
-import { Box, SlideBox } from '../../../common/models';
+import { Box, Interest, SlideBox } from '../../../common/models';
 import { AutomationDataService } from '../../services/data.service';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
@@ -12,6 +12,12 @@ import { ContactLocationService } from '../../../common/services/contact-locatio
   styleUrl: './automation-office.component.scss'
 })
 export class AutomationOfficeComponent implements AfterViewInit {
+
+  public others: Interest[] = [
+    { h3: 'Security Cameras & Centralized Surveillance:', p: 'Protect your assets and ensure security with advanced video surveillance systems designed for residential, commercial and industrial environments', cta: 'Upgrade Your Security', link: 'cctv-video-surveillance-security-cameras' },
+    { h3: 'Solar Energy Solutions:', p: 'Optimize energy consumption with renewable solutions for homes and businesses.', cta: 'Go Green', link: 'solar-energy-solutions' },
+    { h3: 'Software Consulting Services', p: 'Specialized in Banking & Financial Services, Capital Markets & Wealth Management Solutions, and Data & AI Services.', cta: 'Unlock Data-Driven Growth', link: 'software-consulting-services' },
+  ];
 
   constructor(title: GoasosTitleService,
     meta: MetaService,

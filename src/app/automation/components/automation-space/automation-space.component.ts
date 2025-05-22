@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { Box, VideoBox } from '../../../common/models';
+import { Box, Interest, VideoBox } from '../../../common/models';
 import { AutomationDataService } from '../../services/data.service';
 import { Subscription } from 'rxjs';
 import { GoasosTitleService } from '../../../common/services/title.service';
@@ -14,6 +14,12 @@ import { ContactLocationService } from '../../../common/services/contact-locatio
   styleUrl: './automation-space.component.scss'
 })
 export class AutomationSpaceComponent {
+
+  public others: Interest[] = [
+    { h3: 'Home Automation Solutions:', p: 'Transform your living space with intelligent systems that enhance comfort, security, and energy efficiency.', cta: 'Make Your Home Smarter', link: 'smart-home-automation-solutions' },
+    { h3: 'Security Cameras & Centralized Surveillance:', p: 'Protect your assets and ensure security with advanced video surveillance systems designed for residential, commercial and industrial environments', cta: 'Upgrade Your Security', link: 'cctv-video-surveillance-security-cameras' },
+    { h3: 'Solar Energy Solutions:', p: 'Optimize energy consumption with renewable solutions for homes and businesses.', cta: 'Go Green', link: 'solar-energy-solutions' },
+  ];
 
   public homes: SpaceHomes[] = [
     { h3: 'Apartments and Flats', p: 'Maximize limited space in urban apartments across Bangalore, Bhubaneswar and Cuttack.' },

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AutomationDataService } from '../../services/data.service';
-import { Box } from '../../../common/models';
+import { Box, Interest } from '../../../common/models';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { SecurityTypes } from '../../models';
@@ -13,6 +13,12 @@ import { ContactLocationService } from '../../../common/services/contact-locatio
   styleUrl: './automation-security.component.scss'
 })
 export class AutomationSecurityComponent {
+
+  public others: Interest[] = [
+    { h3: 'Home Automation Solutions:', p: 'Transform your living space with intelligent systems that enhance comfort, security, and energy efficiency.', cta: 'Make Your Home Smarter', link: 'smart-home-automation-solutions' },
+    { h3: 'Office Automation Services:', p: 'Streamline workplace operations with smart systems that boost productivity and strengthen security.', cta: 'Optimize Your Office', link: 'smart-office-automation-solutions' },
+    { h3: 'Industrial Automation Systems:', p: 'Optimize your industrial operations with robust, cloud-based solutions.', cta: 'Boost Production', link: 'industrial-automation-solutions' },
+  ];
 
   public types: SecurityTypes[] = [
     { title: 'IP Security Cameras', imgSrc: 'cc', imgalt: 'CCTV', points: ['High-definition video (HD, 4K)', 'Night vision and motion sensors', 'Weather-resistant construction for outdoor use', 'Network integration for centralized monitoring'] },
