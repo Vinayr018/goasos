@@ -17,8 +17,6 @@
         <li>Integrate predictive maintenance</li>
         <li>Centralize system control & data visibility</li>
     </ul>
-    <a (click)="CaptureClicks('industry_automation_assesment')" [href]="cont.PopulateContactLocation()"
-        class="highlight-text">Book a Free On-Site Assessment Today&nbsp;&nbsp;&rarr;</a>
 </section>
 <section class="types">
     <h2>Our Industrial Automation Solutions</h2>
@@ -38,14 +36,12 @@
             </div>
         </div>
     </div>
-    <p class="highlight-text">Request a Custom Quote</p>
+    <a [href]="cont.PopulateContactLocation()" class="highlight-text">Request a Custom Quote</a>
 </section>
-<section>
-    <app-service-areas footer="" header="We work closely with clients across industrial hubs in:"
-        bangalore="Supporting businesses throughout the city and surrounding commercial zones"
-        bhubaneshwar="Supporting businesses throughout the city and surrounding commercial zones"
-        cuttack="Supporting businesses throughout the city and surrounding commercial zones"></app-service-areas>
-</section>
+<app-service-areas footer="" header="We work closely with clients across industrial hubs in:"
+bangalore="Supporting businesses throughout the city and surrounding commercial zones"
+bhubaneshwar="Supporting businesses throughout the city and surrounding commercial zones"
+cuttack="Supporting businesses throughout the city and surrounding commercial zones"></app-service-areas>
 <section class="working">
     <h2>Our Implementation Process</h2>
     <ul>

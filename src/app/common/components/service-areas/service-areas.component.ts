@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ContactLocationService } from '../../services/contact-location.service';
 
 @Component({
   selector: 'app-service-areas',
@@ -12,4 +13,5 @@ export class ServiceAreasComponent {
   @Input({ required: true }) public bhubaneshwar!: string;
   @Input({ required: true }) public cuttack!: string;
   
+  constructor(public cont: ContactLocationService){}
 }

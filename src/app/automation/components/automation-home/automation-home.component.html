@@ -11,22 +11,19 @@ in Bengaluru, Bhubaneswar & Cuttack.">
 <section class="block why">
     <h2>Why Choose Our Home Automation Services?</h2>
     <ul class="strong-point">
-        <li><strong>Seamless Control</strong>Manage everything via mobile apps or voice assistants.</li>
-        <li><strong>Enhanced Security</strong>Protect your home with smart locks, video doorbell integration & CCTV.
+        <li><h3>Seamless Control</h3>Manage everything via mobile apps or voice assistants.</li>
+        <li><h3>Enhanced Security</h3>Protect your home with smart locks, video doorbell integration & CCTV.
         </li>
-        <li><strong>Energy Efficiency</strong>Automate lights, curtains & appliances to reduce energy waste.</li>
-        <li><strong>Expert Installation</strong>We customize solutions for apartments, villas & commercial spaces.</li>
+        <li><h3>Energy Efficiency</h3>Automate lights, curtains & appliances to reduce energy waste.</li>
+        <li><h3>Expert Installation</h3>We customize solutions for apartments, villas & commercial spaces.</li>
     </ul>
-    <a class="sec highlight-text" (click)="CaptureClicks('home_automation_why_us')"
-        [href]="cont.PopulateContactLocation()">Get a Free Consultation
-        Today&nbsp;&nbsp;&rarr;</a>
 </section>
 <section class="block products">
     <h2>Our Home Automation Solutions</h2>
     <div class="automation-cards">
         <mat-card appearance="outlined">
             <mat-card-header>
-                <mat-card-title><strong>Home Security & Surveillance</strong></mat-card-title>
+                <mat-card-title><h3>Home Security & Surveillance</h3></mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <ul class="card-list">
@@ -38,7 +35,7 @@ in Bengaluru, Bhubaneswar & Cuttack.">
         </mat-card>
         <mat-card appearance="outlined">
             <mat-card-header>
-                <mat-card-title><strong>Smart Gate Automation</strong></mat-card-title>
+                <mat-card-title><h3>Smart Gate Automation</h3></mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <ul class="card-list">
@@ -50,7 +47,7 @@ in Bengaluru, Bhubaneswar & Cuttack.">
         </mat-card>
         <mat-card appearance="outlined">
             <mat-card-header>
-                <mat-card-title><strong>Smart Door Locks & Video Doorbell Integration</strong></mat-card-title>
+                <mat-card-title><h3>Smart Door Locks & Video Doorbell Integration</h3></mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <ul class="card-list">
@@ -62,7 +59,7 @@ in Bengaluru, Bhubaneswar & Cuttack.">
         </mat-card>
         <mat-card appearance="outlined">
             <mat-card-header>
-                <mat-card-title><strong>Smart Lighting Automation</strong></mat-card-title>
+                <mat-card-title><h3>Smart Lighting Automation</h3></mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <ul class="card-list">
@@ -74,7 +71,7 @@ in Bengaluru, Bhubaneswar & Cuttack.">
         </mat-card>
         <mat-card appearance="outlined">
             <mat-card-header>
-                <mat-card-title><strong>Automated Curtain & Blinds</strong></mat-card-title>
+                <mat-card-title><h3>Automated Curtain & Blinds</h3></mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <ul class="card-list">
@@ -85,14 +82,12 @@ in Bengaluru, Bhubaneswar & Cuttack.">
             </mat-card-content>
         </mat-card>
     </div>
-    <h3 class="highlight-text">Want a fully automated home? Contact us now!</h3>
+    <a class="highlight-text" [href]="cont.PopulateContactLocation()">Want a fully automated home? Contact us now!</a>
 </section>
-<section class="block locations">
-    <app-service-areas header="We provide home automation solutions in:"
-        bangalore="Complete smart home solutions for tech-savvy urban homes"
-        bhubaneshwar="Advanced automation for modern residential spaces"
-        cuttack="Smart home technology tailored to your lifestyle"></app-service-areas>
-</section>
+<app-service-areas header="We provide home automation solutions in:"
+bangalore="Complete smart home solutions for tech-savvy urban homes"
+bhubaneshwar="Advanced automation for modern residential spaces"
+cuttack="Smart home technology tailored to your lifestyle"></app-service-areas>
 <section class="block working">
     <h2>How it works</h2>
     <ul>
@@ -101,8 +96,6 @@ in Bengaluru, Bhubaneswar & Cuttack.">
         <li><strong>Step&nbsp;3</strong>Installation & Setup - Quick & professional installation.</li>
         <li><strong>Step&nbsp;4</strong>Training & Support - Learn to use your smart home with ease!</li>
     </ul>
-    <p>Contact Us Today: <a class="highlight-text" (click)="CaptureClicks('home_automation_call_us')"
-            href="tel:+919999999999">+91&nbsp;99999&nbsp;99999</a></p>
 </section>
 <app-contact h2="Ready to Automate Your Home?"></app-contact>
 <app-interest [data]="others" />
