@@ -11,11 +11,10 @@ section.wrapper {
             margin-bottom: 0.5em;
         }
         .act {
-            justify-content: flex-end;
             padding-right: 1em;
             a.card-action {
+                padding-left: 8px;
                 display: block;
-                text-align: right;
                 color: $pri-color;
                 text-decoration: none;
             }

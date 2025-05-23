@@ -20,6 +20,7 @@ const routes: Routes = [
     { path: 'about', component: MainAboutComponent },
     { path: 'contact', component: MainContactComponent },
     { path: 'product', component: MainProductComponent },
+    { path: '**', redirectTo: '' }
 ]
 
 @NgModule({
