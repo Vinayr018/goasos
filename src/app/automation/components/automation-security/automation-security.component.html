@@ -11,7 +11,7 @@
     <div class="cards">
         <mat-card *ngFor="let c of types">
             <mat-card-header>
-                <mat-card-title>{{c.title}}</mat-card-title>
+                <mat-card-title><h3>{{c.title}}</h3></mat-card-title>
             </mat-card-header>
             <img loading="lazy" mat-card-image [src]="'/images/automation/security/'+c.imgSrc+'.png'" [alt]="c.imgalt">
             <mat-card-content>

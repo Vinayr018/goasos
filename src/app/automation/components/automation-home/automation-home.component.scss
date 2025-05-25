@@ -25,7 +25,8 @@ section.block {
             margin-left: 1em;
             > li {
                 @include list-spacing();
-                > strong {
+                > h3 {
+                    display: inline-block;
                     @include strong-points();
                 }
             }

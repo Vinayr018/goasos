@@ -230,7 +230,8 @@ button.product-video-control {
 ul.strong-bullet-points {
   list-style: none;
   > li {
-    > strong {
+    > h3,
+    strong {
       &::after {
         content: "-";
         margin-left: 6px;
