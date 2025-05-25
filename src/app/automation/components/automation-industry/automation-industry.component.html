@@ -21,7 +21,8 @@
 <section class="types">
     <h2>Our Industrial Automation Solutions</h2>
     <div class="type" *ngFor="let ty of content">
-        <div class="icon"><img loading="lazy" [src]="'/images/automation/industry/'+ty.icon+'.png'" [alt]="ty.alt">
+        <div class="icon"><img loading="lazy" [src]="'/images/automation/industry/'+ helper.GetFileName(ty.h3)+'.png'"
+                [alt]="ty.h3">
         </div>
         <div class="content">
             <h3>{{ty.h3}}</h3>
@@ -39,9 +40,9 @@
     <a [href]="cont.PopulateContactLocation()" class="highlight-text">Request a Custom Quote</a>
 </section>
 <app-service-areas footer="" header="We work closely with clients across industrial hubs in:"
-bangalore="Supporting businesses throughout the city and surrounding commercial zones"
-bhubaneshwar="Supporting businesses throughout the city and surrounding commercial zones"
-cuttack="Supporting businesses throughout the city and surrounding commercial zones"></app-service-areas>
+    bangalore="Supporting businesses throughout the city and surrounding commercial zones"
+    bhubaneshwar="Supporting businesses throughout the city and surrounding commercial zones"
+    cuttack="Supporting businesses throughout the city and surrounding commercial zones"></app-service-areas>
 <section class="working">
     <h2>Our Implementation Process</h2>
     <ul>
@@ -52,4 +53,4 @@ cuttack="Supporting businesses throughout the city and surrounding commercial zo
     </ul>
 </section>
 <app-contact h2="Start Your Automation Journey" />
-<app-interest [data]="others"/>
+<app-interest [data]="others" />

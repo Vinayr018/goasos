@@ -15,7 +15,7 @@
                     <h3>{{c.title}}</h3>
                 </mat-card-title>
             </mat-card-header>
-            <img loading="lazy" mat-card-image [src]="'/images/automation/security/'+c.imgSrc+'.png'" [alt]="c.imgalt">
+            <img loading="lazy" mat-card-image [src]="'/images/automation/security/'+ helper.GetFileName(c.title)+'.png'" [alt]="c.title">
             <mat-card-content>
                 <ul class="card-list">
                     <ng-container *ngFor="let point of c.points">
