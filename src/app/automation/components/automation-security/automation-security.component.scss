@@ -30,6 +30,20 @@ section.types {
     }
 }
 
+section.works {
+    > h2 {
+        margin-bottom: 0.25em;
+    }
+    > div.desc {
+        > p {
+            margin-bottom: 0.1em;
+        }
+        > ol {
+            margin-left: 1em;
+        }
+    }
+}
+
 section.indus {
     padding: 1em;
     > h2 {

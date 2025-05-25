@@ -11,7 +11,9 @@
     <div class="cards">
         <mat-card *ngFor="let c of types">
             <mat-card-header>
-                <mat-card-title><h3>{{c.title}}</h3></mat-card-title>
+                <mat-card-title>
+                    <h3>{{c.title}}</h3>
+                </mat-card-title>
             </mat-card-header>
             <img loading="lazy" mat-card-image [src]="'/images/automation/security/'+c.imgSrc+'.png'" [alt]="c.imgalt">
             <mat-card-content>
@@ -23,7 +25,8 @@
             </mat-card-content>
         </mat-card>
     </div>
-    <a (click)="CaptureClicks('industry_automation_assesment')" [href]="cont.PopulateContactLocation()" class="highlight-text">Request a Custom Quote</a>
+    <a (click)="CaptureClicks('industry_automation_assesment')" [href]="cont.PopulateContactLocation()"
+        class="highlight-text">Request a Custom Quote</a>
 </section>
 <section class="indus">
     <h2>Industry-Specific CCTV Installation Services</h2>
@@ -35,11 +38,19 @@
         <li><strong>Hospitals & Schools</strong>Real-time emergency alerts, visitor management</li>
     </ul>
 </section>
-<section>
-    <app-service-areas
-        header="We provide professional security camera installation and maintenance services throughout:"
-        bangalore="and surrounding areas" bhubaneshwar="and surrounding areas"
-        cuttack="and surrounding areas"></app-service-areas>
+<app-service-areas header="We provide professional security camera installation and maintenance services throughout:"
+    bangalore="and surrounding areas" bhubaneshwar="and surrounding areas"
+    cuttack="and surrounding areas"></app-service-areas>
+<section class="works">
+    <h2>How it works</h2>
+    <div class="desc">
+        <p>3 Steps to Complete Security:</p>
+        <ol>
+            <li>Consultation: Assess your needs</li>
+            <li>Installation: Done in 6 hours by certified technicians.</li>
+            <li>Training: Learn to use the app</li>
+        </ol>
+    </div>
 </section>
 <app-contact h2="Ready to Upgrade Your Security?" />
-<app-interest [data]="others"/>
+<app-interest [data]="others" />
