@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import {
-    MainProductComponent, MainContactComponent,
+    MainContactComponent,
     MainBaseComponent, MainHomeComponent,
     MainAboutComponent, ProductVideoComponent,
     MainContactBranchComponent, MainContactFormComponent,
@@ -19,7 +19,6 @@ const routes: Routes = [
     { path: '', component: MainHomeComponent, pathMatch: 'full' },
     { path: 'about-us', component: MainAboutComponent },
     { path: 'contact-us', component: MainContactComponent },
-    { path: 'product', component: MainProductComponent },
     { path: '**', redirectTo: '' }
 ]
 
@@ -29,8 +28,6 @@ const routes: Routes = [
         MainHomeComponent,
         MainAboutComponent,
         MainContactComponent,
-        MainProductComponent,
-        ProductVideoComponent,
         MainContactBranchComponent,
         MainContactFormComponent,
         MainContactSocialComponent,

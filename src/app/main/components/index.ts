@@ -5,14 +5,13 @@ import { MainContactFormComponent } from "./main-contact-form/main-contact-form.
 import { MainContactSocialComponent } from "./main-contact-social/main-contact-social.component";
 import { MainContactComponent } from "./main-contact/main-contact.component";
 import { MainHomeComponent } from "./main-home/main-home.component";
-import { MainProductComponent } from "./main-product/main-product.component";
 import { ProductVideoComponent } from "./product-video/product-video.component";
 import { MainGeoComponent } from "./main-geo/main-geo.component";
 
 export {
     MainBaseComponent, MainHomeComponent,
     MainAboutComponent, ProductVideoComponent,
-    MainContactComponent, MainProductComponent,
+    MainContactComponent, 
     MainContactBranchComponent, MainContactFormComponent,
     MainContactSocialComponent, MainGeoComponent
 }
