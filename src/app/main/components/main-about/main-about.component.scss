@@ -1,6 +1,18 @@
 section.about-wrapper {
     section {
         padding: 0.5em 1em;
+        &.hero{
+            height: 50vh;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+            @media (max-width:667px) {
+                height: auto;
+                padding: 2em 0.5em;
+            }
+        }
         > h1 {
             font-size: 1.5rem;
         }
@@ -19,6 +31,7 @@ section.about-wrapper {
                     font-size: 1.15em;
                 }
                 @media (max-width:401px) {
+                    font-size: 1em;
                     margin: 0.5em 1em;
                 }
                 > em {
