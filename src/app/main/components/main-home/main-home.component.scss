@@ -67,6 +67,14 @@ div.main-home-wrapper {
             > div.auto-sol {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
+                @media (max-width: 1296px) {
+                    grid-template-columns: 1fr 1fr 1fr;
+                    justify-content: center;
+                }
+                @media (max-width: 934px) {
+                    grid-template-columns: 1fr 1fr;
+                    justify-content: center;
+                }
                 @media (max-width: 733px) {
                     grid-template-columns: 1fr;
                     justify-content: center;
