@@ -8,33 +8,45 @@
 </app-hero>
 <section class="products">
     <h2>Our Solar Solutions</h2>
-    <div class="product">
-        <h3>Solar Panel Installation</h3>
-        <ul>
-            <li>Rooftop solar for homes and apartments</li>
-            <li>Commercial solar installations for offices and buildings</li>
-            <li>Industrial solar farms and grid integration</li>
-            <li>Battery backup and energy storage solutions</li>
-        </ul>
+    <div class="products">
+        <mat-card class="space-it">
+            <mat-card-title>
+                <h3>Solar Panel Installation</h3>
+            </mat-card-title>
+            <mat-card-content>
+                <ul>
+                    <li>Rooftop solar for homes and apartments</li>
+                    <li>Commercial solar installations for offices and buildings</li>
+                    <li>Industrial solar farms and grid integration</li>
+                    <li>Battery backup and energy storage solutions</li>
+                </ul>
+            </mat-card-content>
+            <mat-card-actions>
+                <a class="highlight-text" (click)="CaptureClicks('energy_automation_installation')"
+                    [href]="cont.PopulateContactLocation()">Request
+                    a Free Consultation</a>
+            </mat-card-actions>
+        </mat-card>
+        <mat-card class="space-it">
+            <mat-card-title>
+                <h3>Benefits of Solar + Energy Automation</h3>
+            </mat-card-title>
+            <mat-card-content>
+                <ul>
+                    <li>Save up to 70% on energy bills</li>
+                    <li>Eco-Friendly</li>
+                    <li>Increased property value</li>
+                    <li>Minimal maintenance requirements</li>
+                    <li>Enjoy uninterrupted power with battery support</li>
+                    <li>Automate energy usage for greater efficiency</li>
+                </ul>
+            </mat-card-content>
+            <mat-card-actions>
+                <a class="highlight-text" (click)="CaptureClicks('energy_automation_benefits')"
+                    [href]="cont.PopulateContactLocation()">Request a Free Consultation</a>
+            </mat-card-actions>
+        </mat-card>
     </div>
-    <a class="btn sec" (click)="CaptureClicks('energy_automation_installation')"
-        [href]="cont.PopulateContactLocation()">Request
-        a Free Consultation</a>
-</section>
-<section class="why products">
-    <h2>Benefits of Solar + Energy Automation</h2>
-    <div class="product">
-        <ul>
-            <li>Save up to 70% on energy bills</li>
-            <li>Eco-Friendly</li>
-            <li>Increased property value</li>
-            <li>Minimal maintenance requirements</li>
-            <li>Enjoy uninterrupted power with battery support</li>
-            <li>Automate energy usage for greater efficiency</li>
-        </ul>
-    </div>
-    <a class="btn sec" (click)="CaptureClicks('energy_automation_benefits')"
-        [href]="cont.PopulateContactLocation()">Request a Free Consultation</a>
 </section>
 <app-service-areas header="We provide local, personalized service in:" bangalore="and surrounding areas"
     bhubaneshwar="and surrounding areas" cuttack="and surrounding areas"></app-service-areas>
