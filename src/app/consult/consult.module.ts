@@ -4,26 +4,18 @@ import { RouterModule, Routes } from "@angular/router";
 import { GoasosCommonModule } from "../common/common.module";
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import {
-  ConsultBaseComponent, ConsultBankComponent,
-  ConsultDataAiComponent, ConsultMarketComponent,
-  ConsultProductsComponent
+  ConsultBankComponent
 } from './components';
 
 const routes: Routes = [
   { path: 'software-consulting-services', component: ConsultBankComponent },
-  { path: 'market', component: ConsultMarketComponent },
-  { path: 'data', component: ConsultDataAiComponent },
 ]
 
 @NgModule({
   declarations: [
     ConsultBankComponent,
-    ConsultDataAiComponent,
-    ConsultMarketComponent,
-    ConsultBaseComponent,
-    ConsultProductsComponent
   ],
-  exports: [RouterModule, ConsultProductsComponent],
+  exports: [RouterModule],
   imports: [RouterModule.forChild(routes), CommonModule,
     GoasosCommonModule, GoasasMatModule]
 })
