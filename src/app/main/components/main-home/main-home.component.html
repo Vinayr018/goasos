@@ -1,26 +1,14 @@
 <div class="main-home-wrapper">
-    <section class="hero-section block">
-        <h1>Smart Automation Solutions for Homes, Offices and Industries - Serving Bangalore, Bhubaneswar & Cuttack</h1>
-        <p>Empowering businesses with smart home, office, industrial and energy automation along with expert software
-            consulting in Banking, Capital Markets, and Data & AI - serving Bangalore, Bhubaneswar, and Cuttack.</p>
-        <div class="actions">
-            <a routerLink="contact" (click)="analytics.HomeCtaEvent('home_request_demo')" class="pri">Request a Demo</a>
-            <a routerLink="contact" (click)="analytics.HomeCtaEvent('home_hero_contact')" class="sec">Contact
+    <app-hero
+        h1="Smart Automation Solutions for Homes, Offices and Industries - Serving Bangalore, Bhubaneswar & Cuttack"
+        p="Empowering businesses with smart home, office, industrial and energy automation along with expert software consulting in Banking, Capital Markets, and Data & AI - serving Bangalore, Bhubaneswar, and Cuttack."
+        [showCLient]="true">
+        <div class="actions" actions>
+            <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_request_demo')" class="pri">Request a Demo</a>
+            <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_hero_contact')" class="sec">Contact
                 Us&nbsp;&nbsp;&rarr;</a>
         </div>
-    </section>
-    <section class="block client">
-        <p>Trusted by leading organizations across industries</p>
-        <div class="client-logos">
-            <img src="https://kpmg.com/content/experience-fragments/kpmgpublic/in/en/site/header/master/_jcr_content/root/header/logo.coreimg.svg/1732260814565/logo.svg"
-                alt="KPMG">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Siemens_AG_logo.svg/1200px-Siemens_AG_logo.svg.png"
-                alt="Siemens">
-            <img src="https://www.capgemini.com/wp-content/themes/capgemini2020/assets/images/logo.svg" alt="Capgemini">
-            <img src="https://www.milkbasket.com/assets/img/logo/mb-logo-horizontal.png" alt="Capgemini">
-        </div>
-        <a routerLink="about" (click)="analytics.HomeCtaEvent('home_clients')">View all &nbsp;&nbsp;&rarr;</a>
-    </section>
+    </app-hero>
     <section class="about block">
         <h2>About Us</h2>
         <section class="grid">
@@ -181,7 +169,9 @@
                         modern homes.</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_bangalore')" href="https://www.google.com/maps?ll=12.94944,77.62488&z=20&t=m&hl=en&gl=IN&mapclient=embed&cid=5240335027240441895">Get directions&nbsp;&nbsp;&rarr;</a>
+                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_bangalore')"
+                        href="https://www.google.com/maps?ll=12.94944,77.62488&z=20&t=m&hl=en&gl=IN&mapclient=embed&cid=5240335027240441895">Get
+                        directions&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
             <mat-card appearance="outlined" class="space-it">
@@ -200,7 +190,9 @@
                         clients.</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_Bhubaneshwar')" href="https://www.google.com/maps?ll=20.243461,85.769156&z=16&t=m&hl=en&gl=IN&mapclient=embed&q=20%C2%B014%2736.5%22N+85%C2%B046%2718.2%22E+20.243472,+85.771722@20.2434722,85.7717222">Get directions&nbsp;&nbsp;&rarr;</a>
+                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_Bhubaneshwar')"
+                        href="https://www.google.com/maps?ll=20.243461,85.769156&z=16&t=m&hl=en&gl=IN&mapclient=embed&q=20%C2%B014%2736.5%22N+85%C2%B046%2718.2%22E+20.243472,+85.771722@20.2434722,85.7717222">Get
+                        directions&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
             <mat-card appearance="outlined" class="space-it">
@@ -218,7 +210,9 @@
                     <p>Our Cuttack facility showcases our latest home and office automation technologies.</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_cuttack')" href="https://www.google.com/maps?ll=20.474309,85.832644&z=12&t=m&hl=en&gl=IN&mapclient=embed&cid=2038994486963791631">Get directions&nbsp;&nbsp;&rarr;</a>
+                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_cuttack')"
+                        href="https://www.google.com/maps?ll=20.474309,85.832644&z=12&t=m&hl=en&gl=IN&mapclient=embed&cid=2038994486963791631">Get
+                        directions&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
         </div>

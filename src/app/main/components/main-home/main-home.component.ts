@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { AnalyticsService } from '../../../common/services/analytics.service';
+import { ContactLocationService } from '../../../common/services/contact-location.service';
 
 @Component({
   selector: 'app-main-home',
@@ -15,7 +16,8 @@ export class MainHomeComponent {
   constructor(private router: Router,
     title: GoasosTitleService,
     meta: MetaService,
-    public analytics: AnalyticsService
+    public analytics: AnalyticsService,
+    public cont: ContactLocationService
   ) {
     title.UpdateTitle = 'Smart Automation Solutions | Automation Services Company in India | GOAS';
     meta.Description = 'Empowering businesses with smart home, office, industrial and energy automation along with expert software consulting in Banking, Capital Markets, and Data & AI - serving Bangalore, Bhubaneswar, and Cuttack.';
