@@ -144,6 +144,22 @@ ul.card-list {
   }
 }
 
+.three-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  justify-items: center;
+  @media (max-width: 1597px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 961px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+  }
+}
+
 @keyframes come-in-ltr {
   from {
     transform: translateX(50px);
