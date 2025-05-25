@@ -13,7 +13,7 @@ export class MainContactComponent {
   constructor(title: GoasosTitleService,
     meta: MetaService,
     private sheet: MatBottomSheet) {
-    title.UpdateTitle = 'Contact us';
+    title.UpdateTitle = 'Contact Us | Generation Of Automation Solutions - GOAS';
     meta.Description = 'goasos contact form, locations and social media links';
     meta.Keywords = 'goasos, indiranagar branch bangalore, bhubaneswar branch, cuttack branch, locatios, call, email';
   }

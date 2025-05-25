@@ -18,7 +18,7 @@ import { provideHttpClient } from "@angular/common/http";
 const routes: Routes = [
     { path: '', component: MainHomeComponent, pathMatch: 'full' },
     { path: 'about-us', component: MainAboutComponent },
-    { path: 'contact', component: MainContactComponent },
+    { path: 'contact-us', component: MainContactComponent },
     { path: 'product', component: MainProductComponent },
     { path: '**', redirectTo: '' }
 ]

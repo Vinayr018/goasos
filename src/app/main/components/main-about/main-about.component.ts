@@ -10,7 +10,7 @@ import { GoasosTitleService } from '../../../common/services/title.service';
 export class MainAboutComponent {
   constructor(title: GoasosTitleService,
     meta: MetaService) {
-    title.UpdateTitle = 'About us';
+    title.UpdateTitle = 'About Us | Generation Of Automation Solutions - GOAS';
     meta.Description = 'about us or about goasos.com';
     meta.Keywords = 'goasos, about us, about goasos.com';
   }
