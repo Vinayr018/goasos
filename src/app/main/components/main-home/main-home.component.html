@@ -4,15 +4,17 @@
         p="Empowering businesses with smart home, office, industrial and energy automation along with expert software consulting in Banking, Capital Markets, and Data & AI - serving Bangalore, Bhubaneswar, and Cuttack."
         [showCLient]="true">
         <div class="actions" actions>
-            <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_request_demo')" class="pri">Request a Demo</a>
-            <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_hero_contact')" class="sec">Contact
+            <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_request_demo')"
+                class="pri">Request a Demo</a>
+            <a [href]="cont.PopulateContactLocation()" (click)="analytics.HomeCtaEvent('home_hero_contact')"
+                class="sec">Contact
                 Us&nbsp;&nbsp;&rarr;</a>
         </div>
     </app-hero>
     <section class="about block">
         <h2>About Us</h2>
         <section class="grid">
-            <mat-card appearance="outlined">
+            <mat-card>
                 <mat-card-header>
                     <mat-card-title>
                         <h3>who we are:</h3>
@@ -27,7 +29,7 @@
                         innovation.</p>
                 </mat-card-content>
             </mat-card>
-            <mat-card appearance="outlined">
+            <mat-card>
                 <mat-card-header>
                     <mat-card-title>
                         <h3>our key strengths:</h3>
@@ -45,7 +47,7 @@
                     </ul>
                 </mat-card-content>
             </mat-card>
-            <mat-card appearance="outlined">
+            <mat-card>
                 <mat-card-header>
                     <mat-card-title>
                         <h3>The Automation Advantage:</h3>
@@ -65,7 +67,7 @@
     <section class="block home-automation">
         <h2>Our Automation Solutions</h2>
         <div class="auto-sol">
-            <mat-card appearance="outlined">
+            <mat-card class="space-it">
                 <mat-card-header>
                     <mat-card-title>
                         <h3>Home Automation Solutions:</h3>
@@ -76,11 +78,12 @@
                         efficiency.</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a class="card-cta" (click)="analytics.HomeCtaEvent('home_smart_home')">Make your Home
+                    <a routerLink="smart-home-automation-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_smart_home')">Make your Home
                         Smarter&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
-            <mat-card appearance="outlined">
+            <mat-card class="space-it">
                 <mat-card-header>
                     <mat-card-title>
                         <h3>Office Automation Services:</h3>
@@ -91,11 +94,12 @@
                         security.</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a class="card-cta" (click)="analytics.HomeCtaEvent('home_automation_office')">Optimize Your
+                    <a routerLink="smart-office-automation-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_automation_office')">Optimize Your
                         Office&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
-            <mat-card appearance="outlined" class="space-it">
+            <mat-card class="space-it">
                 <mat-card-header>
                     <mat-card-title>
                         <h3>Industrial Automation Systems:</h3>
@@ -105,11 +109,12 @@
                     <p>Optimize your industrial operations with robust, cloud-based solutions.</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a class="card-cta" (click)="analytics.HomeCtaEvent('home_automation_industry')">Boost
+                    <a routerLink="industrial-automation-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_automation_industry')">Boost
                         Production&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
-            <mat-card appearance="outlined" class="space-it">
+            <mat-card class="space-it">
                 <mat-card-header>
                     <mat-card-title>
                         <h3>Energy Automation Solutions:</h3>
@@ -119,7 +124,8 @@
                     <p>Optimize energy consumption with renewable solutions for homes and businesses.</p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <a class="card-cta" (click)="analytics.HomeCtaEvent('home_go_green')">Go Green&nbsp;&nbsp;&rarr;</a>
+                    <a routerLink="solar-energy-solutions" class="card-cta"
+                        (click)="analytics.HomeCtaEvent('home_go_green')">Go Green&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
         </div>
@@ -146,13 +152,14 @@
                     machine learning, predictive analytics and business intelligence solutions.</p>
             </section>
         </section>
-        <a (click)="analytics.HomeCtaEvent('home_consulting')">Learn More About Our Consulting
+        <a routerLink="software-consulting-services" (click)="analytics.HomeCtaEvent('home_consulting')">Learn More About Our
+            Consulting
             Services&nbsp;&nbsp;&rarr;</a>
     </section>
     <section class="block locations">
         <h2>Our Locations</h2>
         <div class="locals">
-            <mat-card appearance="outlined">
+            <mat-card>
                 <mat-card-header>
                     <mat-card-title>
                         <h3>Bengaluru:</h3>
@@ -174,7 +181,7 @@
                         directions&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
-            <mat-card appearance="outlined" class="space-it">
+            <mat-card class="space-it">
                 <mat-card-header>
                     <mat-card-title>
                         <h3>Bhubaneswar:</h3>
@@ -195,7 +202,7 @@
                         directions&nbsp;&nbsp;&rarr;</a>
                 </mat-card-actions>
             </mat-card>
-            <mat-card appearance="outlined" class="space-it">
+            <mat-card class="space-it">
                 <mat-card-header>
                     <mat-card-title>
                         <h3>Cuttack:</h3>
