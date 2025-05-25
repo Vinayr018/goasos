@@ -62,7 +62,8 @@
                 </mat-card-content>
             </mat-card>
         </section>
-        <a routerLink="about-us" (click)="analytics.HomeCtaEvent('home_about')">Learn More About Us&nbsp;&nbsp;&rarr;</a>
+        <a routerLink="about-us" (click)="analytics.HomeCtaEvent('home_about')">Learn More About
+            Us&nbsp;&nbsp;&rarr;</a>
     </section>
     <section class="block home-automation">
         <h2>Our Automation Solutions</h2>
@@ -152,77 +153,11 @@
                     machine learning, predictive analytics and business intelligence solutions.</p>
             </section>
         </section>
-        <a routerLink="software-consulting-services" (click)="analytics.HomeCtaEvent('home_consulting')">Learn More About Our
+        <a routerLink="software-consulting-services" (click)="analytics.HomeCtaEvent('home_consulting')">Learn More
+            About Our
             Consulting
             Services&nbsp;&nbsp;&rarr;</a>
     </section>
-    <section class="block locations">
-        <h2>Our Locations</h2>
-        <div class="locals">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Bengaluru:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <address>
-                        #103, Plot-56/2, Ashiana Garden, Off, 100 Feet Rd, Doopanahalli, Indiranagar, Bengaluru,
-                        Karnataka 560008
-                    </address>
-                    <p><a (click)="analytics.HomeCtaEvent('home_phone_bangalore')" href="tel:+919845812673">+91-98458
-                            12673</a></p>
-                    <p>Our Bengaluru office specializes in cutting-edge automation solutions for tech businesses and
-                        modern homes.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_bangalore')"
-                        href="https://www.google.com/maps?ll=12.94944,77.62488&z=20&t=m&hl=en&gl=IN&mapclient=embed&cid=5240335027240441895">Get
-                        directions&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="space-it">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Bhubaneswar:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <address>
-                        A/4 ,282,Kalyani Nagar, Patrapada, Bhubaneswar, Odisha 751019
-                    </address>
-                    <p><a (click)="analytics.HomeCtaEvent('home_phone_Bhubaneshwar')" href="tel:+918249003143">+91-82490
-                            03143</a></p>
-                    <p>Our Bhubaneswar center delivers comprehensive automation systems for residential and commercial
-                        clients.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_Bhubaneshwar')"
-                        href="https://www.google.com/maps?ll=20.243461,85.769156&z=16&t=m&hl=en&gl=IN&mapclient=embed&q=20%C2%B014%2736.5%22N+85%C2%B046%2718.2%22E+20.243472,+85.771722@20.2434722,85.7717222">Get
-                        directions&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
-            <mat-card class="space-it">
-                <mat-card-header>
-                    <mat-card-title>
-                        <h3>Cuttack:</h3>
-                    </mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <address>
-                        Plot:437/C, Sector - 6, Markat Nagar, Cuttack, Odisha 753014
-                    </address>
-                    <p><a (click)="analytics.HomeCtaEvent('home_phone_cuttack')" href="tel:+919845812673">+91-98458
-                            12673</a></p>
-                    <p>Our Cuttack facility showcases our latest home and office automation technologies.</p>
-                </mat-card-content>
-                <mat-card-actions>
-                    <a target="_blank" (click)="analytics.HomeCtaEvent('home_location_cuttack')"
-                        href="https://www.google.com/maps?ll=20.474309,85.832644&z=12&t=m&hl=en&gl=IN&mapclient=embed&cid=2038994486963791631">Get
-                        directions&nbsp;&nbsp;&rarr;</a>
-                </mat-card-actions>
-            </mat-card>
-        </div>
-    </section>
+    <app-main-contact-branch />
     <app-contact h2="Your Trusted Partner for Automation Solutions" h3="Ready to Automate?" />
 </div>
