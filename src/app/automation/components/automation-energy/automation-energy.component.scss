@@ -7,34 +7,20 @@ $hero-bg: #a1cfe48a;
     border: 1px solid;
 }
 
-section.products {
+section {
     padding: 1em;
     > h2 {
         margin-bottom: 10px;
     }
-    > div.products {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        @media (max-width: 1042px) {
-            grid-template-columns: 1fr;
+    > div {
+        background-color: #ffffff;
+        padding: 1em;
+        > ul {
+            padding-left: 1em;
         }
-        grid-template-rows: 242px;
-        @media (max-width: 507px) {
-            grid-template-rows: 1fr;
-        }
-        justify-content: center;
-        align-items: center;
-        gap: 1em;
-        .space-it {
-            height: 100%;
-            justify-content: space-between;
-            padding: 1em;
-            > h3 {
-                margin-bottom: 6px;
-            }
-            ul {
-                padding-left: 1em;
-            }
+        > a {
+            display: block;
+            margin-top: 10px;
         }
     }
 }
