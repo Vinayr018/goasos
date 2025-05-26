@@ -11,10 +11,8 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
 
 const matModules: any[] = [
-    MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatExpansionModule,
     MatDividerModule,
     MatCheckboxModule,
     MatSnackBarModule,

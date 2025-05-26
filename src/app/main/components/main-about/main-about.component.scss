@@ -25,7 +25,7 @@ section.about-wrapper {
         }
         > p {
             &.tagline {
-                color: $pri-color;
+                color: $bg-color;
                 margin: 1em 3em;
                 font-size: 1.5em;
                 @media (max-width: 607px) {
