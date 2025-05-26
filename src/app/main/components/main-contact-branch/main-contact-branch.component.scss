@@ -25,12 +25,20 @@ section.locations {
         gap: 1em;
         .space-it {
             justify-content: space-between;
-            a {
-                color: $primary-color;
-                cursor: pointer;
-                padding: 0.5em;
-                &:hover {
-                    text-decoration: underline;
+            div.wrap {
+                display: flex;
+                gap: 1em;
+                @media (max-width: 389px) {
+                    flex-direction: column;
+                    gap: 0;
+                }
+                a {
+                    color: $primary-color;
+                    cursor: pointer;
+                    padding: 0.5em;
+                    &:hover {
+                        text-decoration: underline;
+                    }
                 }
             }
         }
