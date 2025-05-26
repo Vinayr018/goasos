@@ -18,7 +18,11 @@ section.about-wrapper {
             }
         }
         > h1 {
-            font-size: 1.5rem;
+            font-size: 2rem;
+            @media (max-width: 667px) {
+                font-size: 1.7rem;
+                margin-bottom: 0.75em;
+            }
         }
         > h2 {
             font-size: 1.17rem;

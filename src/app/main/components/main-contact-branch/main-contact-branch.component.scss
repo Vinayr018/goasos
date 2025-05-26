@@ -25,6 +25,24 @@ section.locations {
         gap: 1em;
         .space-it {
             justify-content: space-between;
+            div.content {
+                padding: 0.5em 0;
+                > ul {
+                    list-style: none;
+                    > li {
+                        > h4 {
+                            display: inline-block;
+                            margin-right: 0.3em;
+                        }
+                        > p {
+                            display: inline-block;
+                            > a {
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
             div.wrap {
                 display: flex;
                 gap: 1em;
