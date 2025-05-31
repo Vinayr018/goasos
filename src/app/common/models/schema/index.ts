@@ -103,7 +103,11 @@ export class HomeSchema {
         this.url = rootUrl;
         this.logo = `${rootUrl}/images/logo.jpg`;
         this.description = 'At GOAS, we deliver end-to-end automation solutions for homes, offices, industries, and security systems including CCTV surveillance—available in Bangalore, Bhubaneswar & Cuttack.';
-        this.sameAs = [];//TODO: get back with the fb,insta, linkedIn youtube links
+        this.sameAs = [
+            'https://www.youtube.com/@GOAS-Automation-Solutions',
+            'https://www.facebook.com/GOASAutomationSolutions/',
+            'https://www.instagram.com/goas_automation_solutions/',
+        ];//TODO: get back with the linkedIn links
         this.areaServed = places;
         this.address = placeAddresses;
     }
@@ -121,13 +125,11 @@ export class ContactSchema {
         this['@context'] = 'https://schema.org';
         this['@type'] = 'ContactPage';
         this.name = 'Contact Us - Generation Of Automation Solutions'
-        this.url = `${rootUrl}/contact-us`;
+        this.url = window.location.href;
         this.contactPoint = contactPoints;
         this.address = placeAddresses;
     }
 }
-
-
 
 class ServiceBaseSchema {
     "@context": 'https://schema.org';
