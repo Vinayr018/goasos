@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Box, Interest, VideoBox } from '../../../common/models';
 import { AutomationDataService } from '../../services/data.service';
 import { Subscription } from 'rxjs';
@@ -7,13 +7,16 @@ import { MetaService } from '../../../common/services/meta.service';
 import { SpaceHomes } from '../../models';
 import { AnalyticsService } from '../../../common/services/analytics.service';
 import { ContactLocationService } from '../../../common/services/contact-location.service';
+import { SchemaService } from '../../../common/services/schema.service';
+import { SpaceAutomationSchema } from '../../../common/models/schema';
 
 @Component({
   selector: 'app-automation-space',
   templateUrl: './automation-space.component.html',
-  styleUrl: './automation-space.component.scss'
+  styleUrl: './automation-space.component.scss',
+  providers: [SchemaService]
 })
-export class AutomationSpaceComponent {
+export class AutomationSpaceComponent implements OnInit, OnDestroy {
 
   public others: Interest[] = [
     { h3: 'Home Automation Solutions:', p: 'Transform your living space with intelligent systems that enhance comfort, security, and energy efficiency.', cta: 'Make Your Home Smarter', link: 'smart-home-automation-solutions' },
@@ -31,10 +34,17 @@ export class AutomationSpaceComponent {
   constructor(title: GoasosTitleService,
     meta: MetaService,
     public analytics: AnalyticsService,
+    private schemaService: SchemaService,
     public cont: ContactLocationService) {
     title.UpdateTitle = 'Space-Saving Furniture & Solutions | Bangalore, Bhubaneswar & Cuttack';
     meta.Description = 'Discover compact, modular, and multi-functional furniture for homes & offices in Bangalore, Bhubaneswar & Cuttack. Explore foldable beds, smart desks & innovative storage solutions. Upgrade your home today!';
     meta.Keywords = 'space automation, space automation in bangalore, space automation in indiranagar, space automation in bengaluru, space automation in bhubaneshwar, space automation in cuttack, , space automation in usa';
+  }
+  ngOnInit(): void {
+    this.schemaService.UpdateSchema(new SpaceAutomationSchema());
+  }
+  ngOnDestroy(): void {
+    this.schemaService.RemoveSchema();
   }
 
   public CaptureClicks(cta: string): void {

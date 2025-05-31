@@ -1,17 +1,20 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Box, Interest, SlideBox } from '../../../common/models';
 import { AutomationDataService } from '../../services/data.service';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { AnalyticsService } from '../../../common/services/analytics.service';
 import { ContactLocationService } from '../../../common/services/contact-location.service';
+import { SchemaService } from '../../../common/services/schema.service';
+import { OfficeAutomationSchema } from '../../../common/models/schema';
 
 @Component({
   selector: 'app-automation-office',
   templateUrl: './automation-office.component.html',
-  styleUrl: './automation-office.component.scss'
+  styleUrl: './automation-office.component.scss',
+  providers: [SchemaService]
 })
-export class AutomationOfficeComponent implements AfterViewInit {
+export class AutomationOfficeComponent implements AfterViewInit, OnInit, OnDestroy {
 
   public others: Interest[] = [
     { h3: 'Security Cameras & Centralized Surveillance:', p: 'Protect your assets and ensure security with advanced video surveillance systems designed for residential, commercial and industrial environments', cta: 'Upgrade Your Security', link: 'cctv-video-surveillance-security-cameras' },
@@ -22,10 +25,17 @@ export class AutomationOfficeComponent implements AfterViewInit {
   constructor(title: GoasosTitleService,
     meta: MetaService,
     public analytics: AnalyticsService,
+    private schemaService: SchemaService,
     public cont: ContactLocationService) {
     title.UpdateTitle = 'Office Automation Solutions Provider | Smart Office Systems in Bangalore, Bhubaneswar & Cuttack';
     meta.Description = 'Boost your business productivity with our advanced office automation solutions. From smart lighting and access control to AI-powered systems—available in Bangalore, Bhubaneswar and Cuttack. Get a quote today!';
     meta.Keywords = 'office automation, office automation in bangalore, office automation in indiranagar, office automation in bengaluru, office automation in bhubaneshwar, office automation in cuttack, , office automation in usa';
+  }
+  ngOnInit(): void {
+    this.schemaService.UpdateSchema(new OfficeAutomationSchema());
+  }
+  ngOnDestroy(): void {
+    this.schemaService.RemoveSchema();
   }
 
   charts = [

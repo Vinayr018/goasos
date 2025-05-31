@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { IndustryContent } from '../../models';
@@ -6,14 +6,16 @@ import { AnalyticsService } from '../../../common/services/analytics.service';
 import { ContactLocationService } from '../../../common/services/contact-location.service';
 import { Interest } from '../../../common/models';
 import { HelperService } from '../../../common/services';
+import { SchemaService } from '../../../common/services/schema.service';
+import { IndustryAutomationSchema } from '../../../common/models/schema';
 
 @Component({
   selector: 'app-automation-industry',
   templateUrl: './automation-industry.component.html',
   styleUrl: './automation-industry.component.scss',
-  providers: [HelperService]
+  providers: [HelperService, SchemaService]
 })
-export class AutomationIndustryComponent {
+export class AutomationIndustryComponent implements OnInit, OnDestroy {
 
   public others: Interest[] = [
     { h3: 'Security Cameras & Centralized Surveillance:', p: 'Protect your assets and ensure security with advanced video surveillance systems designed for residential, commercial and industrial environments', cta: 'Upgrade Your Security', link: 'cctv-video-surveillance-security-cameras' },
@@ -67,12 +69,19 @@ export class AutomationIndustryComponent {
   constructor(title: GoasosTitleService,
     meta: MetaService,
     public analytics: AnalyticsService,
+    private schemaService: SchemaService,
     public cont: ContactLocationService,
     public helper: HelperService
   ) {
     title.UpdateTitle = 'Industrial Automation Solutions Provider | Factory Automation Systems in Bangalore, Bhubaneswar & Cuttack';
     meta.Description = 'Transform your manufacturing with our advanced industrial automation solutions. From machine automation solutions to cloud-based solutions, we deliver customized systems that boost efficiency and reduce costs—available in Bangalore, Bhubaneswar & Cuttack.';
     meta.Keywords = 'industry automation, industry automation in bangalore, industry automation in indiranagar, industry automation in bengaluru, industry automation in bhubaneshwar, industry automation in cuttack, , industry automation in usa';
+  }
+  ngOnInit(): void {
+    this.schemaService.UpdateSchema(new IndustryAutomationSchema());
+  }
+  ngOnDestroy(): void {
+    this.schemaService.RemoveSchema();
   }
 
   public CaptureClicks(cta: string): void {

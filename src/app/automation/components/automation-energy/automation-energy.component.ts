@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { GoasosTitleService } from '../../../common/services/title.service';
 import { MetaService } from '../../../common/services/meta.service';
 import { ContactLocationService } from '../../../common/services/contact-location.service';
 import { AnalyticsService } from '../../../common/services/analytics.service';
 import { Interest } from '../../../common/models';
+import { SchemaService } from '../../../common/services/schema.service';
+import { EnergyAutomationSchema } from '../../../common/models/schema';
 
 @Component({
   selector: 'app-automation-energy',
   templateUrl: './automation-energy.component.html',
-  styleUrl: './automation-energy.component.scss'
+  styleUrl: './automation-energy.component.scss',
+  providers: [SchemaService]
 })
-export class AutomationEnergyComponent {
+export class AutomationEnergyComponent implements OnInit, OnDestroy {
 
   public others: Interest[] = [
     { h3: 'Home Automation Solutions:', p: 'Transform your living space with intelligent systems that enhance comfort, security, and energy efficiency.', cta: 'Make Your Home Smarter', link: 'smart-home-automation-solutions' },
@@ -21,10 +24,17 @@ export class AutomationEnergyComponent {
   constructor(title: GoasosTitleService,
     meta: MetaService,
     public analytics: AnalyticsService,
+    private schemaService: SchemaService,
     public cont: ContactLocationService) {
     title.UpdateTitle = 'Solar Panel Installation in Bangalore, Bhubaneswar & Cuttack | Rooftop Solar Solutions';
     meta.Description = 'Harness the power of solar and smart energy automation with GOAS. We offer end-to-end solar panel installation and smart energy management systems for homes, offices, and industrial sites in Bangalore, Bhubaneswar and Cuttack. Save energy, reduce costs, and go green today!';
     meta.Keywords = 'energy automation, energy automation in bangalore, energy automation in indiranagar, energy automation in bengaluru, energy automation in bhubaneshwar, energy automation in cuttack, energy automation in usa';
+  }
+  ngOnInit(): void {
+    this.schemaService.UpdateSchema(new EnergyAutomationSchema());
+  }
+  ngOnDestroy(): void {
+    this.schemaService.RemoveSchema();
   }
 
   public CaptureClicks(cta: string): void {
