@@ -2,12 +2,13 @@ import { Pipe, PipeTransform } from "@angular/core";
 import { DomSanitizer } from "@angular/platform-browser";
 
 @Pipe({
-    name: 'video',
+    name: 'safevideo',
 })
 export class SafeVideoPipe implements PipeTransform {
     constructor(private sanitize: DomSanitizer) { }
     transform(value: any, ...args: any[]) {
-        const final = `https://www.youtube-nocookie.com/embed/${value}`;
+        console.log('safe pipe', value);
+        const final = `https://www.youtube.com/embed/${value}&autoplay=1`;
         return this.sanitize.bypassSecurityTrustResourceUrl(final);
     }
 }

@@ -9,6 +9,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatListModule } from '@angular/material/list';
+import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogConfig, MatDialogModule } from '@angular/material/dialog';
 
 const matModules: any[] = [
     MatIconModule,
@@ -18,11 +19,26 @@ const matModules: any[] = [
     MatSnackBarModule,
     MatMenuModule,
     MatBottomSheetModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule,
+    MatButtonModule
 ];
 
 @NgModule({
     imports: [matModules],
-    exports: [matModules]
+    exports: [matModules],
+    providers: [
+        {
+            provide: MAT_DIALOG_DEFAULT_OPTIONS,
+            useValue: <MatDialogConfig>{
+                hasBackdrop: true,
+                disableClose: true,
+                autoFocus: true,
+                panelClass: 'goas-dialog-panel',
+                width:'80vw',
+                height:'71vh'
+            }
+        }
+    ]
 })
 export class GoasasMatModule { }

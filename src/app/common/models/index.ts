@@ -50,3 +50,24 @@ export interface Interest {
     cta: string;
     link: string;
 }
+
+export type DialogVideoLinkIndex = 1 | 2;
+
+export class DialogVideoDetails {
+    src: string;
+    title: string;
+    duration: number;
+
+    constructor(src: string, title: string, dur: number) {
+        this.src = src; this.title = title; this.duration = dur;
+    }
+
+    public static get Videos(): DialogVideoDetails[] {
+        return [
+            new DialogVideoDetails('dEvbNL6nMfo?si=8cYUFRAKwp13Hae1',
+                'Home Automation', 102),
+            new DialogVideoDetails('e4f_tQ-sLkE?si=RnOcEdsVH3yo0ACE',
+                'Space-Saving Furniture', 102)
+        ]
+    }
+}

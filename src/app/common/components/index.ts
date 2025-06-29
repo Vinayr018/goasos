@@ -12,6 +12,7 @@ import { GoasosFooterComponent } from "./goasos-footer/goasos-footer.component";
 import { PhoneComponent } from "./phone/phone.component";
 import { InterestComponent } from "./interest/interest.component";
 import { SelectComponent } from "./select/select.component";
+import { VideoDialogComponent } from "./video-dialog/video-dialog.component";
 
 export {
     HeaderComponent, BaseComponent,
@@ -21,5 +22,6 @@ export {
     HeroComponent, ServiceAreasComponent,
     ContactComponent, FloatContactComponent,
     GoasosFooterComponent, PhoneComponent,
-    InterestComponent, SelectComponent
+    InterestComponent, SelectComponent,
+    VideoDialogComponent
 }

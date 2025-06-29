@@ -9,6 +9,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { GoasosCommonModule } from "../common/common.module";
 import { CommonModule } from "@angular/common";
 import { GoasasMatModule } from "../mat/goasos-mat.module";
+import { VideoDialogService } from "../common/services/video-dialog.service";
 
 const routes: Routes = [
   { path: 'smart-home-automation-solutions', component: AutomationHomeComponent },
@@ -32,5 +33,6 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes), GoasosCommonModule,
     CommonModule, GoasasMatModule],
   exports: [RouterModule],
+  providers:[VideoDialogService]
 })
 export class AutomationModule { }

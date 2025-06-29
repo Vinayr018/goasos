@@ -4,7 +4,7 @@ import {
   SlideBoxComponent, SuccessSnackComponent, SeoMetaComponent,
   HeroComponent, ServiceAreasComponent, ContactComponent,
   FloatContactComponent, GoasosFooterComponent, PhoneComponent,
-  InterestComponent, SelectComponent
+  InterestComponent, SelectComponent, VideoDialogComponent
 } from './components';
 import { GoasasMatModule } from "../mat/goasos-mat.module";
 import { RouterModule } from "@angular/router";
@@ -38,6 +38,7 @@ import { ReactiveFormsModule } from "@angular/forms";
     GoasosFooterComponent,
     PhoneComponent,
     InterestComponent,
+    VideoDialogComponent,
   ],
   exports: [HeaderComponent, BaseComponent, MenuComponent,
     SlideBoxComponent, SuccessSnackComponent,

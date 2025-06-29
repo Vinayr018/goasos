@@ -6,6 +6,7 @@ import { AnalyticsService } from '../../../common/services/analytics.service';
 import { Interest } from '../../../common/models';
 import { SchemaService } from '../../../common/services/schema.service';
 import { HomeAutomationSchema } from '../../../common/models/schema';
+import { VideoDialogService } from '../../../common/services/video-dialog.service';
 
 @Component({
   selector: 'app-automation-home',
@@ -25,6 +26,7 @@ export class AutomationHomeComponent implements OnInit, OnDestroy {
     meta: MetaService,
     private schemaService: SchemaService,
     public cont: ContactLocationService,
+    public dialog: VideoDialogService,
     public analytics: AnalyticsService) {
     title.UpdateTitle = 'Smart Home Automation Solutions | Best Home Automation Company in Bangalore, Bhubaneswar & Cuttack | GOAS';
     meta.Description = 'Looking for smart home automation solutions? We offer smart lighting, security systems, voice-controlled devices, and AI-powered smart home setups in Bangalore, Bhubaneswar & Cuttack. Upgrade your home today!';
@@ -32,6 +34,7 @@ export class AutomationHomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.schemaService.UpdateSchema(new HomeAutomationSchema());
+    this.dialog.ShowVideo(1);
   }
 
   ngOnDestroy(): void {
