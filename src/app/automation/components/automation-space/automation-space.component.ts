@@ -9,6 +9,7 @@ import { AnalyticsService } from '../../../common/services/analytics.service';
 import { ContactLocationService } from '../../../common/services/contact-location.service';
 import { SchemaService } from '../../../common/services/schema.service';
 import { SpaceAutomationSchema } from '../../../common/models/schema';
+import { VideoDialogService } from '../../../common/services/video-dialog.service';
 
 @Component({
   selector: 'app-automation-space',
@@ -35,6 +36,7 @@ export class AutomationSpaceComponent implements OnInit, OnDestroy {
     meta: MetaService,
     public analytics: AnalyticsService,
     private schemaService: SchemaService,
+    public dialog: VideoDialogService,
     public cont: ContactLocationService) {
     title.UpdateTitle = 'Space-Saving Furniture & Solutions | Bangalore, Bhubaneswar & Cuttack';
     meta.Description = 'Discover compact, modular, and multi-functional furniture for homes & offices in Bangalore, Bhubaneswar & Cuttack. Explore foldable beds, smart desks & innovative storage solutions. Upgrade your home today!';
@@ -42,6 +44,7 @@ export class AutomationSpaceComponent implements OnInit, OnDestroy {
   }
   ngOnInit(): void {
     this.schemaService.UpdateSchema(new SpaceAutomationSchema());
+    this.dialog.ShowVideo(2);
   }
   ngOnDestroy(): void {
     this.schemaService.RemoveSchema();
