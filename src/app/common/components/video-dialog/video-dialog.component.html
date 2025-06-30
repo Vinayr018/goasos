@@ -3,7 +3,9 @@
   <button
     class="video-close"
     mat-icon-button
+    mat-dialog-close
     [disabled]="ser.videoDuration$ | async"
+    [ngClass]="(ser.videoDuration$ | async) ? '' : 'highlight'"
   >
     <mat-icon>close</mat-icon>
   </button>

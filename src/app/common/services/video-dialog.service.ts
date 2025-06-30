@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { DialogVideoDetails, DialogVideoLinkIndex } from "../models";
-import { BehaviorSubject, identity, Observable, Subject } from "rxjs";
+import { BehaviorSubject, Observable, } from "rxjs";
 import { VideoDialogComponent } from "../components";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
@@ -9,8 +9,8 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 export class VideoDialogService {
 
     private videos: DialogVideoDetails[];
-    private videoSrc: Subject<string>;
-    private videoTitle: Subject<string>;
+    private videoSrc: BehaviorSubject<string>;
+    private videoTitle: BehaviorSubject<string>;
     private duration: BehaviorSubject<boolean>;
     private dialogRef: MatDialogRef<VideoDialogComponent, any> | undefined;
 
@@ -26,11 +26,11 @@ export class VideoDialogService {
         return this.duration.asObservable();
     }
 
-    constructor(private matDialog: MatDialog, private sanitizer: DomSanitizer) {
+    constructor(private matDialog: MatDialog) {
         this.videos = DialogVideoDetails.Videos;
-        this.videoSrc = new Subject<string>();
-        this.videoTitle = new Subject<string>();
-        this.duration = new BehaviorSubject<boolean>(false);
+        this.videoSrc = new BehaviorSubject<string>('');
+        this.videoTitle = new BehaviorSubject<string>('');
+        this.duration = new BehaviorSubject<boolean>(true);
         this.videoSrc$.subscribe(s => console.log('ser Sub', s))
     }
 
@@ -47,18 +47,18 @@ export class VideoDialogService {
     }
 
     public ShowVideo(index: DialogVideoLinkIndex): void {
-        const duration = this.PublishSrc(index);
+        const dur = this.PublishSrc(index);
         this.ShowDialog();
         setTimeout(() => {
             this.OnPlay();
-        }, duration * 1000);
+        }, dur * 1000);
     }
 
     private OnPlay(): void {
         console.log('videoplay')
         if (!!this.dialogRef) {
             this.dialogRef.disableClose = false;
-            this.duration.next(true);
+            this.duration.next(false);
         }
     }
 }
