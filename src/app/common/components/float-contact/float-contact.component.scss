@@ -1,18 +1,39 @@
+$shadow-color: rgba(0, 0, 0, 0.1);
+
 div.wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-    > a {
-        display: block;
-        height: 2em;
-        width: 2em;
-        cursor: pointer;
-        > img {
-            display: block;
-            height: 100%;
-            width: 100%;
+    background-color: white;
+    box-shadow:
+        0 -2px 4px $shadow-color,
+        -2px 0px 4px $shadow-color,
+        2px 0px 4px $shadow-color;
+    > ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        > li {
+            padding: 10px 15px;
+            border-right: 1px solid $shadow-color;
+            &:last-of-type {
+                border-right: none;
+            }
+            > a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                > mat-icon {
+                }
+                > span {
+                }
+                > svg {
+                    height: 1em;
+                    > path {
+                    }
+                }
+                > img {
+                    height: 1em;
+                    display: block;
+                }
+            }
         }
     }
 }

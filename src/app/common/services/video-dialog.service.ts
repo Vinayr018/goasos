@@ -3,7 +3,6 @@ import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { DialogVideoDetails, DialogVideoLinkIndex } from "../models";
 import { BehaviorSubject, Observable, } from "rxjs";
 import { VideoDialogComponent } from "../components";
-import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 @Injectable()
 export class VideoDialogService {
@@ -21,6 +20,8 @@ export class VideoDialogService {
         this.videoSrc = new BehaviorSubject<string>('');
     }
 
+    private delegate=() => this.PauseDelay();
+
     private PublishSrc(index: DialogVideoLinkIndex): number {
         const foundSource = this.videos[index - 1];
         console.log('foundrc', foundSource, foundSource.src);
@@ -30,11 +31,13 @@ export class VideoDialogService {
 
     private ShowDialog(): void {
         this.dialogRef = this.matDialog.open(VideoDialogComponent);
+        this.RegisterWindowEvents();
     }
 
     public ShowVideo(index: DialogVideoLinkIndex): void {
         const dur = this.PublishSrc(index);
         this.ShowDialog();
+        this.SubscribeToDialogRef();
         setTimeout(() => {
             this.OnPlay();
         }, dur * 1000);
@@ -46,4 +49,26 @@ export class VideoDialogService {
             this.dialogRef.disableClose = false;
         }
     }
+
+    private SubscribeToDialogRef(): void {
+        if (!!this.dialogRef) {
+            this.dialogRef.afterClosed().subscribe(() => {
+                this.DeRegisterWindowEvents();
+            });
+        }
+    }
+
+    private RegisterWindowEvents(): void {
+        window.addEventListener('blur', this.delegate);
+    }
+
+    private DeRegisterWindowEvents(): void {
+        window.removeEventListener('blur', this.delegate);
+    }
+
+    private PauseDelay(): void {
+        console.log('videopaused', this);
+    }
+
+    private ResumeDelay(): void { }
 }
