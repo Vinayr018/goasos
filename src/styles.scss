@@ -243,6 +243,9 @@ ul.strong-bullet-points {
 
 .goas-dialog-panel{
   user-select: none;
+  .mat-mdc-dialog-surface{
+    overflow-y: initial;
+  }
 }
 
 .goasos {

@@ -1,23 +1,12 @@
-div.title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 9px;
-    > button.highlight {
-        animation: jump 0.5s ease-in-out 0s infinite alternate;
+button.video-close {
+    position: absolute;
+    right: 0;
+    top: -2em;
+    color: white;
+    > mat-icon {
     }
 }
-
 iframe {
-    height: 98%;
+    height: 100%;
     width: 100%;
-}
-
-@keyframes jump {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.5);
-    }
 }

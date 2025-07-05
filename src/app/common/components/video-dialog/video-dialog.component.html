@@ -1,28 +1,13 @@
-<div mat-dialog-title class="title">
-  <h2>{{ ser.videoTitle$ | async }}</h2>
-  <button
-    class="video-close"
-    mat-icon-button
-    mat-dialog-close
-    [disabled]="ser.videoDuration$ | async"
-    [ngClass]="(ser.videoDuration$ | async) ? '' : 'highlight'"
-  >
-    <mat-icon>close</mat-icon>
-  </button>
-</div>
-<mat-dialog-content>
-  <iframe
-    *ngIf="ser.videoSrc$ | async as sr"
-    #frame
-    [src]="sr | safevideo"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen
-  ></iframe>
-</mat-dialog-content>
-<!-- <mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  <button mat-button mat-dialog-close cdkFocusInitial>Ok</button>
-</mat-dialog-actions> -->
+<button class="video-close" mat-dialog-close mat-icon-button>
+  <mat-icon fontIcon="close"></mat-icon>
+</button>
+<iframe
+  *ngIf="ser.videoSrc$ | async as sr"
+  #frame
+  [src]="sr | safevideo"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>

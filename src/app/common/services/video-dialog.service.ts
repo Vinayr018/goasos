@@ -10,35 +10,21 @@ export class VideoDialogService {
 
     private videos: DialogVideoDetails[];
     private videoSrc: BehaviorSubject<string>;
-    private videoTitle: BehaviorSubject<string>;
-    private duration: BehaviorSubject<boolean>;
     private dialogRef: MatDialogRef<VideoDialogComponent, any> | undefined;
 
     public get videoSrc$(): Observable<string> {
         return this.videoSrc.asObservable();
     }
 
-    public get videoTitle$(): Observable<string> {
-        return this.videoTitle.asObservable();
-    }
-
-    public get videoDuration$(): Observable<boolean> {
-        return this.duration.asObservable();
-    }
-
     constructor(private matDialog: MatDialog) {
         this.videos = DialogVideoDetails.Videos;
         this.videoSrc = new BehaviorSubject<string>('');
-        this.videoTitle = new BehaviorSubject<string>('');
-        this.duration = new BehaviorSubject<boolean>(true);
-        this.videoSrc$.subscribe(s => console.log('ser Sub', s))
     }
 
     private PublishSrc(index: DialogVideoLinkIndex): number {
         const foundSource = this.videos[index - 1];
         console.log('foundrc', foundSource, foundSource.src);
         this.videoSrc.next(foundSource.src);
-        this.videoTitle.next(foundSource.title);
         return foundSource.duration;
     }
 
@@ -58,7 +44,6 @@ export class VideoDialogService {
         console.log('videoplay')
         if (!!this.dialogRef) {
             this.dialogRef.disableClose = false;
-            this.duration.next(false);
         }
     }
 }
