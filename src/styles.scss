@@ -241,10 +241,13 @@ ul.strong-bullet-points {
   }
 }
 
-.goas-dialog-panel{
+.goas-dialog-panel {
   user-select: none;
-  .mat-mdc-dialog-surface{
-    overflow-y: initial;
+  .mat-mdc-dialog-surface {
+    &.mdc-dialog__surface{
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
   }
 }
 

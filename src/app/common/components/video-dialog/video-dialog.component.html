@@ -1,13 +1,35 @@
-<button class="video-close" mat-dialog-close mat-icon-button>
-  <mat-icon fontIcon="close"></mat-icon>
-</button>
-<iframe
-  *ngIf="ser.videoSrc$ | async as sr"
-  #frame
-  [src]="sr | safevideo"
-  title="YouTube video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
-  referrerpolicy="strict-origin-when-cross-origin"
-  allowfullscreen
-></iframe>
+<div class="wrapper">
+  <div class="header">
+    <button class="video-close" mat-dialog-close mat-icon-button>
+      <mat-icon fontIcon="close"></mat-icon>
+    </button>
+  </div>
+  <div class="video">
+    <iframe
+      *ngIf="ser.videoSrc$ | async as sr"
+      #frame
+      [src]="sr | safevideo"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="footer">
+    <ul>
+      <li>
+        <a>
+          <img src="/images/home-automation-video-thumbnail.jpg" alt="">
+          <span>Home Autmation</span>
+        </a>
+      </li>
+      <li>
+        <a>
+          <img src="/images/space-saving-automation-video-thumbnail.jpg" alt="">
+          <span>Space saving automation</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

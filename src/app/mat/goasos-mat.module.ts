@@ -35,8 +35,8 @@ const matModules: any[] = [
                 disableClose: true,
                 autoFocus: true,
                 panelClass: 'goas-dialog-panel',
-                width:'80vw',
-                height:'71vh'
+                width:'90vw',
+                height:'85vh'
             }
         }
     ]

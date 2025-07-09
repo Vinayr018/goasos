@@ -1,12 +1,61 @@
-button.video-close {
-    position: absolute;
-    right: 0;
-    top: -2em;
-    color: white;
-    > mat-icon {
-    }
-}
-iframe {
+div.wrapper {
     height: 100%;
-    width: 100%;
+    > div.header {
+        text-align: right;
+        > button.video-close {
+            color: white;
+        }
+    }
+    > div.video {
+        height: calc(100% - 110px - 3em);
+        > iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    > div.footer {
+        padding-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            > li {
+                &.active{
+                    a::before{
+                        background-color: rgba(0, 0, 0, 0.1);
+                    }
+                }
+                > a {
+                    height: 100px;
+                    width: 250px;
+                    position: relative;
+                    display: block;
+                    &::before {
+                        position: absolute;
+                        inset: 0;
+                        content: "";
+                        display: block;
+                        background-color: rgba(0, 0, 0, 0.5);
+                    }
+                    > img {
+                        height: 100%;
+                        width: 100%;
+                        display: block;
+                    }
+                    > span {
+                        position: absolute;
+                        top: 30%;
+                        left: 50%;
+                        transform: translate(-50%);
+                        color: white;
+                        background-color: black;
+                    }
+                }
+            }
+        }
+    }
 }
