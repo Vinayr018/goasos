@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VideoDialogService } from '../../services/video-dialog.service';
 
 @Component({
   selector: 'app-float-contact',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class FloatContactComponent {
 
+  constructor(private videoService: VideoDialogService) { }
+
+  public PlayVideo(): void {
+    this.videoService.PlayVideo();
+  }
 }
