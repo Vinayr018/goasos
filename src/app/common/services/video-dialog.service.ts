@@ -1,74 +1,66 @@
 import { Injectable } from "@angular/core";
-import { MatDialog, MatDialogRef } from "@angular/material/dialog";
-import { DialogVideoDetails, DialogVideoLinkIndex } from "../models";
-import { BehaviorSubject, Observable, } from "rxjs";
+import { MatDialog } from "@angular/material/dialog";
+import { DialogVideoDetails, DialogVideoThumbnail, VideoMap } from "../models";
+import { BehaviorSubject, filter, Observable, } from "rxjs";
 import { VideoDialogComponent } from "../components";
+import { NavigationEnd, Router } from "@angular/router";
 
 @Injectable()
 export class VideoDialogService {
 
-    private videos: DialogVideoDetails[];
-    private videoSrc: BehaviorSubject<string>;
-    private dialogRef: MatDialogRef<VideoDialogComponent, any> | undefined;
+    private currentRouteVideos: DialogVideoDetails[];
+    private currentVideoSrcBehavior: BehaviorSubject<DialogVideoDetails | undefined>;
+    private videoThumbnailsBehavior: BehaviorSubject<DialogVideoThumbnail[]>;
 
-    public get videoSrc$(): Observable<string> {
-        return this.videoSrc.asObservable();
-    }
+    constructor(private matDialog: MatDialog,
+        private route: Router) {
+        this.currentRouteVideos = [];
+        this.currentVideoSrcBehavior =
+            new BehaviorSubject<DialogVideoDetails | undefined>(undefined);
+        this.videoThumbnailsBehavior = new BehaviorSubject<DialogVideoThumbnail[]>([]);
 
-    constructor(private matDialog: MatDialog) {
-        this.videos = DialogVideoDetails.Videos;
-        this.videoSrc = new BehaviorSubject<string>('');
-    }
-
-    private delegate=() => this.PauseDelay();
-
-    private PublishSrc(index: DialogVideoLinkIndex): number {
-        const foundSource = this.videos[index - 1];
-        console.log('foundrc', foundSource, foundSource.src);
-        this.videoSrc.next(foundSource.src);
-        return foundSource.duration;
-    }
-
-    private ShowDialog(): void {
-        this.dialogRef = this.matDialog.open(VideoDialogComponent);
-        this.RegisterWindowEvents();
-    }
-
-    public ShowVideo(index: DialogVideoLinkIndex): void {
-        const dur = this.PublishSrc(index);
-        this.ShowDialog();
-        this.SubscribeToDialogRef();
-        setTimeout(() => {
-            this.OnPlay();
-        }, dur * 1000);
-    }
-
-    private OnPlay(): void {
-        console.log('videoplay')
-        if (!!this.dialogRef) {
-            this.dialogRef.disableClose = false;
-        }
-    }
-
-    private SubscribeToDialogRef(): void {
-        if (!!this.dialogRef) {
-            this.dialogRef.afterClosed().subscribe(() => {
-                this.DeRegisterWindowEvents();
+        route.events
+            .pipe(filter(event => event instanceof NavigationEnd))
+            .subscribe(event => {
+                console.log('Route changed:', (event as NavigationEnd).urlAfterRedirects);
+                this.PlayVideo();
             });
+    }
+
+    public get CurrentVideoSrc$(): Observable<DialogVideoDetails | undefined> {
+        return this.currentVideoSrcBehavior.asObservable();
+    }
+
+    public get VideoThumbnails$(): Observable<DialogVideoThumbnail[]> {
+        return this.videoThumbnailsBehavior.asObservable();
+    }
+
+    public PlayVideo(): void {
+        const foundVideos = this.VideoBasedOnRoute();
+        if (!!foundVideos) {
+            this.NotifyVideoChange(foundVideos);
         }
     }
 
-    private RegisterWindowEvents(): void {
-        window.addEventListener('blur', this.delegate);
+    private NotifyVideoChange(videos: VideoMap): void {
+        this.currentRouteVideos = videos.video;
+        this.currentVideoSrcBehavior.next(this.currentRouteVideos[0]);
+        this.videoThumbnailsBehavior.next(this.currentRouteVideos.map(v => v.ToThumbnail()));
+        this.matDialog.open(VideoDialogComponent);
     }
 
-    private DeRegisterWindowEvents(): void {
-        window.removeEventListener('blur', this.delegate);
+    public PlayVideoByIndex(index: number): void {
+        if (index < 0 || index >= this.currentRouteVideos.length) {
+            console.error("Invalid video index:", index);
+            return;
+        }
+
+        this.currentVideoSrcBehavior.next(this.currentRouteVideos[index]);
+        this.videoThumbnailsBehavior.next(this.currentRouteVideos.map(v => v.ToThumbnail()));
     }
 
-    private PauseDelay(): void {
-        console.log('videopaused', this);
+    private VideoBasedOnRoute(): VideoMap | undefined {
+        const path = window.location.pathname;
+        return VideoMap.All.find(v => v.route === path);
     }
-
-    private ResumeDelay(): void { }
 }

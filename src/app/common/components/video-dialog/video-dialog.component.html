@@ -6,9 +6,9 @@
   </div>
   <div class="video">
     <iframe
-      *ngIf="ser.videoSrc$ | async as sr"
+      *ngIf="ser.CurrentVideoSrc$ | async as sr"
       #frame
-      [src]="sr | safevideo"
+      [src]="sr.src | safevideo"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share"
@@ -16,20 +16,16 @@
       allowfullscreen
     ></iframe>
   </div>
-  <div class="footer">
-    <ul>
-      <li>
-        <a>
-          <img src="/images/home-automation-video-thumbnail.jpg" alt="">
-          <span>Home Autmation</span>
-        </a>
-      </li>
-      <li>
-        <a>
-          <img src="/images/space-saving-automation-video-thumbnail.jpg" alt="">
-          <span>Space saving automation</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+  <ng-container *ngIf="ser.VideoThumbnails$ | async as thumbnails">
+    <div class="footer" *ngIf="thumbnails.length > 1">
+      <ul>
+        <li *ngFor="let video of thumbnails; let i = index">
+          <a (click)="ser.PlayVideoByIndex(i)" href="javascript:void(0)">
+            <img [src]="video.src" [alt]="video.alt" />
+            <span>{{ video.title }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
 </div>

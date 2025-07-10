@@ -56,15 +56,68 @@ export type DialogVideoLinkIndex = 1 | 2;
 export class DialogVideoDetails {
     src: string;
     duration: number;
+    thumbnail: string;
+    alt: string;
 
-    constructor(src: string, dur: number) {
-        this.src = src; this.duration = dur;
+    constructor(
+        src: string,
+        dur: number,
+        thumbnail: string,
+        alt: string) {
+        this.src = src;
+        this.duration = dur;
+        this.thumbnail = thumbnail;
+        this.alt = alt;
     }
 
-    public static get Videos(): DialogVideoDetails[] {
+    public ToThumbnail(): DialogVideoThumbnail {
+        return {
+            src: this.thumbnail,
+            alt: this.alt,
+            title: this.alt
+        };
+    }
+
+    public static get HomeAutomation(): DialogVideoDetails {
+        return new DialogVideoDetails('dEvbNL6nMfo?si=8cYUFRAKwp13Hae1',
+            102, '/images/home-automation-video-thumbnail.jpg',
+            'Home Automation');
+    }
+
+    public static get SpaceAutomation(): DialogVideoDetails {
+        return new DialogVideoDetails('e4f_tQ-sLkE?si=RnOcEdsVH3yo0ACE',
+            114, '/images/space-saving-automation-video-thumbnail.jpg',
+            'Space Saving Automation');
+    }
+
+    public static get All(): DialogVideoDetails[] {
         return [
-            new DialogVideoDetails('dEvbNL6nMfo?si=8cYUFRAKwp13Hae1', 102),
-            new DialogVideoDetails('e4f_tQ-sLkE?si=RnOcEdsVH3yo0ACE', 114)
+            this.HomeAutomation,
+            this.SpaceAutomation
         ]
     }
+}
+
+export class VideoMap {
+    public route: string;
+    public video: DialogVideoDetails[];
+
+    constructor(route: string, video: DialogVideoDetails[]) {
+        this.route = route;
+        this.video = video;
+    }
+
+    public static get All(): VideoMap[] {
+        return [
+            new VideoMap('/smart-home-automation-solutions', [DialogVideoDetails.HomeAutomation]),
+            new VideoMap('/space-saving-furniture-solutions', [DialogVideoDetails.SpaceAutomation]),
+            new VideoMap('/', DialogVideoDetails.All),
+        ];
+    }
+}
+
+export interface DialogVideoThumbnail {
+    src: string;
+    alt: string;
+    title: string;
 }

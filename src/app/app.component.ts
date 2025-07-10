@@ -8,6 +8,7 @@ import { GoasosTitleService } from './common/services/title.service';
 import { MetaService } from './common/services/meta.service';
 import { AnalyticsService } from './common/services/analytics.service';
 import { UserAnalyticsEvents } from './common/models/analytics';
+import { VideoDialogService } from './common/services/video-dialog.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,10 @@ import { UserAnalyticsEvents } from './common/models/analytics';
 })
 export class AppComponent {
   title = 'goasos';
-  constructor(private ser: IdentifierService, private link: CanonicalService
+  constructor(
+    private ser: IdentifierService,
+    private link: CanonicalService,
+    private video: VideoDialogService
   ) {
     link.AddLink();
   }

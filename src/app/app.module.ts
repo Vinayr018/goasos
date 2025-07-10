@@ -8,6 +8,7 @@ import { MainModule } from './main/main.module';
 import { APP_BASE_HREF, PlatformLocation } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GoasosCommonModule } from './common/common.module';
+import { VideoDialogService } from './common/services/video-dialog.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { GoasosCommonModule } from './common/common.module';
       useFactory: (s: PlatformLocation) => s.getBaseHrefFromDOM(),
       deps: [PlatformLocation]
     },
+    VideoDialogService
   ],
   bootstrap: [AppComponent]
 })
