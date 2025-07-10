@@ -56,6 +56,9 @@ div.main-wrapper {
                 bottom: 0.1em;
                 right: 2em;
                 z-index: 4;
+                @media (max-width: 648px) {
+                    right: 1em;
+                }
             }
         }
     }
