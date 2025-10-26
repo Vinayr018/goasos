@@ -46,6 +46,9 @@ section.about-wrapper {
                     font-size: inherit;
                 }
             }
+            &.ai {
+                text-align: center;
+            }
         }
         > ol {
             margin-left: 1em;
